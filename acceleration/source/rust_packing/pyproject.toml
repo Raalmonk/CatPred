@@ -1,0 +1,13 @@
+[build-system]
+requires = ["maturin>=1.9,<2"]
+build-backend = "maturin"
+
+[project]
+name = "catpred-rust-packing"
+version = "0.1.0"
+requires-python = ">=3.9"
+dependencies = ["numpy>=1.23"]
+
+[tool.maturin]
+module-name = "catpred_rust_packing"
+features = ["pyo3/extension-module"]

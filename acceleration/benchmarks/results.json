@@ -1,0 +1,338 @@
+{
+  "baseline_comparison": {
+    "run": "20261007T160555Z_G4_H100_RUNTIME",
+    "comparison": "A original Python versus S1 accepted runtime on one G4",
+    "medians_reported_seconds": [
+      {
+        "request": "warm",
+        "rows": 2047,
+        "n": 5,
+        "original": 31.391,
+        "S1": 7.371,
+        "speedup_reported": 4.259
+      },
+      {
+        "request": "warm",
+        "rows": 4096,
+        "n": 5,
+        "original": 47.598,
+        "S1": 6.463,
+        "speedup_reported": 7.365
+      },
+      {
+        "request": "warm",
+        "rows": 16384,
+        "n": 3,
+        "original": 173.02,
+        "S1": 23.748,
+        "speedup_reported": 7.286
+      },
+      {
+        "request": "cold",
+        "rows": 100,
+        "unique_proteins": 99,
+        "n": 3,
+        "original": 8.208,
+        "S1": 5.765,
+        "speedup_reported": 1.424
+      },
+      {
+        "request": "cold",
+        "rows": 2047,
+        "unique_proteins": 1544,
+        "n": 3,
+        "original": 86.207,
+        "S1": 61.612,
+        "speedup_reported": 1.399
+      }
+    ],
+    "source_report_sha256": "c124dcd776d0a7e769cfebd30ecea4fb7ae3edf367cd3964c6bccea96fd99455"
+  },
+  "latest_kinetics_comparison": {
+    "run": "20261008T030303Z_KINETICS_G4",
+    "comparison": "K0 = accepted S_STREAM runtime; K1 = K0 with unused head averaging removed",
+    "request": "warm complete request; model loading and ESM generation excluded",
+    "batch_size": 50,
+    "members": 10,
+    "precision": "FP32",
+    "input_cache_bytes": 2147483648,
+    "raw_outputs_bitwise_equal": true,
+    "same_runtime": true,
+    "gate": {
+      "receipts": 12,
+      "comparisons": 9,
+      "rtol": 0,
+      "atol": 0
+    },
+    "lifecycle": {
+      "real_model_exception_and_recovery": true,
+      "restoration_passed": true
+    },
+    "hardware": {
+      "gpu": "NVIDIA RTX PRO 6000 Blackwell Server Edition",
+      "logical_cpus": 48,
+      "torch_threads": 24,
+      "torch": "2.11.0+cu130",
+      "cuda": "13.0",
+      "python": "3.13.15"
+    },
+    "warm": [
+      {
+        "workload": "mixed_valid_2047",
+        "rows": 2047,
+        "arms": {
+          "K0": {
+            "n": 5,
+            "seconds": [
+              7.331306994999977,
+              7.693044955999994,
+              7.323185210000247,
+              7.333551373999853,
+              7.687204319000102
+            ],
+            "median_seconds": 7.333551373999853,
+            "range_seconds": [
+              7.323185210000247,
+              7.693044955999994
+            ],
+            "process_count": 1,
+            "rows_per_second": 279.1280643723818,
+            "cuda_allocated_peak_bytes": [
+              7192735232,
+              7192735232,
+              7192735232,
+              7192735232,
+              7192735232
+            ],
+            "cuda_allocated_peak_max_bytes": 7192735232,
+            "cuda_reserved_peak_max_bytes": 20157825024,
+            "cpu_rss_peak_max_bytes": 5555372032
+          },
+          "K1": {
+            "n": 5,
+            "seconds": [
+              6.88165997599981,
+              6.856713239999863,
+              6.852721392000149,
+              7.224319147999722,
+              6.843704767999952
+            ],
+            "median_seconds": 6.856713239999863,
+            "range_seconds": [
+              6.843704767999952,
+              7.224319147999722
+            ],
+            "process_count": 1,
+            "rows_per_second": 298.53953758171764,
+            "cuda_allocated_peak_bytes": [
+              7192735232,
+              7192735232,
+              7192735232,
+              7192735232,
+              7192735232
+            ],
+            "cuda_allocated_peak_max_bytes": 7192735232,
+            "cuda_reserved_peak_max_bytes": 20157825024,
+            "cpu_rss_peak_max_bytes": 5539561472
+          }
+        },
+        "time_reduction": 0.0650214486381806,
+        "speedup": 1.0695432516002377,
+        "peak_allocated_delta_bytes": 0
+      },
+      {
+        "workload": "reuse_4096",
+        "rows": 4096,
+        "arms": {
+          "K0": {
+            "n": 5,
+            "seconds": [
+              6.473688571999901,
+              6.467421185999683,
+              6.400427253999624,
+              6.443302859999676,
+              6.487882883000111
+            ],
+            "median_seconds": 6.467421185999683,
+            "range_seconds": [
+              6.400427253999624,
+              6.487882883000111
+            ],
+            "process_count": 1,
+            "rows_per_second": 633.3281662352214,
+            "cuda_allocated_peak_bytes": [
+              4586218496,
+              4586218496,
+              4586218496,
+              4586218496,
+              4586218496
+            ],
+            "cuda_allocated_peak_max_bytes": 4586218496,
+            "cuda_reserved_peak_max_bytes": 7470055424,
+            "cpu_rss_peak_max_bytes": 1924648960
+          },
+          "K1": {
+            "n": 5,
+            "seconds": [
+              6.333653962999961,
+              6.310551506000138,
+              6.3015862809998,
+              6.136157826999806,
+              6.279881173999911
+            ],
+            "median_seconds": 6.3015862809998,
+            "range_seconds": [
+              6.136157826999806,
+              6.333653962999961
+            ],
+            "process_count": 1,
+            "rows_per_second": 649.9950674880128,
+            "cuda_allocated_peak_bytes": [
+              4586218496,
+              4586218496,
+              4586218496,
+              4586218496,
+              4586218496
+            ],
+            "cuda_allocated_peak_max_bytes": 4586218496,
+            "cuda_reserved_peak_max_bytes": 7470055424,
+            "cpu_rss_peak_max_bytes": 1906745344
+          }
+        },
+        "time_reduction": 0.025641581123380885,
+        "speedup": 1.0263163745769697,
+        "peak_allocated_delta_bytes": 0
+      },
+      {
+        "workload": "screening_16384",
+        "rows": 16384,
+        "arms": {
+          "K0": {
+            "n": 3,
+            "seconds": [
+              23.69427110200013,
+              23.584460973000205,
+              23.726317546000246
+            ],
+            "median_seconds": 23.69427110200013,
+            "range_seconds": [
+              23.584460973000205,
+              23.726317546000246
+            ],
+            "process_count": 1,
+            "rows_per_second": 691.4751641639215,
+            "cuda_allocated_peak_bytes": [
+              4597626880,
+              4597626880,
+              4597626880
+            ],
+            "cuda_allocated_peak_max_bytes": 4597626880,
+            "cuda_reserved_peak_max_bytes": 9055502336,
+            "cpu_rss_peak_max_bytes": 2042331136
+          },
+          "K1": {
+            "n": 3,
+            "seconds": [
+              23.184973290000016,
+              23.1694969199998,
+              22.97951666100016
+            ],
+            "median_seconds": 23.1694969199998,
+            "range_seconds": [
+              22.97951666100016,
+              23.184973290000016
+            ],
+            "process_count": 1,
+            "rows_per_second": 707.1366312601034,
+            "cuda_allocated_peak_bytes": [
+              4597626880,
+              4597626880,
+              4597626880
+            ],
+            "cuda_allocated_peak_max_bytes": 4597626880,
+            "cuda_reserved_peak_max_bytes": 9055502336,
+            "cpu_rss_peak_max_bytes": 2044481536
+          }
+        },
+        "time_reduction": 0.022147724221659226,
+        "speedup": 1.0226493559101555,
+        "peak_allocated_delta_bytes": 0
+      }
+    ],
+    "mechanism": [
+      {
+        "workload": "mixed_valid_2047",
+        "K0_head_means": 410,
+        "K1_head_means": 0,
+        "bmm_each": 1230,
+        "softmax_each": 820
+      },
+      {
+        "workload": "reuse_4096",
+        "K0_head_means": 820,
+        "K1_head_means": 0,
+        "bmm_each": 2460,
+        "softmax_each": 1640
+      },
+      {
+        "workload": "screening_16384",
+        "K0_head_means": 3280,
+        "K1_head_means": 0,
+        "bmm_each": 9840,
+        "softmax_each": 6560
+      }
+    ],
+    "source": {
+      "upstream_commit": "b314a28a84d388755237de90d9f336f951b291b3",
+      "candidate_identity": "3dd2a37aef40db8c513c1fb0ce6141525a7c134b49e8e15906d9e0a7074088d3",
+      "acceptance_sha256": "834b86b04027ddddc560af49dfa284f3a387b817aa0c338c123687d37338a50a",
+      "raw_receipt_sha256": {
+        "results/kinetics/tasks/gate_mixed_valid_2047_K0/rep_1/attempt_1/receipt.json": "cc596d3fafa05c9650f1f56835db721efe9d097d0d815bd030664296523ddca6",
+        "results/kinetics/tasks/gate_mixed_valid_2047_K0/rep_2/attempt_1/receipt.json": "eca606f7cfaa8a27f24f3d260d1defe3139328c2850132b4e1b832a653c6704c",
+        "results/kinetics/tasks/gate_mixed_valid_2047_K1/rep_1/attempt_1/receipt.json": "ca59d44e3ea3d358b3d09f8c4be07817e1c2eb4e4605219a4dc7b38e8cc53ac1",
+        "results/kinetics/tasks/gate_mixed_valid_2047_K1/rep_2/attempt_1/receipt.json": "b08b26738d6912c28f801729bce5a3601212e3e23e84c70b727a5a47b15a4f88",
+        "results/kinetics/tasks/gate_reuse_4096_K0/rep_1/attempt_1/receipt.json": "9d536a3faea169cf6735ee5f62f9223223bde133b67b2b27d65eb542ce263906",
+        "results/kinetics/tasks/gate_reuse_4096_K0/rep_2/attempt_1/receipt.json": "f8cdb06c74a7baa87bf4bd383f24c506047be80fa0b24fbd43c25e3b1f9c8274",
+        "results/kinetics/tasks/gate_reuse_4096_K1/rep_1/attempt_1/receipt.json": "dcb61d6ac5cc8f544c11f245de04fa45212478b319bb17c77463d81809266cce",
+        "results/kinetics/tasks/gate_reuse_4096_K1/rep_2/attempt_1/receipt.json": "97040e54ec66efa2426c00539221ec24ead11ca3698012268500400cf750c293",
+        "results/kinetics/tasks/gate_screening_16384_K0/rep_1/attempt_1/receipt.json": "7f16d5b8785cce986cb4009d6985abea3d2e2b42a70eaff9a3600e5868baa7d4",
+        "results/kinetics/tasks/gate_screening_16384_K0/rep_2/attempt_1/receipt.json": "0729233b644429c49507c107a7980f942d30b081b28f04697a7cc406a5d56dba",
+        "results/kinetics/tasks/gate_screening_16384_K1/rep_1/attempt_1/receipt.json": "0d904e8137e6f8e9ed24094d2c87957fbdb15c1d653e180a3066df1a6e138a5d",
+        "results/kinetics/tasks/gate_screening_16384_K1/rep_2/attempt_1/receipt.json": "29b2595f83eea1827d488f9122a99bbedc9e705b299bd23444c402754980cded",
+        "results/kinetics/tasks/warm_mixed_valid_2047_K0/rep_1/attempt_1/receipt.json": "cf49f1003b5ae1aae70a144b65af9f104842dd11651e9a10b11776c1fba8f42d",
+        "results/kinetics/tasks/warm_mixed_valid_2047_K0/rep_2/attempt_1/receipt.json": "49f4143c6651219861e4b0c6af1220083b64d5405ab035ed8aa68eed2f633b6f",
+        "results/kinetics/tasks/warm_mixed_valid_2047_K0/rep_3/attempt_1/receipt.json": "d338138943613f6b86fed79e87a2ab917ab669c2f0929aa56f70ddbbdd33c752",
+        "results/kinetics/tasks/warm_mixed_valid_2047_K0/rep_4/attempt_1/receipt.json": "17554df27f5fc70a819dbaa441aa9e050d111d7e7d3244d58684defd6a15d5cc",
+        "results/kinetics/tasks/warm_mixed_valid_2047_K0/rep_5/attempt_1/receipt.json": "93db7a3e8f73d6508c46dbd653273a6357241dd92d4a1036bb367ed5d20bacd9",
+        "results/kinetics/tasks/warm_mixed_valid_2047_K1/rep_1/attempt_1/receipt.json": "8e5ff6ac494b907d63487608cfb6c9065d8a878ab41d4459e06528b83e9e8f89",
+        "results/kinetics/tasks/warm_mixed_valid_2047_K1/rep_2/attempt_1/receipt.json": "94aed8441ef1374072d9a9453a3e80de4570b6d4ec5df83bd3531776c12e7b44",
+        "results/kinetics/tasks/warm_mixed_valid_2047_K1/rep_3/attempt_1/receipt.json": "333edc8b5b6d66d06c6a023fb6da6f4ddeba569aad033f32b715a400c457a948",
+        "results/kinetics/tasks/warm_mixed_valid_2047_K1/rep_4/attempt_1/receipt.json": "c94a8a30e9673aade39b32963fc2f9fbbb3b917c9a969d990ed6da3cad62b619",
+        "results/kinetics/tasks/warm_mixed_valid_2047_K1/rep_5/attempt_1/receipt.json": "c5969d90899c50fd39ed9b9e1faa50d9a2275e67d79c9b63a35af7a21dafa9d5",
+        "results/kinetics/tasks/warm_reuse_4096_K0/rep_1/attempt_1/receipt.json": "e25313eed9e1135e7483d30ddff86a97e223ee5245875baadd2ffb1bf25ad0b2",
+        "results/kinetics/tasks/warm_reuse_4096_K0/rep_2/attempt_1/receipt.json": "3e4d863afd0a6d1eabd23529d9249517c6300201e6630a0b1f5f17e56fdea1bd",
+        "results/kinetics/tasks/warm_reuse_4096_K0/rep_3/attempt_1/receipt.json": "85ea49d452669a08e35269f099c908a3a3e7dad064ddd57f62003774f586f18a",
+        "results/kinetics/tasks/warm_reuse_4096_K0/rep_4/attempt_1/receipt.json": "8e0e3bc8a7f779efb7e5050f1295d348860886f85f864c1d0a90d943163bbf4b",
+        "results/kinetics/tasks/warm_reuse_4096_K0/rep_5/attempt_1/receipt.json": "1991d548ca62391a7a9bea4b89b1dd76e4a6c1e5e5694e579754bae87e72f783",
+        "results/kinetics/tasks/warm_reuse_4096_K1/rep_1/attempt_1/receipt.json": "bef447eca3f5141cead42884fa406ca78da70baab75e64ab75745a91ece9251c",
+        "results/kinetics/tasks/warm_reuse_4096_K1/rep_2/attempt_1/receipt.json": "865401657c5c0871affbc7e5f3267ba87954eaf4ce8315bafb031187008848e2",
+        "results/kinetics/tasks/warm_reuse_4096_K1/rep_3/attempt_1/receipt.json": "ba433bff1c9392761c8341db36ab5b172457e293faae331f1a260f59b9ce29a6",
+        "results/kinetics/tasks/warm_reuse_4096_K1/rep_4/attempt_1/receipt.json": "f3060108716e979ecd3e5cc5a38e0a2d3f849d75d5e671c51db00d2feb7f52e8",
+        "results/kinetics/tasks/warm_reuse_4096_K1/rep_5/attempt_1/receipt.json": "0d119f9963a5583731ac72611e883ccdcd763132058e2465e35224cc3cae9617",
+        "results/kinetics/tasks/warm_screening_16384_K0/rep_1/attempt_1/receipt.json": "e3d10f164cd29d0c5b39a4bb524fb360e9ac5d7e5e96406cb7560a2512a04c80",
+        "results/kinetics/tasks/warm_screening_16384_K0/rep_2/attempt_1/receipt.json": "4479c5a98d3aa9c4eeabc76e2109774282231efbb7abf68fefb0b31bbbdd95e3",
+        "results/kinetics/tasks/warm_screening_16384_K0/rep_3/attempt_1/receipt.json": "f8401866632a1958a2a6bf843d813df0dc78c5908c82f24506187ac9dfa02748",
+        "results/kinetics/tasks/warm_screening_16384_K1/rep_1/attempt_1/receipt.json": "ed45926ad742024dca6b5d7caefe660deb430831055229a0a42f71186a8c4e5f",
+        "results/kinetics/tasks/warm_screening_16384_K1/rep_2/attempt_1/receipt.json": "0d191fe37d87f7c62940799750dd97707916c45ee88d05e099a8e5baa2da1b17",
+        "results/kinetics/tasks/warm_screening_16384_K1/rep_3/attempt_1/receipt.json": "58671e8ca52f90c33494125aa228117e0e5d83a2c487658b65307404fcf12de7",
+        "results/kinetics/tasks/profile_mixed_valid_2047_K0/rep_1/attempt_1/receipt.json": "93cc3fb2e773913cf39abd89983f8437d2d4d7a98e0362f27f7908f2c4de801f",
+        "results/kinetics/tasks/profile_mixed_valid_2047_K1/rep_1/attempt_1/receipt.json": "499992c306ed9254f7b0e5c19b40b847ec46baaa0e03807a1a4badff1eb0528d",
+        "results/kinetics/tasks/profile_reuse_4096_K0/rep_1/attempt_1/receipt.json": "7d74af5bec7cdc3cc98e3816684bc33e54af80a81a715e1fac926c882493cb9b",
+        "results/kinetics/tasks/profile_reuse_4096_K1/rep_1/attempt_1/receipt.json": "507d7d038c993a958a40e9c74fddefc9ef2da8fcc01078d0d967727952680a79",
+        "results/kinetics/tasks/profile_screening_16384_K0/rep_1/attempt_1/receipt.json": "771b5b30d8efe28c70ff45063aebac12a8878f21819f6fa291b0db78cbd81fe9",
+        "results/kinetics/tasks/profile_screening_16384_K1/rep_1/attempt_1/receipt.json": "130bc331cf84cb78d51af2c5bc443af14308aaf0a4d2af8abd5738f18b9a5f4c"
+      }
+    }
+  },
+  "comparisons_are_separate_runs": true
+}

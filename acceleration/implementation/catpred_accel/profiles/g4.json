@@ -1,0 +1,32 @@
+{
+  "architecture_specific_kernels": [],
+  "certified_context_keys": [
+    "dfcbb802d57cfd9cacce1d34c04bc88d917606ddb7f0db8758856750377df576"
+  ],
+  "compute_capability": [
+    12,
+    0
+  ],
+  "current_run_validation": "verified",
+  "default_input_budget_bytes": 2147483648,
+  "default_memory": "stream",
+  "default_numeric": "exact",
+  "evidence_sha256": "f18b6d490d2cf08bb761cdbf303a80a1ccb210092be6006698b16261c3e7feea",
+  "numeric": "exact",
+  "observed_hardware": {
+    "compute_capability": [
+      12,
+      0
+    ],
+    "device_type": "cuda",
+    "multiprocessors": 188,
+    "name": "NVIDIA RTX PRO 6000 Blackwell Server Edition",
+    "total_memory": 101974081536
+  },
+  "observed_reference_gpu": "RTX PRO 6000 Blackwell Server Edition",
+  "profile": "g4_sm120",
+  "recommended_protein_modes": {
+    "loader_mode": "meta",
+    "mode": "off"
+  }
+}

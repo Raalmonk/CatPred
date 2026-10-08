@@ -1,0 +1,750 @@
+{
+  "upstream_commit": "b314a28a84d388755237de90d9f336f951b291b3",
+  "delivery_sha256": "7a4f6c20d052273caa0dd350eefdb25110446088a10afda4cf9fc8f459e1dba1",
+  "copied_files": [
+    {
+      "path": "experiments/analyze_kinetics.py",
+      "sha256": "b8ab4069b1c2f0e064480784ed0e70a44d0d398de55be915488672b2083ce9ba"
+    },
+    {
+      "path": "experiments/evidence.py",
+      "sha256": "dea2762f58893d362f4234e89018631c6e182d8ed6f131d132befdb48a731e16"
+    },
+    {
+      "path": "experiments/gpu_request.py",
+      "sha256": "28fb7ca73d8e1e8b1965c68cedb2011ef54abf3c4efbe308904f786344c5b9c8"
+    },
+    {
+      "path": "experiments/history/analyze_kinetics.whole_json.py",
+      "sha256": "76e4ca59fea4b268019363cb71e8d362c8c3e2c39a153187df3aecb209b6729e"
+    },
+    {
+      "path": "experiments/kinetics_lifecycle.py",
+      "sha256": "0727d71090bbff4133e0db1a96386be584c2be61c6453c0fd5410728a40cbaae"
+    },
+    {
+      "path": "experiments/kinetics_stage.py",
+      "sha256": "527f13e52e2c0cc96d4c71513ed91ca092489fcf419f20468957503d04ca541e"
+    },
+    {
+      "path": "experiments/ops/remote_setup.py",
+      "sha256": "50e21ffd4a5fc96de86a30b0f14de5de9391145ddae67027ef9c1630859875cb"
+    },
+    {
+      "path": "experiments/run_gpu_suite.py",
+      "sha256": "05d38b6a4259e3e614b97718ab7cdff695e0e60072278851e2578c3d92e209eb"
+    },
+    {
+      "path": "experiments/s1_lifecycle.py",
+      "sha256": "af2bc5a59d02e2893614c9fe1dcdff82ed2c60d849cea48d63ccb27aa62d1dca"
+    },
+    {
+      "path": "experiments/test_kinetics_lifecycle_stdlib.py",
+      "sha256": "d345e83a60e895be53e892aea6da753222b2d4e4a581f583da0ff99f79848c41"
+    },
+    {
+      "path": "experiments/tests/test_analyze_kinetics_streaming.py",
+      "sha256": "777ecefb5b9bc191cdbcb15f670dc0c06e86f28381853cf1c8dd669d76eb8a72"
+    },
+    {
+      "path": "experiments/verify_gpu_results.py",
+      "sha256": "210f659205b6c2f3d9ce58ee562e93506b9f7b9b573f614c7224e394a765985a"
+    },
+    {
+      "path": "implementation/FINAL_SOURCE_FREEZE.json",
+      "sha256": "6746bb4b8d8606ab45ac118b55c909403e62dd88fd57968d8b7fa913226ad2a6"
+    },
+    {
+      "path": "implementation/THIRD_PARTY_NOTICES.md",
+      "sha256": "35105847eab324525f43af2893088522e20f94dc532899ef7fb90867831cd22b"
+    },
+    {
+      "path": "implementation/catpred_accel/THIRD_PARTY_NOTICES.md",
+      "sha256": "35105847eab324525f43af2893088522e20f94dc532899ef7fb90867831cd22b"
+    },
+    {
+      "path": "implementation/catpred_accel/__init__.py",
+      "sha256": "e6db07ea3ab7627824e870c808f50365a168e7a3c2cdbd5a6e206e61ff7720a9"
+    },
+    {
+      "path": "implementation/catpred_accel/_accepted/__init__.py",
+      "sha256": "16b26c278d17b3087f783e3c2a2af0b9f1e8f7d436f76a09376dc86968373ac8"
+    },
+    {
+      "path": "implementation/catpred_accel/_accepted/packing.py",
+      "sha256": "38616de366710f06c61c6090576b78f4c634feed4b0d6ee92180bf08bb75b77f"
+    },
+    {
+      "path": "implementation/catpred_accel/_accepted/probes.py",
+      "sha256": "2588f38d4fc381f80b887f3c6fb231e25757d36944dd78aed1baccc8e879e088"
+    },
+    {
+      "path": "implementation/catpred_accel/_accepted/reuse.py",
+      "sha256": "594f14ac87387b0b8fc22df1692c4c25c7510f24cce905f748c54168c98763c0"
+    },
+    {
+      "path": "implementation/catpred_accel/_accepted/streaming.py",
+      "sha256": "6871b65ae3b7cfa9798bc239ad2ca04a49df5d712e461d49baf11c91d4db0829"
+    },
+    {
+      "path": "implementation/catpred_accel/_identity.py",
+      "sha256": "f7662006bd3fc3bb222c998b3c0afbd17a573fc7383aaf53ba389fe351d0c871"
+    },
+    {
+      "path": "implementation/catpred_accel/_vendor.py",
+      "sha256": "aff77b8d68b982f0a9ba1dc99429e8e9d84d19776f5fbfc62c8fb2b637b490f7"
+    },
+    {
+      "path": "implementation/catpred_accel/accepted_sources.json",
+      "sha256": "cf38e6b05262c4ffd9121052c54364b75da97433b148db0cdf72d597e995e6d0"
+    },
+    {
+      "path": "implementation/catpred_accel/api.py",
+      "sha256": "cb9fc1c4e97ea29d3ccf7ec93944ee9e4518779a9d897e820a20bbe632dca9e3"
+    },
+    {
+      "path": "implementation/catpred_accel/cache_keys.py",
+      "sha256": "7c1e288f3e421a6dad311bd0a9821f9fed7fa7f321707ef5d74a0416c35d77d0"
+    },
+    {
+      "path": "implementation/catpred_accel/capabilities.py",
+      "sha256": "dcd0f2088b4323757cd65508d5edaf994a3fd5e3d728c5bb052aab9fbb0dd140"
+    },
+    {
+      "path": "implementation/catpred_accel/config.py",
+      "sha256": "431641e808b27332568def2ce40b2a989e9922a1d352afab6a7c500319ea2bc9"
+    },
+    {
+      "path": "implementation/catpred_accel/profiles/cpu.json",
+      "sha256": "39a24dbf71d74396e3eb8e0069769b4713e37b3db79aa3a1fa3c61e86cc6a0dc"
+    },
+    {
+      "path": "implementation/catpred_accel/profiles/g4.json",
+      "sha256": "fdd1b455226ac99cd40f4a1d996f44b114d7b9627bac0c6e2cd64eb0bf3f4ba0"
+    },
+    {
+      "path": "implementation/catpred_accel/profiles/h100.json",
+      "sha256": "5ed6b2ad2aab12449d8de91999b0d4e117ce53a7d3f50918d3e73d34a650b1e3"
+    },
+    {
+      "path": "implementation/catpred_accel/protein.py",
+      "sha256": "7fa6b7d9990c6f37daa4a0525669291db1fc2fb0b46e723e1f00bd4fb81229db"
+    },
+    {
+      "path": "implementation/catpred_accel/protein_loading.py",
+      "sha256": "d801d65521535dea14a2262db8a7002083d48a14b2f2daad10893ac36be72333"
+    },
+    {
+      "path": "implementation/catpred_accel/source.py",
+      "sha256": "16e429a3fb229e074b0236753bdd29cacdcace9c55d79b090bc877e81ad5581c"
+    },
+    {
+      "path": "implementation/catpred_accel/validation/__init__.py",
+      "sha256": "44b627ee98f36fe3419e245f97f91dab4d564a13d8afc0dfdf43c35f30868130"
+    },
+    {
+      "path": "implementation/catpred_accel/validation/certifications.json",
+      "sha256": "91e805fbb0a0e7bb0ededdd9d1ea2d957e55e0420af8028ce89564244fc4d041"
+    },
+    {
+      "path": "implementation/catpred_accel/validation/evidence_f18b6d490d2cf08bb761cdbf303a80a1ccb210092be6006698b16261c3e7feea.json",
+      "sha256": "f18b6d490d2cf08bb761cdbf303a80a1ccb210092be6006698b16261c3e7feea"
+    },
+    {
+      "path": "implementation/catpred_accel/validation/lifecycle.py",
+      "sha256": "c62b41d00b89a0edc282bcf7b81e9c1d349b00509fff84fe5f5c83d0a34372e7"
+    },
+    {
+      "path": "implementation/catpred_accel/validation/protein_certifications.json",
+      "sha256": "fd0b5df5610808a581b8c46885355d41ecee63281ab21339fb18b34d457a8a32"
+    },
+    {
+      "path": "implementation/examples/run_prediction.py",
+      "sha256": "977a097994b2733b954a05d56e5c72857b4839d44e1b4f8649005b65ca0c6216"
+    },
+    {
+      "path": "implementation/pyproject.toml",
+      "sha256": "160195c7b6fb1dc378433fcea1a9ae04bc4320e74591d3389b3c68d78c071f03"
+    },
+    {
+      "path": "implementation/tests/test_loader_metadata.py",
+      "sha256": "1cfea101653943fe71b40a26012aa633ebd0615df8ebacd18a8c06a57657fe6d"
+    },
+    {
+      "path": "implementation/tests/test_metadata.py",
+      "sha256": "3e4d930d508172d21a926715e3d87f0bd29c9b9a101dedeeb8e31afeeeeabf55"
+    },
+    {
+      "path": "implementation/tests/test_no_import_side_effects.py",
+      "sha256": "ccd5c4f2cf413473728ad8ec5179f67488de407f2f2ba7383915445d6cf5d461"
+    },
+    {
+      "path": "implementation/tests/test_protein_context_stdlib.py",
+      "sha256": "27f61b46a97293c07a7c3c7aeb0e691ea7d5c3fe037571e944a51ada0a3ae304"
+    },
+    {
+      "path": "implementation/tests/test_restoration.py",
+      "sha256": "280b5921980fac3e6b1bc23f152b4102263fe24115477892d22d0e6b7f1e984c"
+    },
+    {
+      "path": "source/CatPred/LICENSE",
+      "sha256": "a07ff0e94555454197cf3c5d86fe4b42dc35a828eadfa6c542149139a19fbe65"
+    },
+    {
+      "path": "source/CatPred/LICENSE.txt",
+      "sha256": "a98ae105ba00c8daa6ae069b28e970222b975174358efe36fda750e5bc250761"
+    },
+    {
+      "path": "source/CatPred/README.md",
+      "sha256": "c69af234295182d7f18e1f7a3f488ccd22a29c72396d5681aa39ab52a17b3393"
+    },
+    {
+      "path": "source/CatPred/__init__.py",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "source/CatPred/api/index.py",
+      "sha256": "e4add97f15312e2169a8d27725052d36f7fef5584833f5b98d4e8f9306a3c83e"
+    },
+    {
+      "path": "source/CatPred/catpred/__init__.py",
+      "sha256": "e345081fec1120245b3422ff90d316b0fc7bf4295d4d017153c85129183f09fc"
+    },
+    {
+      "path": "source/CatPred/catpred/args.py",
+      "sha256": "6b31daaa984274cf516895ac289a3afc87dfbf649467220e5b33c6cb46b0519c"
+    },
+    {
+      "path": "source/CatPred/catpred/constants.py",
+      "sha256": "9de6af10e6fdb83cae85c825137bbc9f8336f661efd5f6fb853a17a3ccad4b3f"
+    },
+    {
+      "path": "source/CatPred/catpred/data/__init__.py",
+      "sha256": "8fd04a8775df47bc4b48a933b0d9b2877dab5b1f997a63dad267262c9ec92d54"
+    },
+    {
+      "path": "source/CatPred/catpred/data/cache_utils.py",
+      "sha256": "1b245a9b73c4443bd6b9de6e462b36e6f075bda7d98961fcbfcebda5130f5859"
+    },
+    {
+      "path": "source/CatPred/catpred/data/data.py",
+      "sha256": "aab48495d5df9ddf8c00535ed05e4a48b8a0ba8ed7dafa34fa9424a7a1cfaaaa"
+    },
+    {
+      "path": "source/CatPred/catpred/data/esm_utils.py",
+      "sha256": "80fa2786ca403bc49c442115c20e9971fa32f9d61c480c0a38028aeb7877f5c4"
+    },
+    {
+      "path": "source/CatPred/catpred/data/gvp_utils.py",
+      "sha256": "4a9379761929f56e6ff7eca39cb17ea584b90a412a39ebd02cb43cf66e3e3eda"
+    },
+    {
+      "path": "source/CatPred/catpred/data/scaffold.py",
+      "sha256": "42dfd8f99b19c9dd084d616efa8983eaf8f12c73967ca6230786f0e96db50e42"
+    },
+    {
+      "path": "source/CatPred/catpred/data/scaler.py",
+      "sha256": "fcf4795326d0d1a23c4dc8b2ca27c1c21b9290e072dfb5cad827429b9c29d5d9"
+    },
+    {
+      "path": "source/CatPred/catpred/data/utils.py",
+      "sha256": "da059c61a9bd455fc065a44248fb29d8c3607bc66a08982891a3b5f801d05d55"
+    },
+    {
+      "path": "source/CatPred/catpred/features/__init__.py",
+      "sha256": "dc61ee9eb41a89afc131fd770e169c5e225ac54a7c66e4154181fc0a58af9793"
+    },
+    {
+      "path": "source/CatPred/catpred/features/features_generators.py",
+      "sha256": "0f4165a847713bad5f40b33b4698dd044649826dc27ce2611a2a8fa5fd55f93a"
+    },
+    {
+      "path": "source/CatPred/catpred/features/featurization.py",
+      "sha256": "4b37628e1fc59e786371a780f979400e0e33faa4440c50004d6551e25a4d3006"
+    },
+    {
+      "path": "source/CatPred/catpred/features/utils.py",
+      "sha256": "d8707c26c7e6f5163df58412e49824ea3d9b0efa330c557f5cc20f1789d0f731"
+    },
+    {
+      "path": "source/CatPred/catpred/inference/__init__.py",
+      "sha256": "da1fec1d84a6439fa9cabdf823ccfef0048ec4a7ef7e503d309a1b4707b050d8"
+    },
+    {
+      "path": "source/CatPred/catpred/inference/backends.py",
+      "sha256": "283565f8e3d572348ac35e6e93464e98e5de3d4e25221395a4fdf01bdc3cc52c"
+    },
+    {
+      "path": "source/CatPred/catpred/inference/service.py",
+      "sha256": "e2542c1c9853b78145c2909cc0fa3afbb9bf76c12044b19131989e4a563ada47"
+    },
+    {
+      "path": "source/CatPred/catpred/inference/types.py",
+      "sha256": "c55f55db60237f8c0d6f7758325fa2423e35f573a990ea8f8f76724277a549dc"
+    },
+    {
+      "path": "source/CatPred/catpred/integration/__init__.py",
+      "sha256": "cc1184f489200413e8f6fe0444179aebfdf78acc5d7eaecf790719e24e7c2034"
+    },
+    {
+      "path": "source/CatPred/catpred/integration/webkinpred_adapter.py",
+      "sha256": "a0cac5c3e089a4c1ec2f72154ec36462387c5c1918b59f6cb2300c9a628e02ff"
+    },
+    {
+      "path": "source/CatPred/catpred/models/__init__.py",
+      "sha256": "783b2b8b01e380fa2812138dbef173b6bb6e98cc7d1e3646ba681ccfeeb98bc5"
+    },
+    {
+      "path": "source/CatPred/catpred/models/en_transformer/__init__.py",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "source/CatPred/catpred/models/en_transformer/en_transformer.py",
+      "sha256": "b25bf80921fb8068cd9618fd8b501010f9f3c80186bdd6a478098a4c3fdf8f61"
+    },
+    {
+      "path": "source/CatPred/catpred/models/en_transformer/rotary.py",
+      "sha256": "aee21da7b9c82e0effe776169e537cc1b4b0df6cb46d492809e186d53052e49b"
+    },
+    {
+      "path": "source/CatPred/catpred/models/en_transformer/utils.py",
+      "sha256": "7b9aecf6355ff662ad59a583ae20e18b8982d11fda08bf5c5b78c8e0ff374f28"
+    },
+    {
+      "path": "source/CatPred/catpred/models/ffn.py",
+      "sha256": "e71335592143527b6f93bbd276b02967219b7b73e28ee368ba41446823da3866"
+    },
+    {
+      "path": "source/CatPred/catpred/models/gvp_models.py",
+      "sha256": "e054cfdee53cacc39d7b157d59c8fe8e6a6cf3849cf32872944c21e61933a67f"
+    },
+    {
+      "path": "source/CatPred/catpred/models/model.py",
+      "sha256": "8cbc6ee75ff2c6526031e856612bf4384d81d3673be49902a8ac3cb708f39676"
+    },
+    {
+      "path": "source/CatPred/catpred/models/mpn.py",
+      "sha256": "d1309fdf0c6daf2409a780ed5d85da399778f7067142e6b9099cbbf2f8143313"
+    },
+    {
+      "path": "source/CatPred/catpred/models/transformer_models.py",
+      "sha256": "2ef5fec6c07cc117d18217f9b8fb19102195ff5877da8ed92a47a1d302bc806f"
+    },
+    {
+      "path": "source/CatPred/catpred/multitask_utils.py",
+      "sha256": "2f3c7822f72d0b40f44f23c7cbbe5397250045a99bb6639e917f15fef78a074e"
+    },
+    {
+      "path": "source/CatPred/catpred/nn_utils.py",
+      "sha256": "844bdfb63cd4ed78b73d5fcc07a9f60b2d1258646554f9a99ee1910788b7d681"
+    },
+    {
+      "path": "source/CatPred/catpred/rdkit.py",
+      "sha256": "a6ab33e646f8d490164ca7f73b38ceff465aeb4c5dfffecc43e3f96d6bd3df13"
+    },
+    {
+      "path": "source/CatPred/catpred/security/__init__.py",
+      "sha256": "69e8f063aadc2407d6708be2850483a786eeb15a2c8f348c9a81ec0870294e0c"
+    },
+    {
+      "path": "source/CatPred/catpred/security/deserialization.py",
+      "sha256": "5943ae60059efc54ac58bece6e0876e2e2cd5d06959ddcfabe632a2ae9f0e40a"
+    },
+    {
+      "path": "source/CatPred/catpred/train/__init__.py",
+      "sha256": "8345a145455fd292bb473f68910d01becaa212aa7ad9d794eef848d3cb3befb7"
+    },
+    {
+      "path": "source/CatPred/catpred/train/cross_validate.py",
+      "sha256": "31c3ca25a9005294416c1a47a428559b50f267f5a3dede681e5fa8223cb0b83f"
+    },
+    {
+      "path": "source/CatPred/catpred/train/evaluate.py",
+      "sha256": "4032821b4af483122421665c8aff8592cff3cfdd26ae7aaedd6dd827db43f3f2"
+    },
+    {
+      "path": "source/CatPred/catpred/train/loss_functions.py",
+      "sha256": "87df0c5ef3f1bd8273c92a0fc375757bfec9652983dcf180b7fb12c742e0ef72"
+    },
+    {
+      "path": "source/CatPred/catpred/train/make_predictions.py",
+      "sha256": "f4fa0af1d8f8f4e7b3fb28ff90671922fd18f13fba8d745dfa3b841e5cf50165"
+    },
+    {
+      "path": "source/CatPred/catpred/train/metrics.py",
+      "sha256": "983f5ae7ec2ab4639e08cc2d3465587555c7639d3d79a0f4a0b81c8a8aadeba6"
+    },
+    {
+      "path": "source/CatPred/catpred/train/molecule_fingerprint.py",
+      "sha256": "56e1a585a279f1153e84aee0fd435257d3d2522d43f44e9f9341a5ecfea2b4a3"
+    },
+    {
+      "path": "source/CatPred/catpred/train/predict.py",
+      "sha256": "0dad566c983ad95a4fc14d912da6ad713fe3ed19007ba8c719b05a83c86e9c2c"
+    },
+    {
+      "path": "source/CatPred/catpred/train/run_training.py",
+      "sha256": "7e11079f132eb4f9cd74a8b593f40992eb69ab80bdc0b3b3e3cba56cec8438c7"
+    },
+    {
+      "path": "source/CatPred/catpred/train/train.py",
+      "sha256": "5141afe8777684833177cdfcb162ead40a9c763cabfddc98f5fd4aa4aa44be7e"
+    },
+    {
+      "path": "source/CatPred/catpred/uncertainty/__init__.py",
+      "sha256": "5c20159c3e5c5f545b5c8336c8d1e2140b3b1b56ff4f1f15e837aa97d4f57e08"
+    },
+    {
+      "path": "source/CatPred/catpred/uncertainty/uncertainty_calibrator.py",
+      "sha256": "99ebd391a8b76aaca5d1dd42ec0ce78940467876d279d0654ddcc4ac055be49d"
+    },
+    {
+      "path": "source/CatPred/catpred/uncertainty/uncertainty_estimator.py",
+      "sha256": "e71716a49dcc0e4e894e35bfbb47d6cadb71ed611567461c43a61a2ac3037983"
+    },
+    {
+      "path": "source/CatPred/catpred/uncertainty/uncertainty_evaluator.py",
+      "sha256": "d7cbe66f51b7b23ace49ec9cdd0cf70452d4897c624330bccb963a27d6378bb2"
+    },
+    {
+      "path": "source/CatPred/catpred/uncertainty/uncertainty_predictor.py",
+      "sha256": "87692aabf08a30d8bbc52290026abc72afad2c6bd25339671273e2875509616c"
+    },
+    {
+      "path": "source/CatPred/catpred/utils.py",
+      "sha256": "6cc522e7449aa5891bbdcf745107e71d15d9ef5c88a70d1d1e18add3c8380984"
+    },
+    {
+      "path": "source/CatPred/catpred/web/__init__.py",
+      "sha256": "f513af0aa9561262b0c1fca762b8188f25e69626f37cfabbb4013e48abbdba3d"
+    },
+    {
+      "path": "source/CatPred/catpred/web/app.py",
+      "sha256": "6ce820ad87b6953ce17b00ca1da11e2885f311895aaffa0b38e856fb497804d8"
+    },
+    {
+      "path": "source/CatPred/catpred/web/run.py",
+      "sha256": "92d70bc46318f4fddabf414f95a99b52fb77aaebd51431c9d9a121226c8aaf00"
+    },
+    {
+      "path": "source/CatPred/demo_run.py",
+      "sha256": "1cf1428c1b800aa45de6a05e112fd49899073eafbcc206216b6b0af77fdb93da"
+    },
+    {
+      "path": "source/CatPred/external/DLKcat/DeeplearningApproach/Code/model/analyze_experiments_new.py",
+      "sha256": "e9fd5a0bb56419fecaae2336900494db4917d28246f3a1d56b0c7d0885c88dc2"
+    },
+    {
+      "path": "source/CatPred/external/DLKcat/DeeplearningApproach/Code/model/format_catpredDB_for_dlkcat.py",
+      "sha256": "27a20db5721881c7ef3e331e0588c7d8f7950876cfe321a0dd9c211594c0c6b8"
+    },
+    {
+      "path": "source/CatPred/external/DLKcat/DeeplearningApproach/Code/model/model.py",
+      "sha256": "9fbb1a948aadd8177f5ff8ab2ef80d698d9753140107b20093a0f3ae3eb439e4"
+    },
+    {
+      "path": "source/CatPred/external/DLKcat/DeeplearningApproach/Code/model/preprocess_all.py",
+      "sha256": "b4b79aba666fc064da1ea849b273e074d40dd846fde38d5ec4663df1e09a95ec"
+    },
+    {
+      "path": "source/CatPred/external/DLKcat/DeeplearningApproach/Code/model/run_model.py",
+      "sha256": "0f2feacc42366f2bc238220f045427e9836ccea2eaed3748104fad271ad4a6a0"
+    },
+    {
+      "path": "source/CatPred/external/DLKcat/DeeplearningApproach/Code/model/run_model_mpi.py",
+      "sha256": "5bfd06a3c4b382c709ddd2c5cc762ffd4f4057338d11d6fc6fd10de4a090628f"
+    },
+    {
+      "path": "source/CatPred/external/UniKP/Preprocessing.py",
+      "sha256": "35bfe0adbb64fc327d6dbdefc555f427dd71310a549fb9c29272a74820758d0c"
+    },
+    {
+      "path": "source/CatPred/external/UniKP/UniKP_Kcat.py",
+      "sha256": "5464906c57396424b988dfa557482d404b22c7e0ec9a1d4898b825eef975de21"
+    },
+    {
+      "path": "source/CatPred/external/UniKP/UniKP_Kcat_v2.py",
+      "sha256": "3d48d3628655f85524b633bdb199b0996feb471a90a3b8c31387efdc67dddd8b"
+    },
+    {
+      "path": "source/CatPred/external/UniKP/UniKP_Ki.py",
+      "sha256": "03bc9708e4a993be8735133f154d5551fef82bc00041e79eee22389ea37e77ea"
+    },
+    {
+      "path": "source/CatPred/external/UniKP/UniKP_Ki_v2.py",
+      "sha256": "b9eb152e5754138fb86850177d7235beb8a2312dc90bee37835c2d61098d1c4b"
+    },
+    {
+      "path": "source/CatPred/external/UniKP/UniKP_Km.py",
+      "sha256": "1b04d4a198a5e0556bed924a2c6aad8e153ae5bc0b6190d42b09790ec773e3ec"
+    },
+    {
+      "path": "source/CatPred/external/UniKP/UniKP_Km_v2.py",
+      "sha256": "82853f3a3c31de45e8c3f92bd506b260d5dfaae2c2ead370b085a63d279280d7"
+    },
+    {
+      "path": "source/CatPred/external/UniKP/UniKP_kcat_Km.py",
+      "sha256": "097c01dcfdd08b3e750134164bc859caefa14a0ab1afac469b29a198a09ab222"
+    },
+    {
+      "path": "source/CatPred/external/UniKP/UniKP_kcat_model.py",
+      "sha256": "a7777bcaf63cd103aaf69a62ad70d1f25b27c45ce703e72d8bc80a9332126847"
+    },
+    {
+      "path": "source/CatPred/external/UniKP/build_corpus.py",
+      "sha256": "98d48804ec08e08589cb7ba117f663180ca385a018afb7bf17661ed0c919ff09"
+    },
+    {
+      "path": "source/CatPred/external/UniKP/build_vocab.py",
+      "sha256": "6ad71f61ae95c5c61edcfcd540bd263ae6d9c0d1374ac98685c28142af91bba6"
+    },
+    {
+      "path": "source/CatPred/external/UniKP/dataset.py",
+      "sha256": "944cf0e14302105de1ff22350eb65c83797fb5a252a57b0de5841750b82b0470"
+    },
+    {
+      "path": "source/CatPred/external/UniKP/enumerator.py",
+      "sha256": "e08af55c68d946819a5254e730ae6e7f24a6e3083267423ca7d274a19c51b459"
+    },
+    {
+      "path": "source/CatPred/external/UniKP/parse_logs.py",
+      "sha256": "5e7e5ddf8f795a2e2eeeb39d9d8a1b451a193dfd3bf86411b9fc39da0f4a2ddd"
+    },
+    {
+      "path": "source/CatPred/external/UniKP/predict.py",
+      "sha256": "e9a2d85dc26d0f2347a6cec7b82c7d0e0c1d74891bad95b9820e958f5a63c1f2"
+    },
+    {
+      "path": "source/CatPred/external/UniKP/pretrain_trfm.py",
+      "sha256": "953c4ed4143637df22a8a9f7201853c3fff75660ddab3f0c7b8c53efe66c31a4"
+    },
+    {
+      "path": "source/CatPred/external/UniKP/train_UniKP_DLKcat.py",
+      "sha256": "8664f6acdc152a9f3c0c9d48e243f0b0ea5fffc51972188f18d85d9cc32b256f"
+    },
+    {
+      "path": "source/CatPred/external/UniKP/train_UniKP_Kroll.py",
+      "sha256": "989dc692df112ff971d66d80613e5f8fb6030a6c7eae0133e4c1c414f4dd225d"
+    },
+    {
+      "path": "source/CatPred/external/UniKP/utils.py",
+      "sha256": "7e2ec3e2ed9af6a7c3c7cfb4025bfcd8f4fc34e6783203d36ad58f2e241a2feb"
+    },
+    {
+      "path": "source/CatPred/modal_app.py",
+      "sha256": "6c07440331e4da0ab560cda82cdc86ee4aa6fb13dea3c41f16feb46957e4ecbf"
+    },
+    {
+      "path": "source/CatPred/predict.py",
+      "sha256": "255e45dd314d2e112178550e85ca8995495cecbbe08aa142c8e7631a2c0450a1"
+    },
+    {
+      "path": "source/CatPred/scripts/analyze_ablation.py",
+      "sha256": "30e72eca09569c00c7cee29e0657cda7d72b2584c7827097ddf13d284589ad7c"
+    },
+    {
+      "path": "source/CatPred/scripts/analyze_ensemble.py",
+      "sha256": "eadb556292c973883b2bb8866a981878e7d91fa0a408f3b45ce3b3f0935af2c3"
+    },
+    {
+      "path": "source/CatPred/scripts/analyze_reproduce.py",
+      "sha256": "6a529a8b4c7414390a31fb55762d4a296b4fd6d7c7bc7c16cf08bc102a407880"
+    },
+    {
+      "path": "source/CatPred/scripts/baseline_analysis.py",
+      "sha256": "e64330c2515c55ec7a05a2184a8fb80aba8f05263e3edf76174a9cc84977b3ee"
+    },
+    {
+      "path": "source/CatPred/scripts/benchmark_inference.py",
+      "sha256": "9aab5762b05860b31f1707aec399fa87ceaca72e6d1e362811c204a2a59adf8f"
+    },
+    {
+      "path": "source/CatPred/scripts/create_pdbrecords.py",
+      "sha256": "734bfa084bd865cc9fd7086b51aedad2362dd782a1d8d5e4d20c1ca84518af04"
+    },
+    {
+      "path": "source/CatPred/scripts/plot_fig3b_fig4_figS1_figS2.py",
+      "sha256": "d18b9c4cfdbedfa7900cb32fc526c2e00047332534dffc4f99c1f1af12271dbe"
+    },
+    {
+      "path": "source/CatPred/scripts/plot_fig5_figS7.py",
+      "sha256": "dabf54e17c6bd7a3464f647d0db5fb2023848dfa1944af1dff5d6368abb096dd"
+    },
+    {
+      "path": "source/CatPred/scripts/plot_fig6_figS8.py",
+      "sha256": "cba1b9af64aaa5ad60817bdbd8cffed48165a3033cded8b32a1311e8e50ea1cf"
+    },
+    {
+      "path": "source/CatPred/scripts/plot_figS10_figS11.py",
+      "sha256": "4750c3b4228aeeb78bc29a68c42001ab3968933f4723c655edf0b92ebdcb2a9e"
+    },
+    {
+      "path": "source/CatPred/scripts/plot_figS3.py",
+      "sha256": "63fda5d0521f06d290994fb342afe58e81a78f0e1267da17d637e45ca2a06f32"
+    },
+    {
+      "path": "source/CatPred/scripts/plot_figS9.py",
+      "sha256": "35a49ce99860b64692b265c7b262bfb8d0375cca43dbaf3758b7be602bbe715e"
+    },
+    {
+      "path": "source/CatPred/setup.cfg",
+      "sha256": "039e8dca81accb31cb6102f3f166faa60006ec988ad4f32d8bb1e5969894b8e4"
+    },
+    {
+      "path": "source/CatPred/setup.py",
+      "sha256": "2cae2cdc1ef213f10e0be9535d8aca17c850914c2d991bf2e00910882bcc067a"
+    },
+    {
+      "path": "source/CatPred/tests/test_esm_batching.py",
+      "sha256": "d699982154d360e4c8a234238451303b1044cbd3c7953b9e391bd2ba56a73d20"
+    },
+    {
+      "path": "source/CatPred/tests/test_inference_fast_path.py",
+      "sha256": "857c8292c1f02ad3441bc8e1fe682d0304cda365893dae04606b3701c290a295"
+    },
+    {
+      "path": "source/CatPred/tests/test_postprocess_predictions.py",
+      "sha256": "5b0693ca9c13fd2e292f518c386774f3b89abaf7ff123d7c1c833baac41b259a"
+    },
+    {
+      "path": "source/CatPred/train.py",
+      "sha256": "958a0fa586d5198fce338702a208ad374bf241d2aaf138a9cf237e428f5de936"
+    },
+    {
+      "path": "source/accepted_distribution/catpred_rust_packing-0.1.0-cp313-cp313-manylinux_2_34_x86_64.whl",
+      "sha256": "095a2b04f88f16a9030ccd3930c794e2505cd950dc4c4790ef6ceea1f3476167"
+    },
+    {
+      "path": "source/baseline/capture.py",
+      "sha256": "4080231420d2b2a6474de76074bc04a64794ae327e3b7b8de38e64bd3dfccf12"
+    },
+    {
+      "path": "source/baseline/diagnostics.py",
+      "sha256": "d9cdb786714de9eaf628f69479d20328372701640777443224b15e615d87e787"
+    },
+    {
+      "path": "source/baseline/packing.py",
+      "sha256": "38616de366710f06c61c6090576b78f4c634feed4b0d6ee92180bf08bb75b77f"
+    },
+    {
+      "path": "source/baseline/probes.py",
+      "sha256": "2588f38d4fc381f80b887f3c6fb231e25757d36944dd78aed1baccc8e879e088"
+    },
+    {
+      "path": "source/baseline/reuse.py",
+      "sha256": "594f14ac87387b0b8fc22df1692c4c25c7510f24cce905f748c54168c98763c0"
+    },
+    {
+      "path": "source/baseline/streaming.py",
+      "sha256": "6871b65ae3b7cfa9798bc239ad2ca04a49df5d712e461d49baf11c91d4db0829"
+    },
+    {
+      "path": "source/kinetics_candidate/experiments/ACCEPTANCE_POLICY.json",
+      "sha256": "92767945ff91c5523d4001cd4ab704d665093d05399c53057d00e4518995b821"
+    },
+    {
+      "path": "source/kinetics_candidate/experiments/BASELINE_HELPERS.json",
+      "sha256": "5cca953406476d9683dc1fe252a6adf865a9907bf3a606c6a74fa9f4a1abe775"
+    },
+    {
+      "path": "source/kinetics_candidate/experiments/kinetics_worker.py",
+      "sha256": "1993a31ee82d85e0bcf22a9c618257d644f96059c237210f17b6bf77fb00592b"
+    },
+    {
+      "path": "source/kinetics_candidate/experiments/test_kinetics_harness.py",
+      "sha256": "f67252b3e1c4477fb9a26660e66e166b39b1e14ef15b2115d98ef559258e56af"
+    },
+    {
+      "path": "source/kinetics_candidate/experiments/verify_kinetics.py",
+      "sha256": "6d2f2c3c12c9348db5457fe5b083ca1c4a4eb52f95f2c7082c88f7aa3c12a1eb"
+    },
+    {
+      "path": "source/kinetics_candidate/implementation/catpred_kinetics/__init__.py",
+      "sha256": "58588dd2ae08329857aa817daa7eeb73a53481ce3ce40ea64c6a4e2848867bf7"
+    },
+    {
+      "path": "source/kinetics_candidate/implementation/catpred_kinetics/accepted_runtime.json",
+      "sha256": "3a1e890f4ab1fb7fd0436beab95c5f2f6f1690d93c952957d72f7cb9d2ecf343"
+    },
+    {
+      "path": "source/kinetics_candidate/implementation/catpred_kinetics/adapter.py",
+      "sha256": "5e84f8f0a1fe46ce8a2f01084fa231cc37b0805dbf5777a897a966bd672e2d16"
+    },
+    {
+      "path": "source/kinetics_candidate/implementation/catpred_kinetics/guards.py",
+      "sha256": "b6df804cb511df2a5b67f5a614c65fc86658c9f9228c84b45476f32613caf6b8"
+    },
+    {
+      "path": "source/kinetics_candidate/implementation/catpred_kinetics/source_proof.py",
+      "sha256": "b5568575e89a6467891372056ec969485b91786b5f0cc1530662234d86bf5daa"
+    },
+    {
+      "path": "source/kinetics_candidate/implementation/pyproject.toml",
+      "sha256": "e4226056d9ab8fcffd852d3baa9933e3a40660d9faf08a8c7447480898ef812d"
+    },
+    {
+      "path": "source/kinetics_candidate/implementation/tests/test_adapter_stdlib.py",
+      "sha256": "108d51d07d5bf16153903d0ea1563f6e26b8d775ff1ecf52baacb50d58e90fdc"
+    },
+    {
+      "path": "source/kinetics_candidate/implementation/tests/test_guards_stdlib.py",
+      "sha256": "14ba2cda48bb923f02c3fafd1710c8d3f5006180cc00dab7f2388c00c19235fb"
+    },
+    {
+      "path": "source/kinetics_candidate/implementation/tests/test_source_proof.py",
+      "sha256": "f4eda88d3203adf1b4260aadebee304ebfff00e462b18f84668e4167843aacbb"
+    },
+    {
+      "path": "source/kinetics_candidate/references/ACCEPTED_SOURCE_FREEZE.json",
+      "sha256": "6746bb4b8d8606ab45ac118b55c909403e62dd88fd57968d8b7fa913226ad2a6"
+    },
+    {
+      "path": "source/prior_checkpoint_manifest.json",
+      "sha256": "1a526152449fc60470e0ab7a5db0b36c853ab7229dafba09049a71596e4b617c"
+    },
+    {
+      "path": "source/prior_esm_checkpoint_manifest.json",
+      "sha256": "f14578c41ae096ebd423e8d4bb203ef4aa0eef0fd1d3b198f6728952a9358903"
+    },
+    {
+      "path": "source/prior_input_manifest.json",
+      "sha256": "27fbff0d65c430deef182fd5fa56cb9b73aa40cffc9a360ea589f91afb6cc3f5"
+    },
+    {
+      "path": "source/rust_packing/Cargo.lock",
+      "sha256": "42f2823317c9777dbc733c6d1bd2e8b3a3f54ba93b47a199333eec576e4c8b0c"
+    },
+    {
+      "path": "source/rust_packing/Cargo.toml",
+      "sha256": "d8306db81a47b9e42009d79f7fd2167fad8cf5c1d25a096bd6c0e11c0ba51e1c"
+    },
+    {
+      "path": "source/rust_packing/pyproject.toml",
+      "sha256": "038b95a5a2d139a8844b5b432e7663b1ec59e36001d40c8085d86dc44b72ae2f"
+    },
+    {
+      "path": "source/rust_packing/src/lib.rs",
+      "sha256": "449e01f39ff82ea7f50041e674d0efa5aea7975655d9f95739a19974c04446dc"
+    },
+    {
+      "path": "experiments/kinetics_lifecycle.before_fingerprint_fix.py",
+      "sha256": "68f9f1398f114f72001d25ae3590a870c2db0ef3ad2640e3ded1d0308adf712c",
+      "purpose": "Original saved diagnostic fixture used by the resume test"
+    }
+  ],
+  "runtime_and_candidate_source_unchanged": true,
+  "excluded_input_files": [
+    {
+      "path": "source/inputs/mixed_valid_2047.csv",
+      "sha256": "dcb2a10b208496d8f040973ccdb44a6e3079c6cb980d11d823ffcec8fd50f213"
+    },
+    {
+      "path": "source/inputs/reuse_4096.csv",
+      "sha256": "a9aae7750c5a2750d05f8a0710810cf2bc0b37f85b06aed11e8bf3622064c0c7"
+    },
+    {
+      "path": "source/inputs/screening_16384.csv",
+      "sha256": "1034c8cde94a0d5df1e6cd32af9b9edc176a6509454d268bdf982d328aec320e"
+    }
+  ]
+}

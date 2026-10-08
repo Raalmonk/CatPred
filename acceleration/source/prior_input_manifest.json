@@ -1,0 +1,60 @@
+{
+  "workloads": {
+    "mixed_valid_2047": {
+      "name": "mixed_valid_2047",
+      "path": "inputs/mixed_valid_2047.csv",
+      "sha256": "dcb2a10b208496d8f040973ccdb44a6e3079c6cb980d11d823ffcec8fd50f213",
+      "bytes": 1261265,
+      "rows": 2047,
+      "unique_proteins": 1544,
+      "unique_smiles": 1692
+    },
+    "reuse_4096": {
+      "name": "reuse_4096",
+      "path": "inputs/reuse_4096.csv",
+      "sha256": "a9aae7750c5a2750d05f8a0710810cf2bc0b37f85b06aed11e8bf3622064c0c7",
+      "bytes": 2488607,
+      "rows": 4096,
+      "unique_proteins": 64,
+      "unique_smiles": 64
+    },
+    "screening_16384": {
+      "name": "screening_16384",
+      "path": "inputs/screening_16384.csv",
+      "sha256": "1034c8cde94a0d5df1e6cd32af9b9edc176a6509454d268bdf982d328aec320e",
+      "bytes": 9893600,
+      "rows": 16384,
+      "unique_proteins": 64,
+      "unique_smiles": 256
+    }
+  },
+  "files": [
+    {
+      "name": "mixed_valid_2047",
+      "path": "inputs/mixed_valid_2047.csv",
+      "sha256": "dcb2a10b208496d8f040973ccdb44a6e3079c6cb980d11d823ffcec8fd50f213",
+      "bytes": 1261265,
+      "rows": 2047,
+      "unique_proteins": 1544,
+      "unique_smiles": 1692
+    },
+    {
+      "name": "reuse_4096",
+      "path": "inputs/reuse_4096.csv",
+      "sha256": "a9aae7750c5a2750d05f8a0710810cf2bc0b37f85b06aed11e8bf3622064c0c7",
+      "bytes": 2488607,
+      "rows": 4096,
+      "unique_proteins": 64,
+      "unique_smiles": 64
+    },
+    {
+      "name": "screening_16384",
+      "path": "inputs/screening_16384.csv",
+      "sha256": "1034c8cde94a0d5df1e6cd32af9b9edc176a6509454d268bdf982d328aec320e",
+      "bytes": 9893600,
+      "rows": 16384,
+      "unique_proteins": 64,
+      "unique_smiles": 256
+    }
+  ]
+}

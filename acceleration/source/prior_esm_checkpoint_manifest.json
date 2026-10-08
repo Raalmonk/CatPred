@@ -1,0 +1,12 @@
+[
+  {
+    "name": "esm2_t33_650M_UR50D.pt",
+    "bytes": 2604537549,
+    "sha256": "ea9d0522b335a8778dea6535a65301f10208dece28cd5865482b0b1fc446168c"
+  },
+  {
+    "name": "esm2_t33_650M_UR50D-contact-regression.pt",
+    "bytes": 3687,
+    "sha256": "8ffe6edbd4173dc8d45c2cd5cb27d43aad77ec26b4c768200c58ae1f96693575"
+  }
+]

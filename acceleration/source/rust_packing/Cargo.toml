@@ -1,0 +1,18 @@
+[package]
+name = "catpred-rust-packing"
+version = "0.1.0"
+edition = "2021"
+rust-version = "1.74"
+
+[lib]
+name = "catpred_rust_packing"
+crate-type = ["cdylib"]
+
+[dependencies]
+pyo3 = { version = "=0.27.0", features = ["extension-module"] }
+numpy = "=0.27.0"
+
+[profile.release]
+opt-level = 3
+lto = "thin"
+codegen-units = 1

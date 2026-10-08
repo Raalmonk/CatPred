@@ -1,0 +1,10 @@
+__pycache__/
+*.py[cod]
+*.egg-info/
+build/
+dist/
+results/
+venv/
+
+# Benchmark protein sequences stay in the local experiment archive.
+/source/inputs/

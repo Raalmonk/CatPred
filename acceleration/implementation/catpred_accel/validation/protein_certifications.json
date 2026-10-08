@@ -1,0 +1,28 @@
+[
+  {
+    "acceptance_policy_sha256": "da2cfbf744b32bd9ae6eafc66d2bc9f21f32a086f0821760df5d934d7b8ceba7",
+    "beneficial": true,
+    "context_key": "9ccf9fdee6ab8c0bc0265366315aa5a8e2ac1b57d80ad0fcc8709e2832d84a70",
+    "downstream_exact": true,
+    "evidence_sha256": "f18b6d490d2cf08bb761cdbf303a80a1ccb210092be6006698b16261c3e7feea",
+    "exact_bits": true,
+    "kind": "esm_loader",
+    "mode": "meta",
+    "passed": true,
+    "warm_nonregression": true
+  },
+  {
+    "acceptance_policy_sha256": "da2cfbf744b32bd9ae6eafc66d2bc9f21f32a086f0821760df5d934d7b8ceba7",
+    "beneficial": true,
+    "downstream_exact": true,
+    "evidence_sha256": "f18b6d490d2cf08bb761cdbf303a80a1ccb210092be6006698b16261c3e7feea",
+    "exact_bits": true,
+    "feature_context_key": "9bc12bf7d9601028f4de7e8ada96ae9fd93d61659a85d50ddc4f6a30e7842b68",
+    "feature_mode": "off",
+    "kind": "esm_profile",
+    "loader_context_key": "9ccf9fdee6ab8c0bc0265366315aa5a8e2ac1b57d80ad0fcc8709e2832d84a70",
+    "loader_mode": "meta",
+    "passed": true,
+    "warm_nonregression": true
+  }
+]

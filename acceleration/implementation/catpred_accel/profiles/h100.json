@@ -1,0 +1,1 @@
+{"profile":"h100_sm90","compute_capability":[9,0],"numeric":"exact","default_input_budget_bytes":2147483648,"architecture_specific_kernels":[],"current_run_validation":"not_run"}

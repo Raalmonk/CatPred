@@ -1,0 +1,38 @@
+{
+  "schema": 1,
+  "created_utc": "2026-10-07T18:05:48.836162+00:00",
+  "python_sources": {
+    "__init__.py": "e6db07ea3ab7627824e870c808f50365a168e7a3c2cdbd5a6e206e61ff7720a9",
+    "_accepted/__init__.py": "16b26c278d17b3087f783e3c2a2af0b9f1e8f7d436f76a09376dc86968373ac8",
+    "_accepted/packing.py": "38616de366710f06c61c6090576b78f4c634feed4b0d6ee92180bf08bb75b77f",
+    "_accepted/probes.py": "2588f38d4fc381f80b887f3c6fb231e25757d36944dd78aed1baccc8e879e088",
+    "_accepted/reuse.py": "594f14ac87387b0b8fc22df1692c4c25c7510f24cce905f748c54168c98763c0",
+    "_accepted/streaming.py": "6871b65ae3b7cfa9798bc239ad2ca04a49df5d712e461d49baf11c91d4db0829",
+    "_identity.py": "f7662006bd3fc3bb222c998b3c0afbd17a573fc7383aaf53ba389fe351d0c871",
+    "_vendor.py": "aff77b8d68b982f0a9ba1dc99429e8e9d84d19776f5fbfc62c8fb2b637b490f7",
+    "api.py": "cb9fc1c4e97ea29d3ccf7ec93944ee9e4518779a9d897e820a20bbe632dca9e3",
+    "cache_keys.py": "7c1e288f3e421a6dad311bd0a9821f9fed7fa7f321707ef5d74a0416c35d77d0",
+    "capabilities.py": "dcd0f2088b4323757cd65508d5edaf994a3fd5e3d728c5bb052aab9fbb0dd140",
+    "config.py": "431641e808b27332568def2ce40b2a989e9922a1d352afab6a7c500319ea2bc9",
+    "protein.py": "7fa6b7d9990c6f37daa4a0525669291db1fc2fb0b46e723e1f00bd4fb81229db",
+    "protein_loading.py": "d801d65521535dea14a2262db8a7002083d48a14b2f2daad10893ac36be72333",
+    "source.py": "16e429a3fb229e074b0236753bdd29cacdcace9c55d79b090bc877e81ad5581c",
+    "validation/__init__.py": "44b627ee98f36fe3419e245f97f91dab4d564a13d8afc0dfdf43c35f30868130",
+    "validation/lifecycle.py": "c62b41d00b89a0edc282bcf7b81e9c1d349b00509fff84fe5f5c83d0a34372e7"
+  },
+  "source_manifest_sha256": "100b84313e08b16babf2b7c3f5161ac2c5b3328175129dd1acc17eed70adb2c1",
+  "python_file_count": 17,
+  "local_checks": {
+    "syntax_passed": true,
+    "stdlib_unittest_count": 19,
+    "stdlib_unittest_passed": true,
+    "protein_context_fake_cases": 8,
+    "protein_context_fake_cases_passed": true,
+    "real_torch_imported": false,
+    "model_execution": false,
+    "native_compilation": false
+  },
+  "accepted_helpers_byte_identical": true,
+  "remote_validation_status": "pending_final_package_gate",
+  "certificate_json_excluded_from_python_identity": true
+}

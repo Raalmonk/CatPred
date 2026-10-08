@@ -1,0 +1,3 @@
+# Preserve the bytes checked by runtime and benchmark source hashes.
+acceleration/** -text
+README.upstream.md -text

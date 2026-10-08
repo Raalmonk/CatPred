@@ -1,0 +1,22 @@
+{
+  "candidate": "K1_discard_unused_head_mean",
+  "created_before_any_candidate_execution": true,
+  "required_exact": "all ESM features, ten member raw outputs, all aggregate and final numeric bytes; finite and signed-zero aware",
+  "gate_repetitions_each_arm_each_workload": 2,
+  "warm_repetitions": {
+    "mixed_valid_2047": 5,
+    "reuse_4096": 5,
+    "screening_16384": 3
+  },
+  "adoption_requires": [
+    "same-runtime K0 repeatability and K1 strict exact gate PASS",
+    "actual candidate engagement for every member and original forward count",
+    "real exception restoration and no retained weights/inputs after exit",
+    "shape profile confirms intended head-mean removal without altered attention backend",
+    "at least one warm workload median >= 2% faster and none >3% slower; report all medians and ranges",
+    "no unexplained increase in peak allocated memory"
+  ],
+  "auto_certification": false,
+  "default": "off",
+  "candidate_measurements": "NOT_RUN_USER_REQUEST_LOCAL_ONLY"
+}
