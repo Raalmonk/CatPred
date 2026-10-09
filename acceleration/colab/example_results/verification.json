@@ -1,6 +1,6 @@
 {
   "status": "PASS",
-  "scope": "Saved public 112-row G4 notebook execution and raw gate/warm arrays",
+  "scope": "Saved public 112-row G4 execution and raw gate/warm arrays at the evaluated_notebook revision",
   "notebook": {
     "code_cells": [
       1,
@@ -347,5 +347,6 @@
     "existing_runtime_tests": 87,
     "colab_tests_on_G4": 32,
     "colab_skipped_on_G4": 0
-  }
+  },
+  "evaluated_notebook": "https://github.com/Raalmonk/CatPred/blob/55b9c07d0ee4d2c2e118b9feb3169e45b098d974/colab_compare.ipynb"
 }
