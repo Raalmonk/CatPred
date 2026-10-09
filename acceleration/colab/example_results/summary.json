@@ -13,32 +13,32 @@
       0
     ],
     "cpu_count": 48,
-    "cpu": "Architecture:                            x86_64\nCPU op-mode(s):                          32-bit, 64-bit\nAddress sizes:                           52 bits physical, 57 bits virtual\nByte Order:                              Little Endian\nCPU(s):                                  48\nOn-line CPU(s) list:                     0-47\nVendor ID:                               AuthenticAMD\nModel name:                              AMD EPYC 9B45\nCPU family:                              26\nModel:                                   2\nThread(s) per core:                      2\nCore(s) per socket:                      24\nSocket(s):                               1\nStepping:                                1\nBogoMIPS:                                5400.00\nFlags:                                   fpu vme de pse tsc msr pae mce cx8 apic sep mtrr pge mca cmov pat pse36 clflush mmx fxsr sse sse2 ht syscall nx mmxext fxsr_opt pdpe1gb rdtscp lm constant_tsc rep_good nopl nonstop_tsc cpuid extd_apicid aperfmperf tsc_known_freq pni pclmulqdq monitor ssse3 fma cx16 pcid sse4_1 sse4_2 x2apic movbe popcnt aes xsave avx f16c rdrand hypervisor lahf_lm cmp_legacy cr8_legacy abm sse4a misalignsse 3dnowprefetch osvw topoext mwaitx ssbd ibrs ibpb stibp ibrs_enhanced vmmcall fsgsbase tsc_adjust bmi1 avx2 smep bmi2 invpcid avx512f avx512dq rdseed adx smap avx512ifma clflushopt clwb avx512cd sha_ni avx512bw avx512vl xsaveopt xsavec xgetbv1 xsaves avx_vnni avx512_bf16 clzero xsaveerptr wbnoinvd arat avx512vbmi umip pku ospke avx512_vbmi2 gfni vaes vpclmulqdq avx512_vnni avx512_bitalg avx512_vpopcntdq rdpid movdiri movdir64b avx512_vp2intersect flush_l1d\nHypervisor vendor:                       KVM\nVirtualization type:                     full\nL1d cache:                               1.1 MiB (24 instances)\nL1i cache:                               768 KiB (24 instances)\nL2 cache:                                24 MiB (24 instances)\nL3 cache:                                96 MiB (3 instances)\nNUMA node(s):                            1\nNUMA node0 CPU(s):                       0-47\nVulnerability Gather data sampling:      Not affected\nVulnerability Indirect target selection: Not affected\nVulnerability Itlb multihit:             Not affected\nVulnerability L1tf:                      Not affected\nVulnerability Mds:                       Not affected\nVulnerability Meltdown:                  Not affected\nVulnerability Mmio stale data:           Not affected\nVulnerability Reg file data sampling:    Not affected\nVulnerability Retbleed:                  Not affected\nVulnerability Spec rstack overflow:      Not affected\nVulnerability Spec store bypass:         Vulnerable\nVulnerability Spectre v1:                Vulnerable: __user pointer sanitization and usercopy barriers only; no swapgs barriers\nVulnerability Spectre v2:                Vulnerable; IBPB: disabled; STIBP: disabled; PBRSB-eIBRS: Not affected; BHI: Not affected\nVulnerability Srbds:                     Not affected\nVulnerability Tsa:                       Not affected\nVulnerability Tsx async abort:           Not affected\nVulnerability Vmscape:                   Not affected\n",
+    "cpu": "Architecture:                            x86_64\nCPU op-mode(s):                          32-bit, 64-bit\nAddress sizes:                           52 bits physical, 57 bits virtual\nByte Order:                              Little Endian\nCPU(s):                                  48\nOn-line CPU(s) list:                     0-47\nVendor ID:                               AuthenticAMD\nModel name:                              AMD EPYC 9B45\nCPU family:                              26\nModel:                                   2\nThread(s) per core:                      2\nCore(s) per socket:                      24\nSocket(s):                               1\nStepping:                                1\nBogoMIPS:                                5399.99\nFlags:                                   fpu vme de pse tsc msr pae mce cx8 apic sep mtrr pge mca cmov pat pse36 clflush mmx fxsr sse sse2 ht syscall nx mmxext fxsr_opt pdpe1gb rdtscp lm constant_tsc rep_good nopl nonstop_tsc cpuid extd_apicid aperfmperf tsc_known_freq pni pclmulqdq monitor ssse3 fma cx16 pcid sse4_1 sse4_2 x2apic movbe popcnt aes xsave avx f16c rdrand hypervisor lahf_lm cmp_legacy cr8_legacy abm sse4a misalignsse 3dnowprefetch osvw topoext mwaitx ssbd ibrs ibpb stibp ibrs_enhanced vmmcall fsgsbase tsc_adjust bmi1 avx2 smep bmi2 invpcid avx512f avx512dq rdseed adx smap avx512ifma clflushopt clwb avx512cd sha_ni avx512bw avx512vl xsaveopt xsavec xgetbv1 xsaves avx_vnni avx512_bf16 clzero xsaveerptr wbnoinvd arat avx512vbmi umip pku ospke avx512_vbmi2 gfni vaes vpclmulqdq avx512_vnni avx512_bitalg avx512_vpopcntdq rdpid movdiri movdir64b avx512_vp2intersect flush_l1d\nHypervisor vendor:                       KVM\nVirtualization type:                     full\nL1d cache:                               1.1 MiB (24 instances)\nL1i cache:                               768 KiB (24 instances)\nL2 cache:                                24 MiB (24 instances)\nL3 cache:                                96 MiB (3 instances)\nNUMA node(s):                            1\nNUMA node0 CPU(s):                       0-47\nVulnerability Gather data sampling:      Not affected\nVulnerability Indirect target selection: Not affected\nVulnerability Itlb multihit:             Not affected\nVulnerability L1tf:                      Not affected\nVulnerability Mds:                       Not affected\nVulnerability Meltdown:                  Not affected\nVulnerability Mmio stale data:           Not affected\nVulnerability Reg file data sampling:    Not affected\nVulnerability Retbleed:                  Not affected\nVulnerability Spec rstack overflow:      Not affected\nVulnerability Spec store bypass:         Vulnerable\nVulnerability Spectre v1:                Vulnerable: __user pointer sanitization and usercopy barriers only; no swapgs barriers\nVulnerability Spectre v2:                Vulnerable; IBPB: disabled; STIBP: disabled; PBRSB-eIBRS: Not affected; BHI: Not affected\nVulnerability Srbds:                     Not affected\nVulnerability Tsa:                       Not affected\nVulnerability Tsx async abort:           Not affected\nVulnerability Vmscape:                   Not affected\n",
     "torch_threads": 24,
     "interop_threads": 1
   },
   "arms": {
     "Original": {
       "status": "passed",
-      "median_seconds": 1.2032567040000117,
+      "median_seconds": 0.23512543499998628,
       "seconds": [
-        1.1972301650000077,
-        1.2125620260000005,
-        1.2032567040000117
+        0.23512543499998628,
+        0.23653051400003733,
+        0.2349431039999672
       ],
       "speedup_vs_original": 1.0,
-      "prediction_path": "/content/catpred-comparisons/20261009T152741Z-fa2bc78e/comparison-40a12f5b/warm_Original_2/input_input_output.csv"
+      "prediction_path": "/content/catpred-comparisons/20261009T155214Z-f4cf2b09/comparison-0e9b5505/warm_Original_2/input_input_output.csv"
     },
     "S_STREAM_K1": {
       "status": "passed",
-      "median_seconds": 0.39327292100000477,
+      "median_seconds": 0.09094097100000909,
       "seconds": [
-        0.3935378010000363,
-        0.3929541210000025,
-        0.39327292100000477
+        0.0909374210000351,
+        0.09094097100000909,
+        0.09110009099993022
       ],
-      "speedup_vs_original": 3.059597139158221,
-      "prediction_path": "/content/catpred-comparisons/20261009T152741Z-fa2bc78e/comparison-40a12f5b/warm_S_STREAM_K1_2/input_input_output.csv"
+      "speedup_vs_original": 2.585473108704357,
+      "prediction_path": "/content/catpred-comparisons/20261009T155214Z-f4cf2b09/comparison-0e9b5505/warm_S_STREAM_K1_2/input_input_output.csv"
     }
   },
   "repetitions": 3,
@@ -52,14 +52,214 @@
   "numeric": "FP32",
   "input_budget_bytes": 2147483648,
   "input_budget_scope": "retained device inputs",
-  "input_sha256": "7c78c6cc8cd0ba619ee382104b6fa23f79d3aa905201960c2ecd41133f6ecbd0",
+  "input_sha256": "d5414c4c5199d3ae9088e81148d520111e6ec6f0f2e5e59aa38c151a7bbeefaa",
   "timing_boundary": "Warm complete request, synchronized, including preprocessing, all ten models, uncertainty, CSV and request-cache release. Model loading, ESM generation, activation checks and evidence serialization are outside this timer.",
-  "rows": 112,
+  "rows": 14,
   "preparation": {
-    "esm_seconds": 3.786504894000018,
-    "model_load_seconds": 0.3283551080000393,
+    "esm_seconds": 3.8695349970000166,
     "unique_sequences": 9,
-    "esm_forward_batches": 3
+    "esm_forward_batches": 3,
+    "esm_comparison": {
+      "status": "COMPLETE",
+      "repetitions": 3,
+      "arms": {
+        "Original": {
+          "status": "passed",
+          "seconds": [
+            3.121435525999999,
+            2.9326410089999797,
+            3.1619063070000095
+          ],
+          "median_seconds": 3.121435525999999,
+          "speedup_vs_original": 1.0
+        },
+        "Optimized": {
+          "status": "passed",
+          "seconds": [
+            1.219364134000017,
+            1.2050519080000015,
+            1.21369903599998
+          ],
+          "median_seconds": 1.21369903599998,
+          "speedup_vs_original": 2.5718365372418823
+        }
+      },
+      "boundary": "Fresh ESM features with local checkpoint loading, model construction, GPU transfer, original tokenization and batches of four, FP32 forwards, CPU outputs and application-cache writes; synchronized before and after. Downloads, imports, outer preflight validation, precision checks, evidence serialization and model release are excluded. Local filesystem caches are not flushed. The accepted loader's internal metadata checks remain inside the timer. This is not an end-to-end cold request.",
+      "feature_mode": "off",
+      "optimized_loader_mode": "meta",
+      "batch_size": 4,
+      "unique_sequences": 9,
+      "numeric": "FP32",
+      "preflight": {
+        "context_key": "bfd22f923ea62944bf6e55fe60f0241e6d532557e2f647f91e8ec1924e055f03",
+        "context": {
+          "schema": 1,
+          "kind": "esm_loader",
+          "mode": "meta",
+          "software": {
+            "python": "3.13.15",
+            "python_abi": "cpython-313-x86_64-linux-gnu",
+            "torch": "2.11.0+cu130",
+            "cuda": "13.0",
+            "cudnn": 92700,
+            "numpy": "2.1.3",
+            "pandas": "2.2.3",
+            "rdkit": "2026.9.1",
+            "fair_esm": "2.0.0",
+            "rotary_embedding": "0.9.1",
+            "matmul_tf32": false,
+            "cudnn_tf32": true,
+            "default_dtype": "torch.float32",
+            "default_device": "cpu",
+            "matmul_precision": "highest",
+            "deterministic_algorithms": false,
+            "deterministic_warn_only": false,
+            "cublas_workspace_config": null,
+            "cudnn_deterministic": false,
+            "cudnn_benchmark": false,
+            "threads": 24,
+            "interop_threads": 1
+          },
+          "hardware": {
+            "device_type": "cuda",
+            "name": "NVIDIA RTX PRO 6000 Blackwell Server Edition",
+            "compute_capability": [
+              12,
+              0
+            ],
+            "total_memory": 101974081536,
+            "multiprocessors": 188
+          },
+          "fair_esm_version": "2.0.0",
+          "fair_esm_sources": {
+            "esm.model.esm2": "aadad74d5c2a5b85786390df4071466acc57e028279fe499c97c473125e0d9f4",
+            "esm.modules": "6a82388514f8a9a6e67a5636277df5e7a5864421f392b45f3da80717500c57d9",
+            "esm.multihead_attention": "81bfc52ff93431d2384562c657cb0578dee8677fb9663babeec1239155b2cbc0",
+            "esm.rotary_embedding": "fcdf9be00183786bf77e9db4767ea8baac2470407e29ef8a6a2840ac1e03bcdf",
+            "esm.data": "73898ebaa4e7792a98122fef81a9a4087b9aa87eb7ee729a7c270a25a46da230",
+            "esm.pretrained": "2104beefc2eec254fb01143b14b89856d03cecf1fb698d1951e0c5c0cbf4a59f"
+          },
+          "weights": {
+            "esm2_t33_650M_UR50D.pt": "ea9d0522b335a8778dea6535a65301f10208dece28cd5865482b0b1fc446168c",
+            "esm2_t33_650M_UR50D-contact-regression.pt": "8ffe6edbd4173dc8d45c2cd5cb27d43aad77ec26b4c768200c58ae1f96693575"
+          },
+          "implementation_sources": {
+            "__init__.py": "e6db07ea3ab7627824e870c808f50365a168e7a3c2cdbd5a6e206e61ff7720a9",
+            "_accepted/__init__.py": "16b26c278d17b3087f783e3c2a2af0b9f1e8f7d436f76a09376dc86968373ac8",
+            "_accepted/packing.py": "38616de366710f06c61c6090576b78f4c634feed4b0d6ee92180bf08bb75b77f",
+            "_accepted/probes.py": "2588f38d4fc381f80b887f3c6fb231e25757d36944dd78aed1baccc8e879e088",
+            "_accepted/reuse.py": "594f14ac87387b0b8fc22df1692c4c25c7510f24cce905f748c54168c98763c0",
+            "_accepted/streaming.py": "6871b65ae3b7cfa9798bc239ad2ca04a49df5d712e461d49baf11c91d4db0829",
+            "_identity.py": "f7662006bd3fc3bb222c998b3c0afbd17a573fc7383aaf53ba389fe351d0c871",
+            "_vendor.py": "aff77b8d68b982f0a9ba1dc99429e8e9d84d19776f5fbfc62c8fb2b637b490f7",
+            "api.py": "cb9fc1c4e97ea29d3ccf7ec93944ee9e4518779a9d897e820a20bbe632dca9e3",
+            "cache_keys.py": "7c1e288f3e421a6dad311bd0a9821f9fed7fa7f321707ef5d74a0416c35d77d0",
+            "capabilities.py": "dcd0f2088b4323757cd65508d5edaf994a3fd5e3d728c5bb052aab9fbb0dd140",
+            "config.py": "431641e808b27332568def2ce40b2a989e9922a1d352afab6a7c500319ea2bc9",
+            "protein.py": "7fa6b7d9990c6f37daa4a0525669291db1fc2fb0b46e723e1f00bd4fb81229db",
+            "protein_loading.py": "d801d65521535dea14a2262db8a7002083d48a14b2f2daad10893ac36be72333",
+            "source.py": "16e429a3fb229e074b0236753bdd29cacdcace9c55d79b090bc877e81ad5581c",
+            "validation/__init__.py": "44b627ee98f36fe3419e245f97f91dab4d564a13d8afc0dfdf43c35f30868130",
+            "validation/lifecycle.py": "c62b41d00b89a0edc282bcf7b81e9c1d349b00509fff84fe5f5c83d0a34372e7"
+          },
+          "output_device": "cpu",
+          "dtype": "torch.float32"
+        },
+        "support_reason": null,
+        "checkpoint_path": "/content/catpred-compare-runtime/torch/hub/checkpoints/esm2_t33_650M_UR50D.pt",
+        "regression_path": "/content/catpred-compare-runtime/torch/hub/checkpoints/esm2_t33_650M_UR50D-contact-regression.pt",
+        "weight_metadata_checked": true,
+        "file_validation": {
+          "bytes_read": 2604615446,
+          "files_hashed": 8,
+          "cache_hits": 0
+        }
+      },
+      "recommended": {
+        "mode": "off",
+        "loader_mode": "off",
+        "reason": "No certified beneficial ESM profile",
+        "feature_context_key": "75388e3b1e4485ef62d7815effac53aec555f0d7c86af9b209dddaa36580f630",
+        "loader_context_key": "bfd22f923ea62944bf6e55fe60f0241e6d532557e2f647f91e8ec1924e055f03"
+      },
+      "allow_unvalidated": true,
+      "caller_sha256": "80fa2786ca403bc49c442115c20e9971fa32f9d61c480c0a38028aeb7877f5c4",
+      "all_exact_bits": true,
+      "all_reported_timings_passed_exact_bits": true,
+      "records": [
+        "records/gate_Original_0.json",
+        "records/gate_Original_1.json",
+        "records/gate_Optimized_0.json",
+        "records/gate_Optimized_1.json",
+        "records/timed_Original_0.json",
+        "records/timed_Optimized_0.json",
+        "records/timed_Optimized_1.json",
+        "records/timed_Original_1.json",
+        "records/timed_Original_2.json",
+        "records/timed_Optimized_2.json"
+      ],
+      "canonical_record": "records/gate_Original_0.json"
+    },
+    "model_load_seconds": 0.4066447390000576
+  },
+  "dependency_repair": {
+    "utc": "2026-10-09T16:00:58Z",
+    "dependency": "rdkit",
+    "old_version": "2026.9.1",
+    "new_version": "2026.3.6",
+    "esm_retained": true,
+    "esm_regenerated": false,
+    "esm_software": {
+      "python": "3.13.15",
+      "python_abi": "cpython-313-x86_64-linux-gnu",
+      "torch": "2.11.0+cu130",
+      "cuda": "13.0",
+      "cudnn": 92700,
+      "numpy": "2.1.3",
+      "pandas": "2.2.3",
+      "rdkit": "2026.9.1",
+      "fair_esm": "2.0.0",
+      "rotary_embedding": "0.9.1",
+      "matmul_tf32": false,
+      "cudnn_tf32": true,
+      "default_dtype": "torch.float32",
+      "default_device": "cpu",
+      "matmul_precision": "highest",
+      "deterministic_algorithms": false,
+      "deterministic_warn_only": false,
+      "cublas_workspace_config": null,
+      "cudnn_deterministic": false,
+      "cudnn_benchmark": false,
+      "threads": 24,
+      "interop_threads": 1
+    },
+    "kinetics_software": {
+      "python": "3.13.15",
+      "python_abi": "cpython-313-x86_64-linux-gnu",
+      "torch": "2.11.0+cu130",
+      "cuda": "13.0",
+      "cudnn": 92700,
+      "numpy": "2.1.3",
+      "pandas": "2.2.3",
+      "rdkit": "2026.3.6",
+      "fair_esm": "2.0.0",
+      "rotary_embedding": "0.9.1",
+      "matmul_tf32": false,
+      "cudnn_tf32": true,
+      "default_dtype": "torch.float32",
+      "default_device": "cpu",
+      "matmul_precision": "highest",
+      "deterministic_algorithms": false,
+      "deterministic_warn_only": false,
+      "cublas_workspace_config": null,
+      "cudnn_deterministic": false,
+      "cudnn_benchmark": false,
+      "threads": 24,
+      "interop_threads": 1
+    },
+    "esm_summary_sha256": "b4fa7bbc4503d698bf379c4ba563320a27df2d4e4c4d2efca67e3074fb986c28",
+    "canonical_cache_raw_bits_verified": true,
+    "previous_attempt": "attempts/attempt_0"
   },
   "all_reported_timings_passed_exact_bits": true
 }

@@ -1,23 +1,22 @@
 # Saved Colab example
 
-Run on 9 October 2026 in a fresh G4 session: RTX PRO 6000 Blackwell, AMD EPYC 9B45, Python 3.13.15 and PyTorch 2.11.0+cu130.
+14 public examples, measured on one G4 on 9 October 2026. Each time is the median of three runs.
 
-The notebook cloned the public repository, installed its dependencies and downloaded all models from public sources. It used no Drive account or preloaded files. All five code cells finished in 66.9 seconds, including setup and downloads.
+![ESM and prediction timings](stage_comparison.png)
 
-The example repeats the 14 public rows in [`demo/batch_kcat.csv`](../../../demo/batch_kcat.csv) eight times, giving 112 rows. Both versions evaluate every row with batch size 50 and all ten FP32 models.
+| Stage | Original (s) | Optimized (s) | Speedup |
+| --- | ---: | ---: | ---: |
+| ESM features + loading | 3.1214 | 1.2137 | 2.57× |
+| Prediction (models loaded) | 0.2351 | 0.0909 | 2.59× |
 
-Three warm runs per version, measured on the same G4:
+ESM timing includes loading its model and generating features for nine unique proteins. Prediction timing uses loaded models and features, with all ten FP32 kcat models and batch size 50. Kcat model loading was measured separately at 0.407 seconds.
 
-| Version | Median seconds | Speedup |
-| --- | ---: | ---: |
-| Original | 1.2033 | 1.00× |
-| Optimized | 0.3933 | 3.06× |
+The raw ESM features, member outputs, predictions and uncertainties matched exactly. All 75 tests passed.
 
-ESM feature generation took 3.787 seconds for nine unique sequences. Model loading took 0.328 seconds. Both are measured separately from the warm requests.
+An RDKit update interrupted the prediction stage. Its version was restored from 2026.9.1 to 2026.3.6, and prediction testing resumed on the same G4. The completed ESM measurements were retained; both versions within each stage used the same environment. The notebook now pins the validated dependencies.
 
-All ten validation and timed requests matched exactly in raw model outputs, predictions and uncertainties. All 54 tests passed. The G4 was released after collecting the results.
-
-- [Open the executed notebook](../../../colab_compare.ipynb)
-- [Download CSVs, raw arrays and run receipts](results.zip)
+- [Open the notebook](../../../colab_compare.ipynb)
+- [Download results and raw arrays](results.zip)
+- [Download the plot as SVG](stage_comparison.svg)
 - [Independent verification](verification.json)
-- [Public source](source_public.json), [empty starting cache](fresh_defaults.json) and [downloaded model hashes](public_asset_downloads.json)
+- [Dependency repair](dependency_repair.json) and [original execution](initial/execution.json)

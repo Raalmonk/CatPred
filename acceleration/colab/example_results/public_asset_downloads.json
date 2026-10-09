@@ -1,5 +1,5 @@
 {
-  "evidence": "Default cache directories absent before execution; public URLs from executed setup source; downloaded cache files hashed after execution",
+  "evidence": "Initial notebook_01 fresh_defaults proves default caches were absent; notebook_02 resumes the same public assets; files hashed after resume",
   "drive_used": false,
   "assets": [
     {

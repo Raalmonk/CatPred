@@ -1,0 +1,70 @@
+{
+  "commit": "3a3700f7a3baf1b87d0575c7a1f2f0d5d026f72d",
+  "expected_commit": "3a3700f7a3baf1b87d0575c7a1f2f0d5d026f72d",
+  "origin": "https://github.com/Raalmonk/CatPred.git",
+  "status": "",
+  "no_token_authentication": true,
+  "default_git_clone_path": true,
+  "files": [
+    {
+      "path": "colab_compare.ipynb",
+      "bytes": 53724,
+      "sha256": "de1c11a4b3db3bc19c415aa8258c2ca47384f04506419eb9a30ff2a1bc77c40b"
+    },
+    {
+      "path": "demo/batch_kcat.csv",
+      "bytes": 14254,
+      "sha256": "1af5f730363fe6aad93ff46ec0aaac259625a48df57af7b0a7a1d85a16563607"
+    },
+    {
+      "path": "acceleration/SOURCE_MANIFEST.json",
+      "bytes": 29685,
+      "sha256": "1aa89006755b0645a0adc055cc72e3bf4542a9a46f58bd4689d964f06ed53eba"
+    },
+    {
+      "path": "acceleration/colab/compare.py",
+      "bytes": 22739,
+      "sha256": "a0647d46eb5f18503f6133d395579e88978e27cddcb6617a6d365d111c1dc078"
+    },
+    {
+      "path": "acceleration/colab/esm_compare.py",
+      "bytes": 16564,
+      "sha256": "3507fa0fb5e66c128d52517d4e504231a6be900c47b58a27360b9ab52f70f985"
+    },
+    {
+      "path": "acceleration/colab/plot_comparison.py",
+      "bytes": 3343,
+      "sha256": "551eda709ab8319f2b2cfdc8500b4e45b4a4994146b71c8cf0b49f29d7ea00a3"
+    },
+    {
+      "path": "acceleration/colab/setup_runtime.py",
+      "bytes": 14718,
+      "sha256": "0fe677a556d4f626708423b811969aa70f088180d3b9629645ec04ffd10972f5"
+    },
+    {
+      "path": "acceleration/colab/test_compare.py",
+      "bytes": 17267,
+      "sha256": "d9dde70a31747f6417ec58d97240e6e34965b2b0da8097a2580ca40f9789a822"
+    },
+    {
+      "path": "acceleration/colab/test_esm_compare.py",
+      "bytes": 16075,
+      "sha256": "f021ee89686584409ed19d68cad9710803989574ddf7b56bdaaeb01a0b18a2a8"
+    },
+    {
+      "path": "acceleration/colab/test_plot_comparison.py",
+      "bytes": 2565,
+      "sha256": "c8389948142dde4f33bf08ce96e7cde4ffb4dd5e281a073c8e5df3cb8f234170"
+    },
+    {
+      "path": "acceleration/colab/test_public_notebook.py",
+      "bytes": 17158,
+      "sha256": "60750d496f287e283f71577da1ac5fb2b0557a45d17a815e1d059d5fc7ea3b48"
+    },
+    {
+      "path": "acceleration/colab/test_setup.py",
+      "bytes": 10661,
+      "sha256": "3f0eb65d0f75e143417e8f17411d1b164bc213d3a03e72ac9052da9e55820d34"
+    }
+  ]
+}

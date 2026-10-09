@@ -1,0 +1,21 @@
+{
+  "paths": {
+    "/content/CatPred-compare": {
+      "exists": true,
+      "is_symlink": false
+    },
+    "/content/catpred-compare-runtime": {
+      "exists": true,
+      "is_symlink": false
+    },
+    "/content/catpred-weights-cache": {
+      "exists": true,
+      "is_symlink": false
+    }
+  },
+  "no_path_overrides": true,
+  "headless": true,
+  "resume_output": "/content/catpred-comparisons/20261009T155214Z-f4cf2b09/comparison-0e9b5505",
+  "drive_used": false,
+  "initial_fresh_evidence": "../notebook_01/fresh_defaults.json"
+}

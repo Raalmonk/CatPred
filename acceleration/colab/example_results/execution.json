@@ -1,45 +1,56 @@
 {
   "status": "complete",
-  "started_epoch": 1791559616.2957735,
-  "source_notebook_sha256": "b1ffad6bbf45fbcb48ddde5be465f24861924ce6d0c1e8fd063b486100311ca0",
+  "started_epoch": 1791561640.1943178,
+  "source_notebook_sha256": "1b677af62cd5ffde14012f7b706581ad62e279b73e6cdc26d9beeca045d86c09",
   "source_cell_sha256": [
-    "584e3b381e851a791c5771930afc670057ffc88b78628ce728ffb07a3374fc1d",
-    "710296b9534f3cab19e8520edd96ab3c7a3e1ff38db282c52eca6a6a52aa18b2",
-    "969431e1e291bb05c45b08e32922b4120c809baad375ffe35ecbcdb3d520aad7",
-    "6acdbaf574c7ddc6ab6a67223423f3b586a42dc862210357cdd1c74fb67c1ca7",
-    "a544a5629cd14527168d754d14f48a24329a58a94f3bf21eeec3fe441476e598",
+    "8e54236f7dcf909c3781a3f4e4e5145336a186d8e044fd340008b4595d3f3cc2",
+    "eee4f81fefa0e8ef98cf6ba92dbc2092d440bf3ad59ca4ef76daddf99c6ad736",
+    "a24b4ed8b7cd30e1eb3846e7b06248bdde72db6ebffdbf381c2f519434b2e316",
+    "301a28c4b3aad8eea7120c0c705dc11d614734d43ea8186f316adab27461689b",
+    "5ea7c6ec6707e76399df3b663255a9d16aa6833310d81f28483e3a8b4b3c3906",
     "caa29220442f945891b1f7571936c11f9bfbb7ad4b85ac3a40cbb257d9643dd7",
-    "193306af235f0cc18853ba7b296c37b30229bc88ba6b494d0e7a23638f2c98eb"
+    "172f15095dadfd2275cc574b3e72acab845729a432fe66fd7b4f0d9e4f5d34d9"
   ],
   "cell_events": [
     {
       "event": "executed",
       "cell_index": 1,
-      "epoch": 1791559661.6655593
+      "epoch": 1791561654.3096724
     },
     {
       "event": "executed",
       "cell_index": 3,
-      "epoch": 1791559661.677157
+      "epoch": 1791561654.31976
     },
     {
       "event": "executed",
       "cell_index": 4,
-      "epoch": 1791559682.954528
+      "epoch": 1791561664.5714827
     },
     {
       "event": "executed",
       "cell_index": 5,
-      "epoch": 1791559682.97098
+      "epoch": 1791561664.586493
     },
     {
       "event": "executed",
       "cell_index": 6,
-      "epoch": 1791559683.0015345
+      "epoch": 1791561665.328998
     }
   ],
+  "resuming_from": "notebook_01",
+  "public_commit": "a092f0bb3a128e9828ec3e851a58da343377a48e",
+  "resume_output": "/content/catpred-comparisons/20261009T155214Z-f4cf2b09/comparison-0e9b5505",
+  "initial_fresh_defaults": "../notebook_01/fresh_defaults.json",
   "code_cells_executed": 5,
   "source_cells_unchanged": true,
-  "finished_epoch": 1791559683.2146049,
-  "seconds": 66.91883134841919
+  "finished_epoch": 1791561665.5423057,
+  "seconds": 25.34798789024353,
+  "rendered_png_figures": [
+    {
+      "path": "figures/cell_04_output_02.png",
+      "bytes": 30867,
+      "sha256": "5aa1e2e80c319773753aaa8ad4d3b92ed0e4ebaf24ac79f65e948cbaba16e6d8"
+    }
+  ]
 }

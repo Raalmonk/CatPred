@@ -1,0 +1,16 @@
+{
+  "rows": [
+    {
+      "Stage": "ESM features + loading",
+      "Original (s)": 3.121435525999999,
+      "Optimized (s)": 1.21369903599998,
+      "Speedup": 2.5718365372418823
+    },
+    {
+      "Stage": "Prediction (models loaded)",
+      "Original (s)": 0.23512543499998628,
+      "Optimized (s)": 0.09094097100000909,
+      "Speedup": 2.585473108704357
+    }
+  ]
+}

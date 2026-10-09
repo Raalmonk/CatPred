@@ -1,25 +1,17 @@
 {
-  "commit": "68f6bd024340b4cd8bc5725170ba9b84321925d6",
-  "expected_commit": "68f6bd024340b4cd8bc5725170ba9b84321925d6",
+  "commit": "a092f0bb3a128e9828ec3e851a58da343377a48e",
+  "expected_commit": "a092f0bb3a128e9828ec3e851a58da343377a48e",
   "origin": "https://github.com/Raalmonk/CatPred.git",
   "status": "",
   "no_token_authentication": true,
   "default_git_clone_path": true,
+  "in_place_public_git_update": true,
+  "initial_source_public": "../notebook_01/source_public.json",
   "files": [
     {
       "path": "colab_compare.ipynb",
-      "bytes": 54751,
-      "sha256": "b1ffad6bbf45fbcb48ddde5be465f24861924ce6d0c1e8fd063b486100311ca0"
-    },
-    {
-      "path": "acceleration/colab/compare.py",
-      "bytes": 23195,
-      "sha256": "64d9ef8fff9fa72ed9af1ebc0e1bef8e2d06da10cdbc1f51edf60ba9b2c51755"
-    },
-    {
-      "path": "acceleration/colab/setup_runtime.py",
-      "bytes": 14718,
-      "sha256": "0fe677a556d4f626708423b811969aa70f088180d3b9629645ec04ffd10972f5"
+      "bytes": 55234,
+      "sha256": "1b677af62cd5ffde14012f7b706581ad62e279b73e6cdc26d9beeca045d86c09"
     },
     {
       "path": "demo/batch_kcat.csv",
@@ -30,6 +22,51 @@
       "path": "acceleration/SOURCE_MANIFEST.json",
       "bytes": 29685,
       "sha256": "1aa89006755b0645a0adc055cc72e3bf4542a9a46f58bd4689d964f06ed53eba"
+    },
+    {
+      "path": "acceleration/colab/compare.py",
+      "bytes": 32256,
+      "sha256": "eb57f43f2258e189b9e08bb98c38dd9196df2ce64643c4d9e173b7d00ac61656"
+    },
+    {
+      "path": "acceleration/colab/esm_compare.py",
+      "bytes": 16564,
+      "sha256": "3507fa0fb5e66c128d52517d4e504231a6be900c47b58a27360b9ab52f70f985"
+    },
+    {
+      "path": "acceleration/colab/plot_comparison.py",
+      "bytes": 3343,
+      "sha256": "551eda709ab8319f2b2cfdc8500b4e45b4a4994146b71c8cf0b49f29d7ea00a3"
+    },
+    {
+      "path": "acceleration/colab/setup_runtime.py",
+      "bytes": 14783,
+      "sha256": "29e4b3c0fcf9d95ac89d83fefe665759a2cbe2c6a574a1be8bb0a1b5a2224f91"
+    },
+    {
+      "path": "acceleration/colab/test_compare.py",
+      "bytes": 22702,
+      "sha256": "7119b4acfb1ee3e9bec8811405bb6eceb4cb100d47d8168559f2fa3fb9cbe330"
+    },
+    {
+      "path": "acceleration/colab/test_esm_compare.py",
+      "bytes": 16075,
+      "sha256": "f021ee89686584409ed19d68cad9710803989574ddf7b56bdaaeb01a0b18a2a8"
+    },
+    {
+      "path": "acceleration/colab/test_plot_comparison.py",
+      "bytes": 2565,
+      "sha256": "c8389948142dde4f33bf08ce96e7cde4ffb4dd5e281a073c8e5df3cb8f234170"
+    },
+    {
+      "path": "acceleration/colab/test_public_notebook.py",
+      "bytes": 17196,
+      "sha256": "ea546204974544d32e05866affbbde61bacae10ee29e8431d88650aa195e1cd1"
+    },
+    {
+      "path": "acceleration/colab/test_setup.py",
+      "bytes": 10661,
+      "sha256": "3f0eb65d0f75e143417e8f17411d1b164bc213d3a03e72ac9052da9e55820d34"
     }
   ]
 }

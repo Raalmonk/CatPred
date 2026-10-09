@@ -1,0 +1,19 @@
+{
+  "paths": {
+    "/content/CatPred-compare": {
+      "exists": false,
+      "is_symlink": false
+    },
+    "/content/catpred-compare-runtime": {
+      "exists": false,
+      "is_symlink": false
+    },
+    "/content/catpred-weights-cache": {
+      "exists": false,
+      "is_symlink": false
+    }
+  },
+  "no_path_overrides": true,
+  "headless_only_scientific_override": true,
+  "drive_used": false
+}

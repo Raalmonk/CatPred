@@ -1,6 +1,6 @@
 {
   "status": "PASS",
-  "scope": "Fresh public-Git 112-row G4 notebook execution: Original versus Optimized and raw gate/warm arrays",
+  "scope": "Public-Git 14-row G4 notebook: independently measured ESM and warm prediction stages with raw precision evidence; dependency repair and retained ESM are recorded separately",
   "notebook": {
     "code_cells": [
       1,
@@ -17,36 +17,56 @@
       5
     ],
     "published_code_equals_executed": true,
-    "allowed_later_markdown_changes": [
-      0
-    ],
-    "original_source_notebook_sha256": "b1ffad6bbf45fbcb48ddde5be465f24861924ce6d0c1e8fd063b486100311ca0"
+    "allowed_later_markdown_changes": [],
+    "original_source_notebook_sha256": "1b677af62cd5ffde14012f7b706581ad62e279b73e6cdc26d9beeca045d86c09"
   },
-  "execution_path": "results/G4/collected/results/notebook_01/execution.json",
-  "published_commit": "68f6bd024340b4cd8bc5725170ba9b84321925d6",
+  "execution_path": "results/G4/collected/results/notebook_02/execution.json",
+  "published_commit": "a092f0bb3a128e9828ec3e851a58da343377a48e",
   "public_repository": "https://github.com/Raalmonk/CatPred.git",
+  "resume_provenance": {
+    "resumed": true,
+    "initial_commit": "3a3700f7a3baf1b87d0575c7a1f2f0d5d026f72d",
+    "final_execution_commit": "a092f0bb3a128e9828ec3e851a58da343377a48e",
+    "initial_notebook_status": "failed",
+    "final_notebook_status": "complete",
+    "initial_failure": "UnsupportedKinetics: Base runtime must have a matching accepted certificate",
+    "initial_esm_complete": true,
+    "esm_files_unchanged": 12,
+    "esm_regenerated": false,
+    "frozen_scientific_sources_unchanged": true,
+    "measured_kinetics_methods_unchanged": true,
+    "changed_public_files": [
+      "acceleration/colab/compare.py",
+      "acceleration/colab/setup_runtime.py",
+      "acceleration/colab/test_compare.py",
+      "acceleration/colab/test_public_notebook.py",
+      "colab_compare.ipynb"
+    ],
+    "source_patch_sha256": "df8c60c00fa5b79b69de7328154bc89978ec7639e025dd445873e48bedf5eec9",
+    "initial_failed_attempt_preserved": true,
+    "failed_attempt_used_for_timing": false,
+    "esm_rdkit": "2026.9.1",
+    "prediction_rdkit": "2026.3.6",
+    "all_other_stage_software_equal": true,
+    "same_physical_runtime_boot_id": "11f61e16-3e05-4030-84cd-b5e33d645bb9",
+    "task_endpoint": "gpu-g4-s-kkb-usw4a1-2nu9sel874jc0",
+    "task_endpoint_released": true,
+    "other_runtime_count_after_release": 1
+  },
   "public_git_provenance": {
-    "commit": "68f6bd024340b4cd8bc5725170ba9b84321925d6",
-    "expected_commit": "68f6bd024340b4cd8bc5725170ba9b84321925d6",
+    "commit": "a092f0bb3a128e9828ec3e851a58da343377a48e",
+    "expected_commit": "a092f0bb3a128e9828ec3e851a58da343377a48e",
     "origin": "https://github.com/Raalmonk/CatPred.git",
     "status": "",
     "no_token_authentication": true,
     "default_git_clone_path": true,
+    "in_place_public_git_update": true,
+    "initial_source_public": "../notebook_01/source_public.json",
     "files": [
       {
         "path": "colab_compare.ipynb",
-        "bytes": 54751,
-        "sha256": "b1ffad6bbf45fbcb48ddde5be465f24861924ce6d0c1e8fd063b486100311ca0"
-      },
-      {
-        "path": "acceleration/colab/compare.py",
-        "bytes": 23195,
-        "sha256": "64d9ef8fff9fa72ed9af1ebc0e1bef8e2d06da10cdbc1f51edf60ba9b2c51755"
-      },
-      {
-        "path": "acceleration/colab/setup_runtime.py",
-        "bytes": 14718,
-        "sha256": "0fe677a556d4f626708423b811969aa70f088180d3b9629645ec04ffd10972f5"
+        "bytes": 55234,
+        "sha256": "1b677af62cd5ffde14012f7b706581ad62e279b73e6cdc26d9beeca045d86c09"
       },
       {
         "path": "demo/batch_kcat.csv",
@@ -57,6 +77,51 @@
         "path": "acceleration/SOURCE_MANIFEST.json",
         "bytes": 29685,
         "sha256": "1aa89006755b0645a0adc055cc72e3bf4542a9a46f58bd4689d964f06ed53eba"
+      },
+      {
+        "path": "acceleration/colab/compare.py",
+        "bytes": 32256,
+        "sha256": "eb57f43f2258e189b9e08bb98c38dd9196df2ce64643c4d9e173b7d00ac61656"
+      },
+      {
+        "path": "acceleration/colab/esm_compare.py",
+        "bytes": 16564,
+        "sha256": "3507fa0fb5e66c128d52517d4e504231a6be900c47b58a27360b9ab52f70f985"
+      },
+      {
+        "path": "acceleration/colab/plot_comparison.py",
+        "bytes": 3343,
+        "sha256": "551eda709ab8319f2b2cfdc8500b4e45b4a4994146b71c8cf0b49f29d7ea00a3"
+      },
+      {
+        "path": "acceleration/colab/setup_runtime.py",
+        "bytes": 14783,
+        "sha256": "29e4b3c0fcf9d95ac89d83fefe665759a2cbe2c6a574a1be8bb0a1b5a2224f91"
+      },
+      {
+        "path": "acceleration/colab/test_compare.py",
+        "bytes": 22702,
+        "sha256": "7119b4acfb1ee3e9bec8811405bb6eceb4cb100d47d8168559f2fa3fb9cbe330"
+      },
+      {
+        "path": "acceleration/colab/test_esm_compare.py",
+        "bytes": 16075,
+        "sha256": "f021ee89686584409ed19d68cad9710803989574ddf7b56bdaaeb01a0b18a2a8"
+      },
+      {
+        "path": "acceleration/colab/test_plot_comparison.py",
+        "bytes": 2565,
+        "sha256": "c8389948142dde4f33bf08ce96e7cde4ffb4dd5e281a073c8e5df3cb8f234170"
+      },
+      {
+        "path": "acceleration/colab/test_public_notebook.py",
+        "bytes": 17196,
+        "sha256": "ea546204974544d32e05866affbbde61bacae10ee29e8431d88650aa195e1cd1"
+      },
+      {
+        "path": "acceleration/colab/test_setup.py",
+        "bytes": 10661,
+        "sha256": "3f0eb65d0f75e143417e8f17411d1b164bc213d3a03e72ac9052da9e55820d34"
       }
     ]
   },
@@ -69,16 +134,16 @@
   },
   "original_public_source_unchanged": true,
   "input": {
-    "rows": 112,
+    "rows": 14,
     "original_public_rows": 14,
-    "repetitions": 8,
-    "sha256": "7c78c6cc8cd0ba619ee382104b6fa23f79d3aa905201960c2ecd41133f6ecbd0",
+    "repetitions": 1,
+    "sha256": "d5414c4c5199d3ae9088e81148d520111e6ec6f0f2e5e59aa38c151a7bbeefaa",
     "order_and_duplicate_rows_preserved": true
   },
   "complete_receipts": 10,
   "raw_comparisons": [
     {
-      "receipt": "comparisons/20261009T152741Z-fa2bc78e/comparison-40a12f5b/gate_Original_0/receipt.json",
+      "receipt": "comparisons/20261009T155214Z-f4cf2b09/comparison-0e9b5505/gate_Original_0/receipt.json",
       "reported_arm": true,
       "exact_bits": true,
       "arrays": {
@@ -88,7 +153,7 @@
       }
     },
     {
-      "receipt": "comparisons/20261009T152741Z-fa2bc78e/comparison-40a12f5b/gate_Original_1/receipt.json",
+      "receipt": "comparisons/20261009T155214Z-f4cf2b09/comparison-0e9b5505/gate_Original_1/receipt.json",
       "reported_arm": true,
       "exact_bits": true,
       "arrays": {
@@ -98,7 +163,7 @@
       }
     },
     {
-      "receipt": "comparisons/20261009T152741Z-fa2bc78e/comparison-40a12f5b/gate_S_STREAM_K1_0/receipt.json",
+      "receipt": "comparisons/20261009T155214Z-f4cf2b09/comparison-0e9b5505/gate_S_STREAM_K1_0/receipt.json",
       "reported_arm": true,
       "exact_bits": true,
       "arrays": {
@@ -108,7 +173,7 @@
       }
     },
     {
-      "receipt": "comparisons/20261009T152741Z-fa2bc78e/comparison-40a12f5b/gate_S_STREAM_K1_1/receipt.json",
+      "receipt": "comparisons/20261009T155214Z-f4cf2b09/comparison-0e9b5505/gate_S_STREAM_K1_1/receipt.json",
       "reported_arm": true,
       "exact_bits": true,
       "arrays": {
@@ -118,7 +183,7 @@
       }
     },
     {
-      "receipt": "comparisons/20261009T152741Z-fa2bc78e/comparison-40a12f5b/warm_Original_0/receipt.json",
+      "receipt": "comparisons/20261009T155214Z-f4cf2b09/comparison-0e9b5505/warm_Original_0/receipt.json",
       "reported_arm": true,
       "exact_bits": true,
       "arrays": {
@@ -128,7 +193,7 @@
       }
     },
     {
-      "receipt": "comparisons/20261009T152741Z-fa2bc78e/comparison-40a12f5b/warm_Original_1/receipt.json",
+      "receipt": "comparisons/20261009T155214Z-f4cf2b09/comparison-0e9b5505/warm_Original_1/receipt.json",
       "reported_arm": true,
       "exact_bits": true,
       "arrays": {
@@ -138,7 +203,7 @@
       }
     },
     {
-      "receipt": "comparisons/20261009T152741Z-fa2bc78e/comparison-40a12f5b/warm_Original_2/receipt.json",
+      "receipt": "comparisons/20261009T155214Z-f4cf2b09/comparison-0e9b5505/warm_Original_2/receipt.json",
       "reported_arm": true,
       "exact_bits": true,
       "arrays": {
@@ -148,7 +213,7 @@
       }
     },
     {
-      "receipt": "comparisons/20261009T152741Z-fa2bc78e/comparison-40a12f5b/warm_S_STREAM_K1_0/receipt.json",
+      "receipt": "comparisons/20261009T155214Z-f4cf2b09/comparison-0e9b5505/warm_S_STREAM_K1_0/receipt.json",
       "reported_arm": true,
       "exact_bits": true,
       "arrays": {
@@ -158,7 +223,7 @@
       }
     },
     {
-      "receipt": "comparisons/20261009T152741Z-fa2bc78e/comparison-40a12f5b/warm_S_STREAM_K1_1/receipt.json",
+      "receipt": "comparisons/20261009T155214Z-f4cf2b09/comparison-0e9b5505/warm_S_STREAM_K1_1/receipt.json",
       "reported_arm": true,
       "exact_bits": true,
       "arrays": {
@@ -168,7 +233,7 @@
       }
     },
     {
-      "receipt": "comparisons/20261009T152741Z-fa2bc78e/comparison-40a12f5b/warm_S_STREAM_K1_2/receipt.json",
+      "receipt": "comparisons/20261009T155214Z-f4cf2b09/comparison-0e9b5505/warm_S_STREAM_K1_2/receipt.json",
       "reported_arm": true,
       "exact_bits": true,
       "arrays": {
@@ -182,23 +247,370 @@
     "Original": {
       "n": 3,
       "seconds": [
-        1.1972301650000077,
-        1.2125620260000005,
-        1.2032567040000117
+        0.23512543499998628,
+        0.23653051400003733,
+        0.2349431039999672
       ],
-      "median_seconds": 1.2032567040000117,
+      "median_seconds": 0.23512543499998628,
       "speedup_vs_original": 1.0
     },
     "S_STREAM_K1": {
       "n": 3,
       "seconds": [
-        0.3935378010000363,
-        0.3929541210000025,
-        0.39327292100000477
+        0.0909374210000351,
+        0.09094097100000909,
+        0.09110009099993022
       ],
-      "median_seconds": 0.39327292100000477,
-      "speedup_vs_original": 3.059597139158221
+      "median_seconds": 0.09094097100000909,
+      "speedup_vs_original": 2.585473108704357
     }
+  },
+  "esm_stage": {
+    "status": "PASS",
+    "boundary": "Fresh ESM features with local checkpoint loading, model construction, GPU transfer, original tokenization and batches of four, FP32 forwards, CPU outputs and application-cache writes; synchronized before and after. Downloads, imports, outer preflight validation, precision checks, evidence serialization and model release are excluded. Local filesystem caches are not flushed. The accepted loader's internal metadata checks remain inside the timer. This is not an end-to-end cold request.",
+    "raw_comparisons": [
+      {
+        "receipt": "records/gate_Original_0.json",
+        "raw_features": 9,
+        "exact_bits": true,
+        "archive": "raw/39013c5f2193d5fdaf26dbaab5937ed36ae4b83a6b1f03b695a3ab46e2c40381.npz"
+      },
+      {
+        "receipt": "records/gate_Original_1.json",
+        "raw_features": 9,
+        "exact_bits": true,
+        "archive": "raw/39013c5f2193d5fdaf26dbaab5937ed36ae4b83a6b1f03b695a3ab46e2c40381.npz"
+      },
+      {
+        "receipt": "records/gate_Optimized_0.json",
+        "raw_features": 9,
+        "exact_bits": true,
+        "archive": "raw/39013c5f2193d5fdaf26dbaab5937ed36ae4b83a6b1f03b695a3ab46e2c40381.npz"
+      },
+      {
+        "receipt": "records/gate_Optimized_1.json",
+        "raw_features": 9,
+        "exact_bits": true,
+        "archive": "raw/39013c5f2193d5fdaf26dbaab5937ed36ae4b83a6b1f03b695a3ab46e2c40381.npz"
+      },
+      {
+        "receipt": "records/timed_Original_0.json",
+        "raw_features": 9,
+        "exact_bits": true,
+        "archive": "raw/39013c5f2193d5fdaf26dbaab5937ed36ae4b83a6b1f03b695a3ab46e2c40381.npz"
+      },
+      {
+        "receipt": "records/timed_Optimized_0.json",
+        "raw_features": 9,
+        "exact_bits": true,
+        "archive": "raw/39013c5f2193d5fdaf26dbaab5937ed36ae4b83a6b1f03b695a3ab46e2c40381.npz"
+      },
+      {
+        "receipt": "records/timed_Optimized_1.json",
+        "raw_features": 9,
+        "exact_bits": true,
+        "archive": "raw/39013c5f2193d5fdaf26dbaab5937ed36ae4b83a6b1f03b695a3ab46e2c40381.npz"
+      },
+      {
+        "receipt": "records/timed_Original_1.json",
+        "raw_features": 9,
+        "exact_bits": true,
+        "archive": "raw/39013c5f2193d5fdaf26dbaab5937ed36ae4b83a6b1f03b695a3ab46e2c40381.npz"
+      },
+      {
+        "receipt": "records/timed_Original_2.json",
+        "raw_features": 9,
+        "exact_bits": true,
+        "archive": "raw/39013c5f2193d5fdaf26dbaab5937ed36ae4b83a6b1f03b695a3ab46e2c40381.npz"
+      },
+      {
+        "receipt": "records/timed_Optimized_2.json",
+        "raw_features": 9,
+        "exact_bits": true,
+        "archive": "raw/39013c5f2193d5fdaf26dbaab5937ed36ae4b83a6b1f03b695a3ab46e2c40381.npz"
+      }
+    ],
+    "raw_archives": [
+      {
+        "path": "raw/39013c5f2193d5fdaf26dbaab5937ed36ae4b83a6b1f03b695a3ab46e2c40381.npz",
+        "sha256": "c4d226730f9332c5889ed7c68c43bebee4eab119510a1299283684f437e7cd6d",
+        "entries": [
+          {
+            "key": "feature_0000",
+            "sequence_sha256": "2a7a9cac8c5574379c9d1049e2f4dc648b0967476b9b78709d43b12e86ba697a",
+            "shape": [
+              1329,
+              1280
+            ],
+            "dtype": "<f4",
+            "sha256": "f400b56c16fbccfa66def829c72e30c7187fd814fdf0292ba38b557e6e967858",
+            "bytes": 6804480
+          },
+          {
+            "key": "feature_0001",
+            "sequence_sha256": "6b99d9eb33a68e6f0939ab8ba0bed955b36f04dec1bf11f4761770c42d614a1d",
+            "shape": [
+              576,
+              1280
+            ],
+            "dtype": "<f4",
+            "sha256": "d32e9806b7f2811092a2543a33ed6ffd3bb3769a709e2deb75afa80a44867000",
+            "bytes": 2949120
+          },
+          {
+            "key": "feature_0002",
+            "sequence_sha256": "7ea8b0ecce4544fef23bee83c24286a5fb68bc1fee8f7602d1a60720b5b6846b",
+            "shape": [
+              776,
+              1280
+            ],
+            "dtype": "<f4",
+            "sha256": "1eec7ad018c016787226d4deb79b64511cdae3387c2a221849da91750bd9f2d1",
+            "bytes": 3973120
+          },
+          {
+            "key": "feature_0003",
+            "sequence_sha256": "eecfec6ffe14f7fc30470da8dec1ab5d5bab5b19ec4448ef9482f971414fdbf1",
+            "shape": [
+              1185,
+              1280
+            ],
+            "dtype": "<f4",
+            "sha256": "bcfb7dc1eaf82cdcf205ad3a34ce86ecc116756645db8520aa615043dcc3e5d3",
+            "bytes": 6067200
+          },
+          {
+            "key": "feature_0004",
+            "sequence_sha256": "05c84e3d0db04af93caee43f96f16e61239586d56548465ce357f6b0a65662d0",
+            "shape": [
+              902,
+              1280
+            ],
+            "dtype": "<f4",
+            "sha256": "0c77f7486355b11394c423fa14dabc2634e93bf93c1e5f9b94d672a005971198",
+            "bytes": 4618240
+          },
+          {
+            "key": "feature_0005",
+            "sequence_sha256": "1f3b9198aa7d870bd9049dd4fa1e0ddbf944449ecfdc82cddd720738970663c0",
+            "shape": [
+              1094,
+              1280
+            ],
+            "dtype": "<f4",
+            "sha256": "5f54b607547c4e72f51e338b8088b487ca0e45d6036f195b9bfcced9eba705f4",
+            "bytes": 5601280
+          },
+          {
+            "key": "feature_0006",
+            "sequence_sha256": "167f3218a9c69890e7605fc8b0a07ae1ab14fea60f1413e797a37b5ea9cd1889",
+            "shape": [
+              1161,
+              1280
+            ],
+            "dtype": "<f4",
+            "sha256": "e0ba8c1097e3ad6c8fba8e12b52cac992d3a243cbc7313c81054a640011ee842",
+            "bytes": 5944320
+          },
+          {
+            "key": "feature_0007",
+            "sequence_sha256": "2e05586c6e2753a91b49ad6a86fed53ec0da2b56dae12409ae1b84e6d185e274",
+            "shape": [
+              950,
+              1280
+            ],
+            "dtype": "<f4",
+            "sha256": "469ff31331bb2cfdf04eba763209f36d6998f8012a6fbe9664ee7eb4cb3d3baf",
+            "bytes": 4864000
+          },
+          {
+            "key": "feature_0008",
+            "sequence_sha256": "638f806a86a75bc438936b68b548f0c859e709933c45d02af0baf29c154c3c68",
+            "shape": [
+              884,
+              1280
+            ],
+            "dtype": "<f4",
+            "sha256": "2a34f584ecf2e4ba9e721be8178830f1f2160be821ce04646aca30e526b19f09",
+            "bytes": 4526080
+          }
+        ]
+      }
+    ],
+    "exact_bits": true,
+    "sequence_count": 9,
+    "actual_batch_sizes": [
+      4,
+      4,
+      1
+    ],
+    "fresh_feature_caches": 10,
+    "cache_reuse": false,
+    "optimized_loader": "meta",
+    "feature_forward_mode": "off",
+    "statistics": {
+      "Original": {
+        "n": 3,
+        "seconds": [
+          3.121435525999999,
+          2.9326410089999797,
+          3.1619063070000095
+        ],
+        "median_seconds": 3.121435525999999,
+        "speedup_vs_original": 1.0
+      },
+      "Optimized": {
+        "n": 3,
+        "seconds": [
+          1.219364134000017,
+          1.2050519080000015,
+          1.21369903599998
+        ],
+        "median_seconds": 1.21369903599998,
+        "speedup_vs_original": 2.5718365372418823
+      }
+    },
+    "canonical_entries": [
+      {
+        "key": "feature_0000",
+        "sequence_sha256": "2a7a9cac8c5574379c9d1049e2f4dc648b0967476b9b78709d43b12e86ba697a",
+        "shape": [
+          1329,
+          1280
+        ],
+        "dtype": "<f4",
+        "sha256": "f400b56c16fbccfa66def829c72e30c7187fd814fdf0292ba38b557e6e967858",
+        "bytes": 6804480
+      },
+      {
+        "key": "feature_0001",
+        "sequence_sha256": "6b99d9eb33a68e6f0939ab8ba0bed955b36f04dec1bf11f4761770c42d614a1d",
+        "shape": [
+          576,
+          1280
+        ],
+        "dtype": "<f4",
+        "sha256": "d32e9806b7f2811092a2543a33ed6ffd3bb3769a709e2deb75afa80a44867000",
+        "bytes": 2949120
+      },
+      {
+        "key": "feature_0002",
+        "sequence_sha256": "7ea8b0ecce4544fef23bee83c24286a5fb68bc1fee8f7602d1a60720b5b6846b",
+        "shape": [
+          776,
+          1280
+        ],
+        "dtype": "<f4",
+        "sha256": "1eec7ad018c016787226d4deb79b64511cdae3387c2a221849da91750bd9f2d1",
+        "bytes": 3973120
+      },
+      {
+        "key": "feature_0003",
+        "sequence_sha256": "eecfec6ffe14f7fc30470da8dec1ab5d5bab5b19ec4448ef9482f971414fdbf1",
+        "shape": [
+          1185,
+          1280
+        ],
+        "dtype": "<f4",
+        "sha256": "bcfb7dc1eaf82cdcf205ad3a34ce86ecc116756645db8520aa615043dcc3e5d3",
+        "bytes": 6067200
+      },
+      {
+        "key": "feature_0004",
+        "sequence_sha256": "05c84e3d0db04af93caee43f96f16e61239586d56548465ce357f6b0a65662d0",
+        "shape": [
+          902,
+          1280
+        ],
+        "dtype": "<f4",
+        "sha256": "0c77f7486355b11394c423fa14dabc2634e93bf93c1e5f9b94d672a005971198",
+        "bytes": 4618240
+      },
+      {
+        "key": "feature_0005",
+        "sequence_sha256": "1f3b9198aa7d870bd9049dd4fa1e0ddbf944449ecfdc82cddd720738970663c0",
+        "shape": [
+          1094,
+          1280
+        ],
+        "dtype": "<f4",
+        "sha256": "5f54b607547c4e72f51e338b8088b487ca0e45d6036f195b9bfcced9eba705f4",
+        "bytes": 5601280
+      },
+      {
+        "key": "feature_0006",
+        "sequence_sha256": "167f3218a9c69890e7605fc8b0a07ae1ab14fea60f1413e797a37b5ea9cd1889",
+        "shape": [
+          1161,
+          1280
+        ],
+        "dtype": "<f4",
+        "sha256": "e0ba8c1097e3ad6c8fba8e12b52cac992d3a243cbc7313c81054a640011ee842",
+        "bytes": 5944320
+      },
+      {
+        "key": "feature_0007",
+        "sequence_sha256": "2e05586c6e2753a91b49ad6a86fed53ec0da2b56dae12409ae1b84e6d185e274",
+        "shape": [
+          950,
+          1280
+        ],
+        "dtype": "<f4",
+        "sha256": "469ff31331bb2cfdf04eba763209f36d6998f8012a6fbe9664ee7eb4cb3d3baf",
+        "bytes": 4864000
+      },
+      {
+        "key": "feature_0008",
+        "sequence_sha256": "638f806a86a75bc438936b68b548f0c859e709933c45d02af0baf29c154c3c68",
+        "shape": [
+          884,
+          1280
+        ],
+        "dtype": "<f4",
+        "sha256": "2a34f584ecf2e4ba9e721be8178830f1f2160be821ce04646aca30e526b19f09",
+        "bytes": 4526080
+      }
+    ],
+    "not_an_end_to_end_cold_request": true
+  },
+  "plot_validation": {
+    "rows": [
+      {
+        "Stage": "ESM features + loading",
+        "Original (s)": 3.121435525999999,
+        "Optimized (s)": 1.21369903599998,
+        "Speedup": 2.5718365372418823
+      },
+      {
+        "Stage": "Prediction (models loaded)",
+        "Original (s)": 0.23512543499998628,
+        "Optimized (s)": 0.09094097100000909,
+        "Speedup": 2.585473108704357
+      }
+    ],
+    "table_rendered_exact": true,
+    "embedded_png": {
+      "width": 1071,
+      "height": 381,
+      "mode": "RGBA",
+      "decoded_pixels": true,
+      "sha256": "5aa1e2e80c319773753aaa8ad4d3b92ed0e4ebaf24ac79f65e948cbaba16e6d8",
+      "bytes": 30867
+    },
+    "exported_png": {
+      "width": 1802,
+      "height": 629,
+      "mode": "RGBA",
+      "decoded_pixels": true,
+      "sha256": "7c4a529809989f9f653bdc7b8c76676df369a3a59ee2eb779962c527e06cfb30",
+      "bytes": 59965
+    },
+    "embedded_matches_executor_export": true,
+    "png_and_svg_saved": true,
+    "download_zip_contains_stage_evidence": true,
+    "separately_measured_stages": true,
+    "model_loading_speedup_claimed": false,
+    "cold_request_total_claimed": false
   },
   "unmeasured_arms": {},
   "claims": {
@@ -213,95 +625,264 @@
     "input_caches_closed_empty": true,
     "current_warm_medians_and_speedups_recomputed": true,
     "notebook_displays_actual_timing_values": true,
-    "unavailable_arms_not_timed": true
+    "unavailable_arms_not_timed": true,
+    "esm_all_raw_features_bit_exact": true,
+    "esm_gates_precede_timed_ab_ba_ab": true,
+    "esm_fresh_application_caches": true,
+    "esm_meta_loader_actually_engaged": true,
+    "separate_stage_medians_recomputed": true,
+    "chart_png_fully_decoded": true,
+    "model_load_speedup_or_cold_total_not_inferred": true
   },
-  "feature_validation": "Saved identity manifest and actual original generation batch records; feature tensor cache is not included in this notebook result download.",
+  "feature_validation": "Every unique NPZ raw ESM tensor was decoded and compared as FP32 bytes, including signed zero; canonical original feature identities bind the warm prediction requests.",
   "numpy_version": "2.0.2",
-  "validator_sha256": "b567941945d9b4e6866a355171b14302ff9e07d7a0bbc1a7578065249aab921b",
+  "validator_sha256": "205c79363dc2b822f9bdba566309c31b4a906e0f08311bb85858f3b24e62b31c",
   "input_sha256": {
-    "results/G4/collected/results/notebook_01/execution.json": "a74369375c35553806e9a9396f23b7b5b925a0d51097a02c7e738b00cb5efdd9",
-    "results/G4/collected/results/notebook_01/colab_compare.executed.ipynb": "61d20e193bbf54dd5ae15cd5a4c9be23bc24bfc455b77ad76a4ebfff5888a8c1",
-    "results/G4/collected/results/notebook_01/source_public.json": "0e0b09d891771795ff4c004e85ccae796c848fb736c63e0bfdf8ab458979a044",
-    "public_config.json": "0f2b5a4444cb92fce98a0691c0121c9d92d89f79f887ce4fea39fa4946ccc3b0",
-    "results/G4/collected/results/notebook_01/public_notebook_download.json": "dd0fce1e3cf4d1b44f069da5516d56035cdddc0c7134e0ab13bd3c27385cd50f",
+    "results/G4/collected/results/notebook_02/execution.json": "e38db38d22967d3d736a693ca354662634cd6237d6f950b984e57e38488d8ea2",
+    "results/G4/collected/results/notebook_02/colab_compare.executed.ipynb": "50cf62ff6c3552f4d92ccc41949271a86776a2483362c0dcdeb58e1dec2a79d6",
+    "results/G4/collected/results/notebook_02/source_public.json": "f0bcc6214d4fc9fe9dc34d446e2cb4030122a821f881168e38dce51cd201d9e2",
+    "results/G4/collected/results/notebook_02/public_config_resume.json": "2a79de4981411915ecac2d366af7fcec68ce4176ff839c0850f2f3c6e00c2b3a",
+    "results/G4/collected/results/notebook_02/public_notebook_resume_download.json": "4f72b77f1c230bc757ecdb96aa60f8efe20b47f024ae86ebd242bb592d516e04",
+    "results/G4/collected/results/notebook_02/resume_defaults.json": "2c606a16351b2277020ba37acd54abafb90350200c5f897dbbcb53c61595c3ca",
     "results/G4/collected/results/notebook_01/fresh_defaults.json": "4d6f2444381e7f8f77597cf0cd78d8ed7ade37436418feac267954b1b2fda69b",
     "demo/batch_kcat.csv": "1af5f730363fe6aad93ff46ec0aaac259625a48df57af7b0a7a1d85a16563607",
-    "acceleration/colab/compare.py": "64d9ef8fff9fa72ed9af1ebc0e1bef8e2d06da10cdbc1f51edf60ba9b2c51755",
-    "acceleration/colab/setup_runtime.py": "0fe677a556d4f626708423b811969aa70f088180d3b9629645ec04ffd10972f5",
-    "colab_compare.ipynb": "9723aa55f8a34013ab15a20d1c3a7e90bae73ad796e5f796b9ffc3ba23d10102",
-    "results/G4/collected/results/notebook_01/comparisons/20261009T152741Z-fa2bc78e/comparison-40a12f5b/summary.json": "62ca4e8f9807ecad2f5252976860d00c4563b2f63b56f2577201cc0f1974bdff",
-    "results/G4/collected/results/notebook_01/comparisons/20261009T152741Z-fa2bc78e/notebook_config.json": "0b5b46bad07d05d0404913bbe8430363dbc550c0ef21a2fd9203d1bf941c2b23",
-    "results/G4/collected/results/notebook_01/comparisons/20261009T152741Z-fa2bc78e/input.csv": "7c78c6cc8cd0ba619ee382104b6fa23f79d3aa905201960c2ecd41133f6ecbd0",
-    "results/G4/collected/results/notebook_01/comparisons/20261009T152741Z-fa2bc78e/comparison-40a12f5b/input.csv": "474a30beb142a278ce8d821676db13f03fab8996e38983ef0bcc82ebc0a5edb8",
-    "results/G4/collected/results/notebook_01/setup.json": "9833260f0e8899b4fea0c197dc0d1188d14373637f6ab4bb1830a06ac09899df",
+    "acceleration/colab/compare.py": "eb57f43f2258e189b9e08bb98c38dd9196df2ce64643c4d9e173b7d00ac61656",
+    "acceleration/colab/setup_runtime.py": "29e4b3c0fcf9d95ac89d83fefe665759a2cbe2c6a574a1be8bb0a1b5a2224f91",
+    "acceleration/colab/esm_compare.py": "3507fa0fb5e66c128d52517d4e504231a6be900c47b58a27360b9ab52f70f985",
+    "acceleration/colab/plot_comparison.py": "551eda709ab8319f2b2cfdc8500b4e45b4a4994146b71c8cf0b49f29d7ea00a3",
+    "colab_compare.ipynb": "b6f60f8735b7559c39bd5bfb69c37c21efb8270c72e5c4fb90e93ebdab3979b6",
+    "results/G4/collected/results/notebook_02/comparisons/20261009T155214Z-f4cf2b09/comparison-0e9b5505/summary.json": "95eedc39795b7fb221cde3bb5b6a9196aa46129702f1bbb99e8bb013d315826e",
+    "results/G4/collected/results/notebook_01/execution.json": "a59b376be7f2bbc1c7561434e4c211e8c8879cf029f7e2165652f704ddf6a326",
+    "results/G4/collected/results/notebook_01/source_public.json": "db9395e33c4cd32a7db5b61da132ece61f196509099b24ec2432c0191b2e3a09",
+    "public_config.json": "691ef4e3b7efad7f55ca5ebe4514a34e0c68af9f9b748cb96f0dd0edef31c0a4",
+    "results/G4/collected/results/notebook_02/public_config_initial.json": "233bfcbc285bab118e066d8730bb97f33eabeccc2540c7320501be453cfc0143",
+    "results/G4/collected/results/source_snapshots/3a3700f7a3baf1b87d0575c7a1f2f0d5d026f72d/source_public.json": "db9395e33c4cd32a7db5b61da132ece61f196509099b24ec2432c0191b2e3a09",
+    "results/G4/collected/results/source_snapshots/3a3700f7a3baf1b87d0575c7a1f2f0d5d026f72d/colab_compare.ipynb": "de1c11a4b3db3bc19c415aa8258c2ca47384f04506419eb9a30ff2a1bc77c40b",
+    "results/G4/collected/results/source_snapshots/3a3700f7a3baf1b87d0575c7a1f2f0d5d026f72d/demo/batch_kcat.csv": "1af5f730363fe6aad93ff46ec0aaac259625a48df57af7b0a7a1d85a16563607",
+    "results/G4/collected/results/source_snapshots/3a3700f7a3baf1b87d0575c7a1f2f0d5d026f72d/acceleration/SOURCE_MANIFEST.json": "1aa89006755b0645a0adc055cc72e3bf4542a9a46f58bd4689d964f06ed53eba",
+    "results/G4/collected/results/source_snapshots/3a3700f7a3baf1b87d0575c7a1f2f0d5d026f72d/acceleration/colab/compare.py": "a0647d46eb5f18503f6133d395579e88978e27cddcb6617a6d365d111c1dc078",
+    "results/G4/collected/results/source_snapshots/3a3700f7a3baf1b87d0575c7a1f2f0d5d026f72d/acceleration/colab/esm_compare.py": "3507fa0fb5e66c128d52517d4e504231a6be900c47b58a27360b9ab52f70f985",
+    "results/G4/collected/results/source_snapshots/3a3700f7a3baf1b87d0575c7a1f2f0d5d026f72d/acceleration/colab/plot_comparison.py": "551eda709ab8319f2b2cfdc8500b4e45b4a4994146b71c8cf0b49f29d7ea00a3",
+    "results/G4/collected/results/source_snapshots/3a3700f7a3baf1b87d0575c7a1f2f0d5d026f72d/acceleration/colab/setup_runtime.py": "0fe677a556d4f626708423b811969aa70f088180d3b9629645ec04ffd10972f5",
+    "results/G4/collected/results/source_snapshots/3a3700f7a3baf1b87d0575c7a1f2f0d5d026f72d/acceleration/colab/test_compare.py": "d9dde70a31747f6417ec58d97240e6e34965b2b0da8097a2580ca40f9789a822",
+    "results/G4/collected/results/source_snapshots/3a3700f7a3baf1b87d0575c7a1f2f0d5d026f72d/acceleration/colab/test_esm_compare.py": "f021ee89686584409ed19d68cad9710803989574ddf7b56bdaaeb01a0b18a2a8",
+    "results/G4/collected/results/source_snapshots/3a3700f7a3baf1b87d0575c7a1f2f0d5d026f72d/acceleration/colab/test_plot_comparison.py": "c8389948142dde4f33bf08ce96e7cde4ffb4dd5e281a073c8e5df3cb8f234170",
+    "results/G4/collected/results/source_snapshots/3a3700f7a3baf1b87d0575c7a1f2f0d5d026f72d/acceleration/colab/test_public_notebook.py": "60750d496f287e283f71577da1ac5fb2b0557a45d17a815e1d059d5fc7ea3b48",
+    "results/G4/collected/results/source_snapshots/3a3700f7a3baf1b87d0575c7a1f2f0d5d026f72d/acceleration/colab/test_setup.py": "3f0eb65d0f75e143417e8f17411d1b164bc213d3a03e72ac9052da9e55820d34",
+    "results/G4/collected/results/source_snapshots/a092f0bb3a128e9828ec3e851a58da343377a48e/source_public.json": "f0bcc6214d4fc9fe9dc34d446e2cb4030122a821f881168e38dce51cd201d9e2",
+    "results/G4/collected/results/source_snapshots/a092f0bb3a128e9828ec3e851a58da343377a48e/colab_compare.ipynb": "1b677af62cd5ffde14012f7b706581ad62e279b73e6cdc26d9beeca045d86c09",
+    "results/G4/collected/results/source_snapshots/a092f0bb3a128e9828ec3e851a58da343377a48e/demo/batch_kcat.csv": "1af5f730363fe6aad93ff46ec0aaac259625a48df57af7b0a7a1d85a16563607",
+    "results/G4/collected/results/source_snapshots/a092f0bb3a128e9828ec3e851a58da343377a48e/acceleration/SOURCE_MANIFEST.json": "1aa89006755b0645a0adc055cc72e3bf4542a9a46f58bd4689d964f06ed53eba",
+    "results/G4/collected/results/source_snapshots/a092f0bb3a128e9828ec3e851a58da343377a48e/acceleration/colab/compare.py": "eb57f43f2258e189b9e08bb98c38dd9196df2ce64643c4d9e173b7d00ac61656",
+    "results/G4/collected/results/source_snapshots/a092f0bb3a128e9828ec3e851a58da343377a48e/acceleration/colab/esm_compare.py": "3507fa0fb5e66c128d52517d4e504231a6be900c47b58a27360b9ab52f70f985",
+    "results/G4/collected/results/source_snapshots/a092f0bb3a128e9828ec3e851a58da343377a48e/acceleration/colab/plot_comparison.py": "551eda709ab8319f2b2cfdc8500b4e45b4a4994146b71c8cf0b49f29d7ea00a3",
+    "results/G4/collected/results/source_snapshots/a092f0bb3a128e9828ec3e851a58da343377a48e/acceleration/colab/setup_runtime.py": "29e4b3c0fcf9d95ac89d83fefe665759a2cbe2c6a574a1be8bb0a1b5a2224f91",
+    "results/G4/collected/results/source_snapshots/a092f0bb3a128e9828ec3e851a58da343377a48e/acceleration/colab/test_compare.py": "7119b4acfb1ee3e9bec8811405bb6eceb4cb100d47d8168559f2fa3fb9cbe330",
+    "results/G4/collected/results/source_snapshots/a092f0bb3a128e9828ec3e851a58da343377a48e/acceleration/colab/test_esm_compare.py": "f021ee89686584409ed19d68cad9710803989574ddf7b56bdaaeb01a0b18a2a8",
+    "results/G4/collected/results/source_snapshots/a092f0bb3a128e9828ec3e851a58da343377a48e/acceleration/colab/test_plot_comparison.py": "c8389948142dde4f33bf08ce96e7cde4ffb4dd5e281a073c8e5df3cb8f234170",
+    "results/G4/collected/results/source_snapshots/a092f0bb3a128e9828ec3e851a58da343377a48e/acceleration/colab/test_public_notebook.py": "ea546204974544d32e05866affbbde61bacae10ee29e8431d88650aa195e1cd1",
+    "results/G4/collected/results/source_snapshots/a092f0bb3a128e9828ec3e851a58da343377a48e/acceleration/colab/test_setup.py": "3f0eb65d0f75e143417e8f17411d1b164bc213d3a03e72ac9052da9e55820d34",
+    "results/G4/collected/results/notebook_01/colab_compare.executed.ipynb": "180dc07216ab8c950aca2c679c1e5be18538315b8f982241e984a98148632835",
+    "results/G4/collected/results/notebook_01/public_notebook_download.json": "eb06f6a5599287823b71adeceb93d2baa51e881e2a05415b4c526d4d0901c954",
+    "results/G4/collected/results/notebook_01_failed_snapshot/source_public.json": "db9395e33c4cd32a7db5b61da132ece61f196509099b24ec2432c0191b2e3a09",
+    "results/G4/collected/results/notebook_01/setup.json": "15adbb4097229c1f8ef615a66da297029d0750c24feb70d740ec04c595d4b276",
+    "results/G4/collected/results/notebook_01_failed_snapshot/setup.json": "15adbb4097229c1f8ef615a66da297029d0750c24feb70d740ec04c595d4b276",
+    "results/G4/collected/results/notebook_01_failed_snapshot/colab_compare.executed.ipynb": "180dc07216ab8c950aca2c679c1e5be18538315b8f982241e984a98148632835",
     "results/G4/collected/results/notebook_01/public_asset_downloads.json": "56e4e1723d5b0c602c275e5f030a9282dec4e4cf90748b8e50586cefefba13cf",
-    "results/G4/collected/results/notebook_01/comparisons/20261009T152741Z-fa2bc78e/comparison-40a12f5b/gate_Original_0/receipt.json": "b195fd3b577d2cd0bf79b2c7fef49a44937ae60c9ec314c5cd8749384e4401e3",
-    "results/G4/collected/results/notebook_01/comparisons/20261009T152741Z-fa2bc78e/comparison-40a12f5b/gate_Original_0/precision.npz": "ec03ba0601a75c8a7be35c140be37253813a8eae609db92e3c97ece0a91eb12e",
-    "results/G4/collected/results/notebook_01/comparisons/20261009T152741Z-fa2bc78e/comparison-40a12f5b/gate_Original_0/precision_manifest.json": "37801fd018c44e121267865ba91e008b21bca71676e4c3646abf23ff3304e88d",
-    "results/G4/collected/results/notebook_01/comparisons/20261009T152741Z-fa2bc78e/comparison-40a12f5b/gate_Original_0/input_input_output.csv": "3c7ffbd8a3ab94328b888cc928ead3b37af18bc0ba99e0721347cf370dcddaf6",
-    "results/G4/collected/results/notebook_01/comparisons/20261009T152741Z-fa2bc78e/comparison-40a12f5b/gate_Original_0/raw_predictions.csv": "6e8732f09f6be613943dbede094e459be6d9cc0b53c12a6154764f702ee66560",
-    "results/G4/collected/results/notebook_01/comparisons/20261009T152741Z-fa2bc78e/comparison-40a12f5b/gate_Original_1/receipt.json": "47a24629df294df599c8dd714208bfe9ac8aa530f656a1fa0eab447c740b003a",
-    "results/G4/collected/results/notebook_01/comparisons/20261009T152741Z-fa2bc78e/comparison-40a12f5b/gate_Original_1/precision.npz": "ec03ba0601a75c8a7be35c140be37253813a8eae609db92e3c97ece0a91eb12e",
-    "results/G4/collected/results/notebook_01/comparisons/20261009T152741Z-fa2bc78e/comparison-40a12f5b/gate_Original_1/precision_manifest.json": "37801fd018c44e121267865ba91e008b21bca71676e4c3646abf23ff3304e88d",
-    "results/G4/collected/results/notebook_01/comparisons/20261009T152741Z-fa2bc78e/comparison-40a12f5b/gate_Original_1/input_input_output.csv": "3c7ffbd8a3ab94328b888cc928ead3b37af18bc0ba99e0721347cf370dcddaf6",
-    "results/G4/collected/results/notebook_01/comparisons/20261009T152741Z-fa2bc78e/comparison-40a12f5b/gate_Original_1/raw_predictions.csv": "6e8732f09f6be613943dbede094e459be6d9cc0b53c12a6154764f702ee66560",
-    "results/G4/collected/results/notebook_01/comparisons/20261009T152741Z-fa2bc78e/comparison-40a12f5b/gate_S_STREAM_K1_0/receipt.json": "301f86661e581b9508a2627919db8d17fcb5c242a527e1e1a3dc693accf177b1",
-    "results/G4/collected/results/notebook_01/comparisons/20261009T152741Z-fa2bc78e/comparison-40a12f5b/gate_S_STREAM_K1_0/precision.npz": "ec03ba0601a75c8a7be35c140be37253813a8eae609db92e3c97ece0a91eb12e",
-    "results/G4/collected/results/notebook_01/comparisons/20261009T152741Z-fa2bc78e/comparison-40a12f5b/gate_S_STREAM_K1_0/precision_manifest.json": "37801fd018c44e121267865ba91e008b21bca71676e4c3646abf23ff3304e88d",
-    "results/G4/collected/results/notebook_01/comparisons/20261009T152741Z-fa2bc78e/comparison-40a12f5b/gate_S_STREAM_K1_0/input_input_output.csv": "3c7ffbd8a3ab94328b888cc928ead3b37af18bc0ba99e0721347cf370dcddaf6",
-    "results/G4/collected/results/notebook_01/comparisons/20261009T152741Z-fa2bc78e/comparison-40a12f5b/gate_S_STREAM_K1_0/raw_predictions.csv": "6e8732f09f6be613943dbede094e459be6d9cc0b53c12a6154764f702ee66560",
-    "results/G4/collected/results/notebook_01/comparisons/20261009T152741Z-fa2bc78e/comparison-40a12f5b/gate_S_STREAM_K1_1/receipt.json": "04d8d51630aa623ed36564a7fbf4f4f2a5ed7ac8331e1fc1cc59f5639b8433cc",
-    "results/G4/collected/results/notebook_01/comparisons/20261009T152741Z-fa2bc78e/comparison-40a12f5b/gate_S_STREAM_K1_1/precision.npz": "ec03ba0601a75c8a7be35c140be37253813a8eae609db92e3c97ece0a91eb12e",
-    "results/G4/collected/results/notebook_01/comparisons/20261009T152741Z-fa2bc78e/comparison-40a12f5b/gate_S_STREAM_K1_1/precision_manifest.json": "37801fd018c44e121267865ba91e008b21bca71676e4c3646abf23ff3304e88d",
-    "results/G4/collected/results/notebook_01/comparisons/20261009T152741Z-fa2bc78e/comparison-40a12f5b/gate_S_STREAM_K1_1/input_input_output.csv": "3c7ffbd8a3ab94328b888cc928ead3b37af18bc0ba99e0721347cf370dcddaf6",
-    "results/G4/collected/results/notebook_01/comparisons/20261009T152741Z-fa2bc78e/comparison-40a12f5b/gate_S_STREAM_K1_1/raw_predictions.csv": "6e8732f09f6be613943dbede094e459be6d9cc0b53c12a6154764f702ee66560",
-    "results/G4/collected/results/notebook_01/comparisons/20261009T152741Z-fa2bc78e/comparison-40a12f5b/warm_Original_0/receipt.json": "0cfed4e945f76566b32a4e13c2f46304e0fff3d24b1e31feebe8a574ff4962f0",
-    "results/G4/collected/results/notebook_01/comparisons/20261009T152741Z-fa2bc78e/comparison-40a12f5b/warm_Original_0/precision.npz": "ec03ba0601a75c8a7be35c140be37253813a8eae609db92e3c97ece0a91eb12e",
-    "results/G4/collected/results/notebook_01/comparisons/20261009T152741Z-fa2bc78e/comparison-40a12f5b/warm_Original_0/precision_manifest.json": "37801fd018c44e121267865ba91e008b21bca71676e4c3646abf23ff3304e88d",
-    "results/G4/collected/results/notebook_01/comparisons/20261009T152741Z-fa2bc78e/comparison-40a12f5b/warm_Original_0/input_input_output.csv": "3c7ffbd8a3ab94328b888cc928ead3b37af18bc0ba99e0721347cf370dcddaf6",
-    "results/G4/collected/results/notebook_01/comparisons/20261009T152741Z-fa2bc78e/comparison-40a12f5b/warm_Original_0/raw_predictions.csv": "6e8732f09f6be613943dbede094e459be6d9cc0b53c12a6154764f702ee66560",
-    "results/G4/collected/results/notebook_01/comparisons/20261009T152741Z-fa2bc78e/comparison-40a12f5b/warm_Original_1/receipt.json": "49285fe718c501d4366fc55dfc37ab4a1441ee7e29658c921ca970c8ad1101c8",
-    "results/G4/collected/results/notebook_01/comparisons/20261009T152741Z-fa2bc78e/comparison-40a12f5b/warm_Original_1/precision.npz": "ec03ba0601a75c8a7be35c140be37253813a8eae609db92e3c97ece0a91eb12e",
-    "results/G4/collected/results/notebook_01/comparisons/20261009T152741Z-fa2bc78e/comparison-40a12f5b/warm_Original_1/precision_manifest.json": "37801fd018c44e121267865ba91e008b21bca71676e4c3646abf23ff3304e88d",
-    "results/G4/collected/results/notebook_01/comparisons/20261009T152741Z-fa2bc78e/comparison-40a12f5b/warm_Original_1/input_input_output.csv": "3c7ffbd8a3ab94328b888cc928ead3b37af18bc0ba99e0721347cf370dcddaf6",
-    "results/G4/collected/results/notebook_01/comparisons/20261009T152741Z-fa2bc78e/comparison-40a12f5b/warm_Original_1/raw_predictions.csv": "6e8732f09f6be613943dbede094e459be6d9cc0b53c12a6154764f702ee66560",
-    "results/G4/collected/results/notebook_01/comparisons/20261009T152741Z-fa2bc78e/comparison-40a12f5b/warm_Original_2/receipt.json": "a106f8dbb1d48381cde56d2376b785c9fc090871621011f15c98f26f062eaff8",
-    "results/G4/collected/results/notebook_01/comparisons/20261009T152741Z-fa2bc78e/comparison-40a12f5b/warm_Original_2/precision.npz": "ec03ba0601a75c8a7be35c140be37253813a8eae609db92e3c97ece0a91eb12e",
-    "results/G4/collected/results/notebook_01/comparisons/20261009T152741Z-fa2bc78e/comparison-40a12f5b/warm_Original_2/precision_manifest.json": "37801fd018c44e121267865ba91e008b21bca71676e4c3646abf23ff3304e88d",
-    "results/G4/collected/results/notebook_01/comparisons/20261009T152741Z-fa2bc78e/comparison-40a12f5b/warm_Original_2/input_input_output.csv": "3c7ffbd8a3ab94328b888cc928ead3b37af18bc0ba99e0721347cf370dcddaf6",
-    "results/G4/collected/results/notebook_01/comparisons/20261009T152741Z-fa2bc78e/comparison-40a12f5b/warm_Original_2/raw_predictions.csv": "6e8732f09f6be613943dbede094e459be6d9cc0b53c12a6154764f702ee66560",
-    "results/G4/collected/results/notebook_01/comparisons/20261009T152741Z-fa2bc78e/comparison-40a12f5b/warm_S_STREAM_K1_0/receipt.json": "a48c3a588d8e55bedd9189daece6b0fbaa200c8d3fd59a47cd7553aa43560f8c",
-    "results/G4/collected/results/notebook_01/comparisons/20261009T152741Z-fa2bc78e/comparison-40a12f5b/warm_S_STREAM_K1_0/precision.npz": "ec03ba0601a75c8a7be35c140be37253813a8eae609db92e3c97ece0a91eb12e",
-    "results/G4/collected/results/notebook_01/comparisons/20261009T152741Z-fa2bc78e/comparison-40a12f5b/warm_S_STREAM_K1_0/precision_manifest.json": "37801fd018c44e121267865ba91e008b21bca71676e4c3646abf23ff3304e88d",
-    "results/G4/collected/results/notebook_01/comparisons/20261009T152741Z-fa2bc78e/comparison-40a12f5b/warm_S_STREAM_K1_0/input_input_output.csv": "3c7ffbd8a3ab94328b888cc928ead3b37af18bc0ba99e0721347cf370dcddaf6",
-    "results/G4/collected/results/notebook_01/comparisons/20261009T152741Z-fa2bc78e/comparison-40a12f5b/warm_S_STREAM_K1_0/raw_predictions.csv": "6e8732f09f6be613943dbede094e459be6d9cc0b53c12a6154764f702ee66560",
-    "results/G4/collected/results/notebook_01/comparisons/20261009T152741Z-fa2bc78e/comparison-40a12f5b/warm_S_STREAM_K1_1/receipt.json": "1eb5e8973a72a421235d4f852ba01c0d30bce9b43a3bf01deb96f3660ac7fd29",
-    "results/G4/collected/results/notebook_01/comparisons/20261009T152741Z-fa2bc78e/comparison-40a12f5b/warm_S_STREAM_K1_1/precision.npz": "ec03ba0601a75c8a7be35c140be37253813a8eae609db92e3c97ece0a91eb12e",
-    "results/G4/collected/results/notebook_01/comparisons/20261009T152741Z-fa2bc78e/comparison-40a12f5b/warm_S_STREAM_K1_1/precision_manifest.json": "37801fd018c44e121267865ba91e008b21bca71676e4c3646abf23ff3304e88d",
-    "results/G4/collected/results/notebook_01/comparisons/20261009T152741Z-fa2bc78e/comparison-40a12f5b/warm_S_STREAM_K1_1/input_input_output.csv": "3c7ffbd8a3ab94328b888cc928ead3b37af18bc0ba99e0721347cf370dcddaf6",
-    "results/G4/collected/results/notebook_01/comparisons/20261009T152741Z-fa2bc78e/comparison-40a12f5b/warm_S_STREAM_K1_1/raw_predictions.csv": "6e8732f09f6be613943dbede094e459be6d9cc0b53c12a6154764f702ee66560",
-    "results/G4/collected/results/notebook_01/comparisons/20261009T152741Z-fa2bc78e/comparison-40a12f5b/warm_S_STREAM_K1_2/receipt.json": "c21ab99a3cad5ec5b4b081a3f523ace5df90b82a3d689a41670ddc99bc554909",
-    "results/G4/collected/results/notebook_01/comparisons/20261009T152741Z-fa2bc78e/comparison-40a12f5b/warm_S_STREAM_K1_2/precision.npz": "ec03ba0601a75c8a7be35c140be37253813a8eae609db92e3c97ece0a91eb12e",
-    "results/G4/collected/results/notebook_01/comparisons/20261009T152741Z-fa2bc78e/comparison-40a12f5b/warm_S_STREAM_K1_2/precision_manifest.json": "37801fd018c44e121267865ba91e008b21bca71676e4c3646abf23ff3304e88d",
-    "results/G4/collected/results/notebook_01/comparisons/20261009T152741Z-fa2bc78e/comparison-40a12f5b/warm_S_STREAM_K1_2/input_input_output.csv": "3c7ffbd8a3ab94328b888cc928ead3b37af18bc0ba99e0721347cf370dcddaf6",
-    "results/G4/collected/results/notebook_01/comparisons/20261009T152741Z-fa2bc78e/comparison-40a12f5b/warm_S_STREAM_K1_2/raw_predictions.csv": "6e8732f09f6be613943dbede094e459be6d9cc0b53c12a6154764f702ee66560",
-    "results/G4/collected/results/notebook_01/comparisons/20261009T152741Z-fa2bc78e/comparison-40a12f5b/gate_Original.json": "7622e98384fe681b0b57d3ee1f6e71d3fbed63f4be530242be4412b595ce3404",
-    "results/G4/collected/results/notebook_01/comparisons/20261009T152741Z-fa2bc78e/comparison-40a12f5b/warm_Original_0/comparison.json": "7622e98384fe681b0b57d3ee1f6e71d3fbed63f4be530242be4412b595ce3404",
-    "results/G4/collected/results/notebook_01/comparisons/20261009T152741Z-fa2bc78e/comparison-40a12f5b/warm_Original_1/comparison.json": "7622e98384fe681b0b57d3ee1f6e71d3fbed63f4be530242be4412b595ce3404",
-    "results/G4/collected/results/notebook_01/comparisons/20261009T152741Z-fa2bc78e/comparison-40a12f5b/warm_Original_2/comparison.json": "7622e98384fe681b0b57d3ee1f6e71d3fbed63f4be530242be4412b595ce3404",
-    "results/G4/collected/results/notebook_01/comparisons/20261009T152741Z-fa2bc78e/comparison-40a12f5b/gate_S_STREAM_K1.json": "31a7c5ba4a05da3733bb15573cc927ae1316353c78126d03ecb11b166a22ceb6",
-    "results/G4/collected/results/notebook_01/comparisons/20261009T152741Z-fa2bc78e/comparison-40a12f5b/warm_S_STREAM_K1_0/comparison.json": "7622e98384fe681b0b57d3ee1f6e71d3fbed63f4be530242be4412b595ce3404",
-    "results/G4/collected/results/notebook_01/comparisons/20261009T152741Z-fa2bc78e/comparison-40a12f5b/warm_S_STREAM_K1_1/comparison.json": "7622e98384fe681b0b57d3ee1f6e71d3fbed63f4be530242be4412b595ce3404",
-    "results/G4/collected/results/notebook_01/comparisons/20261009T152741Z-fa2bc78e/comparison-40a12f5b/warm_S_STREAM_K1_2/comparison.json": "7622e98384fe681b0b57d3ee1f6e71d3fbed63f4be530242be4412b595ce3404",
-    "results/G4/collected/results/notebook_01/comparisons/20261009T152741Z-fa2bc78e/comparison-40a12f5b/features.json": "5b8f6f3d4123296608172c26d58ce4c9ca7171157996e36e98f2e1373bc895fd"
+    "results/G4/collected/results/notebook_01_failed_snapshot/public_asset_downloads.json": "56e4e1723d5b0c602c275e5f030a9282dec4e4cf90748b8e50586cefefba13cf",
+    "results/G4/collected/results/notebook_01_failed_snapshot/public_notebook_download.json": "eb06f6a5599287823b71adeceb93d2baa51e881e2a05415b4c526d4d0901c954",
+    "results/G4/collected/results/notebook_01/catpred-setup-fd4975bd.log": "46d5181a17195b0883e0152e5ef639d1d78fa72dbf621c08ae716aef81174d08",
+    "results/G4/collected/results/notebook_01_failed_snapshot/catpred-setup-fd4975bd.log": "46d5181a17195b0883e0152e5ef639d1d78fa72dbf621c08ae716aef81174d08",
+    "results/G4/collected/results/notebook_01/preserve_system_torch.txt": "d0f6c4be426b49f099c4f8a90e3931b08f1b7e41472e45c3ff880ed453a78b53",
+    "results/G4/collected/results/notebook_01_failed_snapshot/preserve_system_torch.txt": "d0f6c4be426b49f099c4f8a90e3931b08f1b7e41472e45c3ff880ed453a78b53",
+    "results/G4/collected/results/notebook_01/notebook_bootstrap.json": "b06920794b270ca7f585d3e70db5178e1fa43e8139c7497d201009784a379b7d",
+    "results/G4/collected/results/notebook_01_failed_snapshot/notebook_bootstrap.json": "b06920794b270ca7f585d3e70db5178e1fa43e8139c7497d201009784a379b7d",
+    "results/G4/collected/results/notebook_01_failed_snapshot/fresh_defaults.json": "4d6f2444381e7f8f77597cf0cd78d8ed7ade37436418feac267954b1b2fda69b",
+    "results/G4/collected/results/notebook_01/setup_commands.log": "af89830df711d4f9bd8d2193a479a3f3cb877d5d3985cb670287a8e542615274",
+    "results/G4/collected/results/notebook_01_failed_snapshot/setup_commands.log": "af89830df711d4f9bd8d2193a479a3f3cb877d5d3985cb670287a8e542615274",
+    "results/G4/collected/results/notebook_01_failed_snapshot/execution.json": "a59b376be7f2bbc1c7561434e4c211e8c8879cf029f7e2165652f704ddf6a326",
+    "results/G4/collected/results/notebook_01/comparisons/20261009T155214Z-f4cf2b09/input.csv": "d5414c4c5199d3ae9088e81148d520111e6ec6f0f2e5e59aa38c151a7bbeefaa",
+    "results/G4/collected/results/notebook_01_failed_snapshot/comparisons/20261009T155214Z-f4cf2b09/input.csv": "d5414c4c5199d3ae9088e81148d520111e6ec6f0f2e5e59aa38c151a7bbeefaa",
+    "results/G4/collected/results/notebook_01/comparisons/20261009T155214Z-f4cf2b09/notebook_config.json": "fd0c3d3ada1328e68d1055de3f6ac00a2c4463cbcad0270a0f736994c5be31ec",
+    "results/G4/collected/results/notebook_01_failed_snapshot/comparisons/20261009T155214Z-f4cf2b09/notebook_config.json": "fd0c3d3ada1328e68d1055de3f6ac00a2c4463cbcad0270a0f736994c5be31ec",
+    "results/G4/collected/results/notebook_01/comparisons/20261009T155214Z-f4cf2b09/comparison-0e9b5505.log": "156cd8c4f1e6ba52813804fe70b3b5008cedd70f15c99321b6d3721410602101",
+    "results/G4/collected/results/notebook_01_failed_snapshot/comparisons/20261009T155214Z-f4cf2b09/comparison-0e9b5505.log": "156cd8c4f1e6ba52813804fe70b3b5008cedd70f15c99321b6d3721410602101",
+    "results/G4/collected/results/notebook_01/comparisons/20261009T155214Z-f4cf2b09/comparison-0e9b5505/summary.json": "73e8ece49b9685d425e57b771735f55b20f406c168e2c9c4975a00e014d1ebf8",
+    "results/G4/collected/results/notebook_01_failed_snapshot/comparisons/20261009T155214Z-f4cf2b09/comparison-0e9b5505/summary.json": "73e8ece49b9685d425e57b771735f55b20f406c168e2c9c4975a00e014d1ebf8",
+    "results/G4/collected/results/notebook_01/comparisons/20261009T155214Z-f4cf2b09/comparison-0e9b5505/input_input.csv": "47c41cb781fdd9e02f04880d85ea31b20cd405ab0d70fc545bf06af05eaf82db",
+    "results/G4/collected/results/notebook_01_failed_snapshot/comparisons/20261009T155214Z-f4cf2b09/comparison-0e9b5505/input_input.csv": "47c41cb781fdd9e02f04880d85ea31b20cd405ab0d70fc545bf06af05eaf82db",
+    "results/G4/collected/results/notebook_01/comparisons/20261009T155214Z-f4cf2b09/comparison-0e9b5505/input.csv": "4ef1aaffbdd276bef13d8ad56f8efae625973d0fd603e87c37a383873f1a4221",
+    "results/G4/collected/results/notebook_01_failed_snapshot/comparisons/20261009T155214Z-f4cf2b09/comparison-0e9b5505/input.csv": "4ef1aaffbdd276bef13d8ad56f8efae625973d0fd603e87c37a383873f1a4221",
+    "results/G4/collected/results/notebook_01/comparisons/20261009T155214Z-f4cf2b09/comparison-0e9b5505/features.json": "f5fe124389bc82c28f64cf24b3c37ff134e8e1b0f5e1110f23fd31d0779f8489",
+    "results/G4/collected/results/notebook_01_failed_snapshot/comparisons/20261009T155214Z-f4cf2b09/comparison-0e9b5505/features.json": "f5fe124389bc82c28f64cf24b3c37ff134e8e1b0f5e1110f23fd31d0779f8489",
+    "results/G4/collected/results/notebook_01/comparisons/20261009T155214Z-f4cf2b09/comparison-0e9b5505/input_input.json.gz": "62344c6c838700c77066e466fdcdac65a4fd751bea71a4738522395c03cfacf4",
+    "results/G4/collected/results/notebook_01_failed_snapshot/comparisons/20261009T155214Z-f4cf2b09/comparison-0e9b5505/input_input.json.gz": "62344c6c838700c77066e466fdcdac65a4fd751bea71a4738522395c03cfacf4",
+    "results/G4/collected/results/notebook_01/comparisons/20261009T155214Z-f4cf2b09/comparison-0e9b5505/gate_Original.json": "7622e98384fe681b0b57d3ee1f6e71d3fbed63f4be530242be4412b595ce3404",
+    "results/G4/collected/results/notebook_01_failed_snapshot/comparisons/20261009T155214Z-f4cf2b09/comparison-0e9b5505/gate_Original.json": "7622e98384fe681b0b57d3ee1f6e71d3fbed63f4be530242be4412b595ce3404",
+    "results/G4/collected/results/notebook_01/comparisons/20261009T155214Z-f4cf2b09/comparison-0e9b5505/input_input_output.csv": "83e11e56d6f811cab099298f1e417d8d7ca13f55ab91bfb6bde929923ac5bff5",
+    "results/G4/collected/results/notebook_01_failed_snapshot/comparisons/20261009T155214Z-f4cf2b09/comparison-0e9b5505/input_input_output.csv": "83e11e56d6f811cab099298f1e417d8d7ca13f55ab91bfb6bde929923ac5bff5",
+    "results/G4/collected/results/notebook_01/comparisons/20261009T155214Z-f4cf2b09/comparison-0e9b5505/esm/summary.json": "b4fa7bbc4503d698bf379c4ba563320a27df2d4e4c4d2efca67e3074fb986c28",
+    "results/G4/collected/results/notebook_01_failed_snapshot/comparisons/20261009T155214Z-f4cf2b09/comparison-0e9b5505/esm/summary.json": "b4fa7bbc4503d698bf379c4ba563320a27df2d4e4c4d2efca67e3074fb986c28",
+    "results/G4/collected/results/notebook_01/comparisons/20261009T155214Z-f4cf2b09/comparison-0e9b5505/esm/records/timed_Optimized_2.json": "2f15395e24d877a09ae946935817954f44424d8cc3384fe218ceed7b8e77dae4",
+    "results/G4/collected/results/notebook_01_failed_snapshot/comparisons/20261009T155214Z-f4cf2b09/comparison-0e9b5505/esm/records/timed_Optimized_2.json": "2f15395e24d877a09ae946935817954f44424d8cc3384fe218ceed7b8e77dae4",
+    "results/G4/collected/results/notebook_01/comparisons/20261009T155214Z-f4cf2b09/comparison-0e9b5505/esm/records/timed_Original_2.json": "557b9af9ba578eb47af742f4114e3b773dbfcd96d67df29a409cf0998990f237",
+    "results/G4/collected/results/notebook_01_failed_snapshot/comparisons/20261009T155214Z-f4cf2b09/comparison-0e9b5505/esm/records/timed_Original_2.json": "557b9af9ba578eb47af742f4114e3b773dbfcd96d67df29a409cf0998990f237",
+    "results/G4/collected/results/notebook_01/comparisons/20261009T155214Z-f4cf2b09/comparison-0e9b5505/esm/records/gate_Original_1.json": "b0398cb24cadaf804545592feabca4ce691196753b08e4cb6d61fe7cca38c402",
+    "results/G4/collected/results/notebook_01_failed_snapshot/comparisons/20261009T155214Z-f4cf2b09/comparison-0e9b5505/esm/records/gate_Original_1.json": "b0398cb24cadaf804545592feabca4ce691196753b08e4cb6d61fe7cca38c402",
+    "results/G4/collected/results/notebook_01/comparisons/20261009T155214Z-f4cf2b09/comparison-0e9b5505/esm/records/timed_Original_1.json": "ab1c4904ae232e1d2659166f77dd54e677c743f7801a57eea3b2407757428d53",
+    "results/G4/collected/results/notebook_01_failed_snapshot/comparisons/20261009T155214Z-f4cf2b09/comparison-0e9b5505/esm/records/timed_Original_1.json": "ab1c4904ae232e1d2659166f77dd54e677c743f7801a57eea3b2407757428d53",
+    "results/G4/collected/results/notebook_01/comparisons/20261009T155214Z-f4cf2b09/comparison-0e9b5505/esm/records/timed_Original_0.json": "8d97b56b739ebc945f08856eff2df1543721afa9e842031affc5e92704cbfb7e",
+    "results/G4/collected/results/notebook_01_failed_snapshot/comparisons/20261009T155214Z-f4cf2b09/comparison-0e9b5505/esm/records/timed_Original_0.json": "8d97b56b739ebc945f08856eff2df1543721afa9e842031affc5e92704cbfb7e",
+    "results/G4/collected/results/notebook_01/comparisons/20261009T155214Z-f4cf2b09/comparison-0e9b5505/esm/records/gate_Original_0.json": "750611e814172cb7c9bb42bf1f679271790bff3f33a0b1a42e74cc88d964e1ae",
+    "results/G4/collected/results/notebook_01_failed_snapshot/comparisons/20261009T155214Z-f4cf2b09/comparison-0e9b5505/esm/records/gate_Original_0.json": "750611e814172cb7c9bb42bf1f679271790bff3f33a0b1a42e74cc88d964e1ae",
+    "results/G4/collected/results/notebook_01/comparisons/20261009T155214Z-f4cf2b09/comparison-0e9b5505/esm/records/gate_Optimized_0.json": "049db631de2bad1d01be6b0412a85d751cb12ea9a6832d81e983960f41ce9893",
+    "results/G4/collected/results/notebook_01_failed_snapshot/comparisons/20261009T155214Z-f4cf2b09/comparison-0e9b5505/esm/records/gate_Optimized_0.json": "049db631de2bad1d01be6b0412a85d751cb12ea9a6832d81e983960f41ce9893",
+    "results/G4/collected/results/notebook_01/comparisons/20261009T155214Z-f4cf2b09/comparison-0e9b5505/esm/records/timed_Optimized_0.json": "144cef5a3d6210c976fd50b6c7952e3906a7b65d8d35bb91871dd6ff23f91f7b",
+    "results/G4/collected/results/notebook_01_failed_snapshot/comparisons/20261009T155214Z-f4cf2b09/comparison-0e9b5505/esm/records/timed_Optimized_0.json": "144cef5a3d6210c976fd50b6c7952e3906a7b65d8d35bb91871dd6ff23f91f7b",
+    "results/G4/collected/results/notebook_01/comparisons/20261009T155214Z-f4cf2b09/comparison-0e9b5505/esm/records/timed_Optimized_1.json": "a52bb753ebef0c9f73b94cf6d292c2d3c38a4c58f33aec822c987540c0da729f",
+    "results/G4/collected/results/notebook_01_failed_snapshot/comparisons/20261009T155214Z-f4cf2b09/comparison-0e9b5505/esm/records/timed_Optimized_1.json": "a52bb753ebef0c9f73b94cf6d292c2d3c38a4c58f33aec822c987540c0da729f",
+    "results/G4/collected/results/notebook_01/comparisons/20261009T155214Z-f4cf2b09/comparison-0e9b5505/esm/records/gate_Optimized_1.json": "1d9b72985f93422f0b05b9d8f457d1f14006e250c1eab14f3a3540b64e5ba289",
+    "results/G4/collected/results/notebook_01_failed_snapshot/comparisons/20261009T155214Z-f4cf2b09/comparison-0e9b5505/esm/records/gate_Optimized_1.json": "1d9b72985f93422f0b05b9d8f457d1f14006e250c1eab14f3a3540b64e5ba289",
+    "results/G4/collected/results/notebook_01/comparisons/20261009T155214Z-f4cf2b09/comparison-0e9b5505/esm/raw/39013c5f2193d5fdaf26dbaab5937ed36ae4b83a6b1f03b695a3ab46e2c40381.npz": "c4d226730f9332c5889ed7c68c43bebee4eab119510a1299283684f437e7cd6d",
+    "results/G4/collected/results/notebook_01_failed_snapshot/comparisons/20261009T155214Z-f4cf2b09/comparison-0e9b5505/esm/raw/39013c5f2193d5fdaf26dbaab5937ed36ae4b83a6b1f03b695a3ab46e2c40381.npz": "c4d226730f9332c5889ed7c68c43bebee4eab119510a1299283684f437e7cd6d",
+    "results/G4/collected/results/notebook_01/comparisons/20261009T155214Z-f4cf2b09/comparison-0e9b5505/gate_Original_0/precision_manifest.json": "cca76637a83d68516ab3bf7ba1a5495341367d42376047b0c5754d671732584b",
+    "results/G4/collected/results/notebook_01_failed_snapshot/comparisons/20261009T155214Z-f4cf2b09/comparison-0e9b5505/gate_Original_0/precision_manifest.json": "cca76637a83d68516ab3bf7ba1a5495341367d42376047b0c5754d671732584b",
+    "results/G4/collected/results/notebook_01/comparisons/20261009T155214Z-f4cf2b09/comparison-0e9b5505/gate_Original_0/precision.npz": "1580ced8867c9f2a12a2ae4b0a123b280a7b96a9e1aa038a281f2a7f994f3283",
+    "results/G4/collected/results/notebook_01_failed_snapshot/comparisons/20261009T155214Z-f4cf2b09/comparison-0e9b5505/gate_Original_0/precision.npz": "1580ced8867c9f2a12a2ae4b0a123b280a7b96a9e1aa038a281f2a7f994f3283",
+    "results/G4/collected/results/notebook_01/comparisons/20261009T155214Z-f4cf2b09/comparison-0e9b5505/gate_Original_0/raw_predictions.csv": "83e11e56d6f811cab099298f1e417d8d7ca13f55ab91bfb6bde929923ac5bff5",
+    "results/G4/collected/results/notebook_01_failed_snapshot/comparisons/20261009T155214Z-f4cf2b09/comparison-0e9b5505/gate_Original_0/raw_predictions.csv": "83e11e56d6f811cab099298f1e417d8d7ca13f55ab91bfb6bde929923ac5bff5",
+    "results/G4/collected/results/notebook_01/comparisons/20261009T155214Z-f4cf2b09/comparison-0e9b5505/gate_Original_0/input_input_output.csv": "95e77748df88f8fceca360dbcae123d33ed832664f44a51492305826cc01e6b6",
+    "results/G4/collected/results/notebook_01_failed_snapshot/comparisons/20261009T155214Z-f4cf2b09/comparison-0e9b5505/gate_Original_0/input_input_output.csv": "95e77748df88f8fceca360dbcae123d33ed832664f44a51492305826cc01e6b6",
+    "results/G4/collected/results/notebook_01/comparisons/20261009T155214Z-f4cf2b09/comparison-0e9b5505/gate_Original_0/receipt.json": "92ce6d5439a55d6c81d9f6be2e24e7dc6e68b809bf92d4ba098ffc2ad3292815",
+    "results/G4/collected/results/notebook_01_failed_snapshot/comparisons/20261009T155214Z-f4cf2b09/comparison-0e9b5505/gate_Original_0/receipt.json": "92ce6d5439a55d6c81d9f6be2e24e7dc6e68b809bf92d4ba098ffc2ad3292815",
+    "results/G4/collected/results/notebook_01/comparisons/20261009T155214Z-f4cf2b09/comparison-0e9b5505/gate_Original_1/precision_manifest.json": "cca76637a83d68516ab3bf7ba1a5495341367d42376047b0c5754d671732584b",
+    "results/G4/collected/results/notebook_01_failed_snapshot/comparisons/20261009T155214Z-f4cf2b09/comparison-0e9b5505/gate_Original_1/precision_manifest.json": "cca76637a83d68516ab3bf7ba1a5495341367d42376047b0c5754d671732584b",
+    "results/G4/collected/results/notebook_01/comparisons/20261009T155214Z-f4cf2b09/comparison-0e9b5505/gate_Original_1/precision.npz": "1580ced8867c9f2a12a2ae4b0a123b280a7b96a9e1aa038a281f2a7f994f3283",
+    "results/G4/collected/results/notebook_01_failed_snapshot/comparisons/20261009T155214Z-f4cf2b09/comparison-0e9b5505/gate_Original_1/precision.npz": "1580ced8867c9f2a12a2ae4b0a123b280a7b96a9e1aa038a281f2a7f994f3283",
+    "results/G4/collected/results/notebook_01/comparisons/20261009T155214Z-f4cf2b09/comparison-0e9b5505/gate_Original_1/raw_predictions.csv": "83e11e56d6f811cab099298f1e417d8d7ca13f55ab91bfb6bde929923ac5bff5",
+    "results/G4/collected/results/notebook_01_failed_snapshot/comparisons/20261009T155214Z-f4cf2b09/comparison-0e9b5505/gate_Original_1/raw_predictions.csv": "83e11e56d6f811cab099298f1e417d8d7ca13f55ab91bfb6bde929923ac5bff5",
+    "results/G4/collected/results/notebook_01/comparisons/20261009T155214Z-f4cf2b09/comparison-0e9b5505/gate_Original_1/input_input_output.csv": "95e77748df88f8fceca360dbcae123d33ed832664f44a51492305826cc01e6b6",
+    "results/G4/collected/results/notebook_01_failed_snapshot/comparisons/20261009T155214Z-f4cf2b09/comparison-0e9b5505/gate_Original_1/input_input_output.csv": "95e77748df88f8fceca360dbcae123d33ed832664f44a51492305826cc01e6b6",
+    "results/G4/collected/results/notebook_01/comparisons/20261009T155214Z-f4cf2b09/comparison-0e9b5505/gate_Original_1/receipt.json": "7292951925231ee94da84bb77ed89c2c5425bdf5cdafa94b8ef93f01f6be23f5",
+    "results/G4/collected/results/notebook_01_failed_snapshot/comparisons/20261009T155214Z-f4cf2b09/comparison-0e9b5505/gate_Original_1/receipt.json": "7292951925231ee94da84bb77ed89c2c5425bdf5cdafa94b8ef93f01f6be23f5",
+    "results/G4/collected/results/notebook_02/comparisons/20261009T155214Z-f4cf2b09/comparison-0e9b5505/attempts/attempt_0/preservation.json": "19b7ccca2756661d92b4ff1b564bb79938282e0ca21ef50ad17f2087f04880ac",
+    "results/G4/collected/results/notebook_02/comparisons/20261009T155214Z-f4cf2b09/comparison-0e9b5505/attempts/attempt_0/summary.json": "73e8ece49b9685d425e57b771735f55b20f406c168e2c9c4975a00e014d1ebf8",
+    "results/G4/collected/results/notebook_02/comparisons/20261009T155214Z-f4cf2b09/comparison-0e9b5505/attempts/attempt_0/gate_Original.json": "7622e98384fe681b0b57d3ee1f6e71d3fbed63f4be530242be4412b595ce3404",
+    "results/G4/collected/results/notebook_02/comparisons/20261009T155214Z-f4cf2b09/comparison-0e9b5505/attempts/attempt_0/gate_Original_0/precision_manifest.json": "cca76637a83d68516ab3bf7ba1a5495341367d42376047b0c5754d671732584b",
+    "results/G4/collected/results/notebook_02/comparisons/20261009T155214Z-f4cf2b09/comparison-0e9b5505/attempts/attempt_0/gate_Original_0/precision.npz": "1580ced8867c9f2a12a2ae4b0a123b280a7b96a9e1aa038a281f2a7f994f3283",
+    "results/G4/collected/results/notebook_02/comparisons/20261009T155214Z-f4cf2b09/comparison-0e9b5505/attempts/attempt_0/gate_Original_0/raw_predictions.csv": "83e11e56d6f811cab099298f1e417d8d7ca13f55ab91bfb6bde929923ac5bff5",
+    "results/G4/collected/results/notebook_02/comparisons/20261009T155214Z-f4cf2b09/comparison-0e9b5505/attempts/attempt_0/gate_Original_0/input_input_output.csv": "95e77748df88f8fceca360dbcae123d33ed832664f44a51492305826cc01e6b6",
+    "results/G4/collected/results/notebook_02/comparisons/20261009T155214Z-f4cf2b09/comparison-0e9b5505/attempts/attempt_0/gate_Original_0/receipt.json": "92ce6d5439a55d6c81d9f6be2e24e7dc6e68b809bf92d4ba098ffc2ad3292815",
+    "results/G4/collected/results/notebook_02/comparisons/20261009T155214Z-f4cf2b09/comparison-0e9b5505/attempts/attempt_0/gate_Original_1/precision_manifest.json": "cca76637a83d68516ab3bf7ba1a5495341367d42376047b0c5754d671732584b",
+    "results/G4/collected/results/notebook_02/comparisons/20261009T155214Z-f4cf2b09/comparison-0e9b5505/attempts/attempt_0/gate_Original_1/precision.npz": "1580ced8867c9f2a12a2ae4b0a123b280a7b96a9e1aa038a281f2a7f994f3283",
+    "results/G4/collected/results/notebook_02/comparisons/20261009T155214Z-f4cf2b09/comparison-0e9b5505/attempts/attempt_0/gate_Original_1/raw_predictions.csv": "83e11e56d6f811cab099298f1e417d8d7ca13f55ab91bfb6bde929923ac5bff5",
+    "results/G4/collected/results/notebook_02/comparisons/20261009T155214Z-f4cf2b09/comparison-0e9b5505/attempts/attempt_0/gate_Original_1/input_input_output.csv": "95e77748df88f8fceca360dbcae123d33ed832664f44a51492305826cc01e6b6",
+    "results/G4/collected/results/notebook_02/comparisons/20261009T155214Z-f4cf2b09/comparison-0e9b5505/attempts/attempt_0/gate_Original_1/receipt.json": "7292951925231ee94da84bb77ed89c2c5425bdf5cdafa94b8ef93f01f6be23f5",
+    "results/G4/collected/results/repair_rdkit/repair.json": "3538b91c754e16cc68537466948bf1a40b01ddae32d85590fd3bc4aa452d4560",
+    "results/G4/collected/results/repair_rdkit/before.json": "1b8d71b6ebeb39fd1b22bdde614cacd22656df1906e0dd737a81783ab920d711",
+    "results/G4/collected/results/repair_rdkit/after.json": "80c7b838df0e12e73ae89b9bce6a160ec93439fa841d2e4a71d2798dfd91e4a3",
+    "results/G4/collected/results/repair_rdkit/pip.log": "ea46fa302a11bdb87202d4ee946feccf1f1c88e54d6ba955bce5ba6339b7f101",
+    "results/G4/collected/results/repair_rdkit/preserved_esm.json": "2150a2927f916bf540d85f234e7aee87e01454a88513ede254142a50fa14b467",
+    "results/G4/collected/results/notebook_02/comparisons/20261009T155214Z-f4cf2b09/comparison-0e9b5505/esm/raw/39013c5f2193d5fdaf26dbaab5937ed36ae4b83a6b1f03b695a3ab46e2c40381.npz": "c4d226730f9332c5889ed7c68c43bebee4eab119510a1299283684f437e7cd6d",
+    "results/G4/collected/results/notebook_02/comparisons/20261009T155214Z-f4cf2b09/comparison-0e9b5505/esm/records/gate_Optimized_0.json": "049db631de2bad1d01be6b0412a85d751cb12ea9a6832d81e983960f41ce9893",
+    "results/G4/collected/results/notebook_02/comparisons/20261009T155214Z-f4cf2b09/comparison-0e9b5505/esm/records/gate_Optimized_1.json": "1d9b72985f93422f0b05b9d8f457d1f14006e250c1eab14f3a3540b64e5ba289",
+    "results/G4/collected/results/notebook_02/comparisons/20261009T155214Z-f4cf2b09/comparison-0e9b5505/esm/records/gate_Original_0.json": "750611e814172cb7c9bb42bf1f679271790bff3f33a0b1a42e74cc88d964e1ae",
+    "results/G4/collected/results/notebook_02/comparisons/20261009T155214Z-f4cf2b09/comparison-0e9b5505/esm/records/gate_Original_1.json": "b0398cb24cadaf804545592feabca4ce691196753b08e4cb6d61fe7cca38c402",
+    "results/G4/collected/results/notebook_02/comparisons/20261009T155214Z-f4cf2b09/comparison-0e9b5505/esm/records/timed_Optimized_0.json": "144cef5a3d6210c976fd50b6c7952e3906a7b65d8d35bb91871dd6ff23f91f7b",
+    "results/G4/collected/results/notebook_02/comparisons/20261009T155214Z-f4cf2b09/comparison-0e9b5505/esm/records/timed_Optimized_1.json": "a52bb753ebef0c9f73b94cf6d292c2d3c38a4c58f33aec822c987540c0da729f",
+    "results/G4/collected/results/notebook_02/comparisons/20261009T155214Z-f4cf2b09/comparison-0e9b5505/esm/records/timed_Optimized_2.json": "2f15395e24d877a09ae946935817954f44424d8cc3384fe218ceed7b8e77dae4",
+    "results/G4/collected/results/notebook_02/comparisons/20261009T155214Z-f4cf2b09/comparison-0e9b5505/esm/records/timed_Original_0.json": "8d97b56b739ebc945f08856eff2df1543721afa9e842031affc5e92704cbfb7e",
+    "results/G4/collected/results/notebook_02/comparisons/20261009T155214Z-f4cf2b09/comparison-0e9b5505/esm/records/timed_Original_1.json": "ab1c4904ae232e1d2659166f77dd54e677c743f7801a57eea3b2407757428d53",
+    "results/G4/collected/results/notebook_02/comparisons/20261009T155214Z-f4cf2b09/comparison-0e9b5505/esm/records/timed_Original_2.json": "557b9af9ba578eb47af742f4114e3b773dbfcd96d67df29a409cf0998990f237",
+    "results/G4/collected/results/notebook_02/comparisons/20261009T155214Z-f4cf2b09/comparison-0e9b5505/esm/summary.json": "b4fa7bbc4503d698bf379c4ba563320a27df2d4e4c4d2efca67e3074fb986c28",
+    "results/G4/collected/results/notebook_02/comparisons/20261009T155214Z-f4cf2b09/comparison-0e9b5505/input.csv": "4ef1aaffbdd276bef13d8ad56f8efae625973d0fd603e87c37a383873f1a4221",
+    "results/G4/collected/results/notebook_02/comparisons/20261009T155214Z-f4cf2b09/comparison-0e9b5505/features.json": "f5fe124389bc82c28f64cf24b3c37ff134e8e1b0f5e1110f23fd31d0779f8489",
+    "results/G4/collected/results/notebook_02/comparisons/20261009T155214Z-f4cf2b09/input.csv": "d5414c4c5199d3ae9088e81148d520111e6ec6f0f2e5e59aa38c151a7bbeefaa",
+    "results/G4/collected/results/notebook_02/comparisons/20261009T155214Z-f4cf2b09/comparison-0e9b5505/dependency_repair.json": "57747f36012737a4bfe09ca2505569575d3ad7318e26f8021943e91ae06e1e74",
+    "results/G4/boot_identity.json": "afe6d3cfc025ceb562bfa44edf86b2ea39ff322ee9c431839428c2bfbe466d29",
+    "results/G4/session_metadata.json": "253a2f7522e440c13c9c32dcd90b3f56e0e95eacd740d5354bb3480da4bb7507",
+    "results/G4/collected/jobs/notebook_01.json": "d2a9433ae9c471dbbe642aa3b98cacdab21343ecc5374d24df7150f7d8cdbb7f",
+    "results/G4/collected/jobs/repair_rdkit.json": "18b16fedd548c60587d746755b4b45051cdd07e225a24d303ed97d9ec66ac170",
+    "results/G4/collected/jobs/notebook_02.json": "3041af6beef78973bc11242c17759a70715b9649177c4869eecff014fb2e26a9",
+    "results/G4/release_backend_independent.json": "098c5d7a40cea94856657bbb513387be29badd8dc97d30e376a864fc7ad7a20b",
+    "results/G4/collected/results/notebook_02/comparisons/20261009T155214Z-f4cf2b09/notebook_config.json": "cbb1aab4705494235b3b026580d1569c366c536974b5eb4f9452a8546e2214f5",
+    "results/G4/collected/results/notebook_02/setup.json": "15adbb4097229c1f8ef615a66da297029d0750c24feb70d740ec04c595d4b276",
+    "results/G4/collected/results/notebook_02/public_asset_downloads.json": "260625258694e584fd5059e5f62c67dc006709c998c80ac6bce29061bbcdc684",
+    "results/G4/collected/results/notebook_02/comparisons/20261009T155214Z-f4cf2b09/comparison-0e9b5505/gate_Original_0/receipt.json": "30f59800818ccb278d05c652e321d9412f1ef8f50f0ccd21bbcd12bbf8b55c5f",
+    "results/G4/collected/results/notebook_02/comparisons/20261009T155214Z-f4cf2b09/comparison-0e9b5505/gate_Original_0/precision.npz": "1580ced8867c9f2a12a2ae4b0a123b280a7b96a9e1aa038a281f2a7f994f3283",
+    "results/G4/collected/results/notebook_02/comparisons/20261009T155214Z-f4cf2b09/comparison-0e9b5505/gate_Original_0/precision_manifest.json": "cca76637a83d68516ab3bf7ba1a5495341367d42376047b0c5754d671732584b",
+    "results/G4/collected/results/notebook_02/comparisons/20261009T155214Z-f4cf2b09/comparison-0e9b5505/gate_Original_0/input_input_output.csv": "95e77748df88f8fceca360dbcae123d33ed832664f44a51492305826cc01e6b6",
+    "results/G4/collected/results/notebook_02/comparisons/20261009T155214Z-f4cf2b09/comparison-0e9b5505/gate_Original_0/raw_predictions.csv": "83e11e56d6f811cab099298f1e417d8d7ca13f55ab91bfb6bde929923ac5bff5",
+    "results/G4/collected/results/notebook_02/comparisons/20261009T155214Z-f4cf2b09/comparison-0e9b5505/gate_Original_1/receipt.json": "6cc9ab027493eef7c2372529ae99a65139d79939ad06ffc20bec17641e3ef9c4",
+    "results/G4/collected/results/notebook_02/comparisons/20261009T155214Z-f4cf2b09/comparison-0e9b5505/gate_Original_1/precision.npz": "1580ced8867c9f2a12a2ae4b0a123b280a7b96a9e1aa038a281f2a7f994f3283",
+    "results/G4/collected/results/notebook_02/comparisons/20261009T155214Z-f4cf2b09/comparison-0e9b5505/gate_Original_1/precision_manifest.json": "cca76637a83d68516ab3bf7ba1a5495341367d42376047b0c5754d671732584b",
+    "results/G4/collected/results/notebook_02/comparisons/20261009T155214Z-f4cf2b09/comparison-0e9b5505/gate_Original_1/input_input_output.csv": "95e77748df88f8fceca360dbcae123d33ed832664f44a51492305826cc01e6b6",
+    "results/G4/collected/results/notebook_02/comparisons/20261009T155214Z-f4cf2b09/comparison-0e9b5505/gate_Original_1/raw_predictions.csv": "83e11e56d6f811cab099298f1e417d8d7ca13f55ab91bfb6bde929923ac5bff5",
+    "results/G4/collected/results/notebook_02/comparisons/20261009T155214Z-f4cf2b09/comparison-0e9b5505/gate_S_STREAM_K1_0/receipt.json": "f96eb96cb47437b288ac34ed850aa07ad89d16a5a4771cc7f76d48c170b3ad35",
+    "results/G4/collected/results/notebook_02/comparisons/20261009T155214Z-f4cf2b09/comparison-0e9b5505/gate_S_STREAM_K1_0/precision.npz": "1580ced8867c9f2a12a2ae4b0a123b280a7b96a9e1aa038a281f2a7f994f3283",
+    "results/G4/collected/results/notebook_02/comparisons/20261009T155214Z-f4cf2b09/comparison-0e9b5505/gate_S_STREAM_K1_0/precision_manifest.json": "cca76637a83d68516ab3bf7ba1a5495341367d42376047b0c5754d671732584b",
+    "results/G4/collected/results/notebook_02/comparisons/20261009T155214Z-f4cf2b09/comparison-0e9b5505/gate_S_STREAM_K1_0/input_input_output.csv": "95e77748df88f8fceca360dbcae123d33ed832664f44a51492305826cc01e6b6",
+    "results/G4/collected/results/notebook_02/comparisons/20261009T155214Z-f4cf2b09/comparison-0e9b5505/gate_S_STREAM_K1_0/raw_predictions.csv": "83e11e56d6f811cab099298f1e417d8d7ca13f55ab91bfb6bde929923ac5bff5",
+    "results/G4/collected/results/notebook_02/comparisons/20261009T155214Z-f4cf2b09/comparison-0e9b5505/gate_S_STREAM_K1_1/receipt.json": "f8aa8e577f000265872a80b1129ef9ca576e4bee18a55d04059012ec994b1030",
+    "results/G4/collected/results/notebook_02/comparisons/20261009T155214Z-f4cf2b09/comparison-0e9b5505/gate_S_STREAM_K1_1/precision.npz": "1580ced8867c9f2a12a2ae4b0a123b280a7b96a9e1aa038a281f2a7f994f3283",
+    "results/G4/collected/results/notebook_02/comparisons/20261009T155214Z-f4cf2b09/comparison-0e9b5505/gate_S_STREAM_K1_1/precision_manifest.json": "cca76637a83d68516ab3bf7ba1a5495341367d42376047b0c5754d671732584b",
+    "results/G4/collected/results/notebook_02/comparisons/20261009T155214Z-f4cf2b09/comparison-0e9b5505/gate_S_STREAM_K1_1/input_input_output.csv": "95e77748df88f8fceca360dbcae123d33ed832664f44a51492305826cc01e6b6",
+    "results/G4/collected/results/notebook_02/comparisons/20261009T155214Z-f4cf2b09/comparison-0e9b5505/gate_S_STREAM_K1_1/raw_predictions.csv": "83e11e56d6f811cab099298f1e417d8d7ca13f55ab91bfb6bde929923ac5bff5",
+    "results/G4/collected/results/notebook_02/comparisons/20261009T155214Z-f4cf2b09/comparison-0e9b5505/warm_Original_0/receipt.json": "c09e46e8bf437de22a8e71bf2280c9f0667bbe957896826ce67609e3da5ebab4",
+    "results/G4/collected/results/notebook_02/comparisons/20261009T155214Z-f4cf2b09/comparison-0e9b5505/warm_Original_0/precision.npz": "1580ced8867c9f2a12a2ae4b0a123b280a7b96a9e1aa038a281f2a7f994f3283",
+    "results/G4/collected/results/notebook_02/comparisons/20261009T155214Z-f4cf2b09/comparison-0e9b5505/warm_Original_0/precision_manifest.json": "cca76637a83d68516ab3bf7ba1a5495341367d42376047b0c5754d671732584b",
+    "results/G4/collected/results/notebook_02/comparisons/20261009T155214Z-f4cf2b09/comparison-0e9b5505/warm_Original_0/input_input_output.csv": "95e77748df88f8fceca360dbcae123d33ed832664f44a51492305826cc01e6b6",
+    "results/G4/collected/results/notebook_02/comparisons/20261009T155214Z-f4cf2b09/comparison-0e9b5505/warm_Original_0/raw_predictions.csv": "83e11e56d6f811cab099298f1e417d8d7ca13f55ab91bfb6bde929923ac5bff5",
+    "results/G4/collected/results/notebook_02/comparisons/20261009T155214Z-f4cf2b09/comparison-0e9b5505/warm_Original_1/receipt.json": "3a884f0a968a756b064e802174ea7fe54ee49bfd0ad40b4a68796deaf6722b68",
+    "results/G4/collected/results/notebook_02/comparisons/20261009T155214Z-f4cf2b09/comparison-0e9b5505/warm_Original_1/precision.npz": "1580ced8867c9f2a12a2ae4b0a123b280a7b96a9e1aa038a281f2a7f994f3283",
+    "results/G4/collected/results/notebook_02/comparisons/20261009T155214Z-f4cf2b09/comparison-0e9b5505/warm_Original_1/precision_manifest.json": "cca76637a83d68516ab3bf7ba1a5495341367d42376047b0c5754d671732584b",
+    "results/G4/collected/results/notebook_02/comparisons/20261009T155214Z-f4cf2b09/comparison-0e9b5505/warm_Original_1/input_input_output.csv": "95e77748df88f8fceca360dbcae123d33ed832664f44a51492305826cc01e6b6",
+    "results/G4/collected/results/notebook_02/comparisons/20261009T155214Z-f4cf2b09/comparison-0e9b5505/warm_Original_1/raw_predictions.csv": "83e11e56d6f811cab099298f1e417d8d7ca13f55ab91bfb6bde929923ac5bff5",
+    "results/G4/collected/results/notebook_02/comparisons/20261009T155214Z-f4cf2b09/comparison-0e9b5505/warm_Original_2/receipt.json": "35b755ea4842627c71fc6cf45a5ad69f6af2939ced2211f2d7cbd5edd8285bd0",
+    "results/G4/collected/results/notebook_02/comparisons/20261009T155214Z-f4cf2b09/comparison-0e9b5505/warm_Original_2/precision.npz": "1580ced8867c9f2a12a2ae4b0a123b280a7b96a9e1aa038a281f2a7f994f3283",
+    "results/G4/collected/results/notebook_02/comparisons/20261009T155214Z-f4cf2b09/comparison-0e9b5505/warm_Original_2/precision_manifest.json": "cca76637a83d68516ab3bf7ba1a5495341367d42376047b0c5754d671732584b",
+    "results/G4/collected/results/notebook_02/comparisons/20261009T155214Z-f4cf2b09/comparison-0e9b5505/warm_Original_2/input_input_output.csv": "95e77748df88f8fceca360dbcae123d33ed832664f44a51492305826cc01e6b6",
+    "results/G4/collected/results/notebook_02/comparisons/20261009T155214Z-f4cf2b09/comparison-0e9b5505/warm_Original_2/raw_predictions.csv": "83e11e56d6f811cab099298f1e417d8d7ca13f55ab91bfb6bde929923ac5bff5",
+    "results/G4/collected/results/notebook_02/comparisons/20261009T155214Z-f4cf2b09/comparison-0e9b5505/warm_S_STREAM_K1_0/receipt.json": "0efda247e4537543a8a278dc15f23401f29fe50de2d87113545ed455fc324911",
+    "results/G4/collected/results/notebook_02/comparisons/20261009T155214Z-f4cf2b09/comparison-0e9b5505/warm_S_STREAM_K1_0/precision.npz": "1580ced8867c9f2a12a2ae4b0a123b280a7b96a9e1aa038a281f2a7f994f3283",
+    "results/G4/collected/results/notebook_02/comparisons/20261009T155214Z-f4cf2b09/comparison-0e9b5505/warm_S_STREAM_K1_0/precision_manifest.json": "cca76637a83d68516ab3bf7ba1a5495341367d42376047b0c5754d671732584b",
+    "results/G4/collected/results/notebook_02/comparisons/20261009T155214Z-f4cf2b09/comparison-0e9b5505/warm_S_STREAM_K1_0/input_input_output.csv": "95e77748df88f8fceca360dbcae123d33ed832664f44a51492305826cc01e6b6",
+    "results/G4/collected/results/notebook_02/comparisons/20261009T155214Z-f4cf2b09/comparison-0e9b5505/warm_S_STREAM_K1_0/raw_predictions.csv": "83e11e56d6f811cab099298f1e417d8d7ca13f55ab91bfb6bde929923ac5bff5",
+    "results/G4/collected/results/notebook_02/comparisons/20261009T155214Z-f4cf2b09/comparison-0e9b5505/warm_S_STREAM_K1_1/receipt.json": "2a7aadef2d88a0fbcde87b7f86882c79360dc29c5b34a81e322c4f19752a830d",
+    "results/G4/collected/results/notebook_02/comparisons/20261009T155214Z-f4cf2b09/comparison-0e9b5505/warm_S_STREAM_K1_1/precision.npz": "1580ced8867c9f2a12a2ae4b0a123b280a7b96a9e1aa038a281f2a7f994f3283",
+    "results/G4/collected/results/notebook_02/comparisons/20261009T155214Z-f4cf2b09/comparison-0e9b5505/warm_S_STREAM_K1_1/precision_manifest.json": "cca76637a83d68516ab3bf7ba1a5495341367d42376047b0c5754d671732584b",
+    "results/G4/collected/results/notebook_02/comparisons/20261009T155214Z-f4cf2b09/comparison-0e9b5505/warm_S_STREAM_K1_1/input_input_output.csv": "95e77748df88f8fceca360dbcae123d33ed832664f44a51492305826cc01e6b6",
+    "results/G4/collected/results/notebook_02/comparisons/20261009T155214Z-f4cf2b09/comparison-0e9b5505/warm_S_STREAM_K1_1/raw_predictions.csv": "83e11e56d6f811cab099298f1e417d8d7ca13f55ab91bfb6bde929923ac5bff5",
+    "results/G4/collected/results/notebook_02/comparisons/20261009T155214Z-f4cf2b09/comparison-0e9b5505/warm_S_STREAM_K1_2/receipt.json": "ac587cb419d191a5798625c2cfcfc2f90e9f2dfc0c0e070fcdf65a579b4520e0",
+    "results/G4/collected/results/notebook_02/comparisons/20261009T155214Z-f4cf2b09/comparison-0e9b5505/warm_S_STREAM_K1_2/precision.npz": "1580ced8867c9f2a12a2ae4b0a123b280a7b96a9e1aa038a281f2a7f994f3283",
+    "results/G4/collected/results/notebook_02/comparisons/20261009T155214Z-f4cf2b09/comparison-0e9b5505/warm_S_STREAM_K1_2/precision_manifest.json": "cca76637a83d68516ab3bf7ba1a5495341367d42376047b0c5754d671732584b",
+    "results/G4/collected/results/notebook_02/comparisons/20261009T155214Z-f4cf2b09/comparison-0e9b5505/warm_S_STREAM_K1_2/input_input_output.csv": "95e77748df88f8fceca360dbcae123d33ed832664f44a51492305826cc01e6b6",
+    "results/G4/collected/results/notebook_02/comparisons/20261009T155214Z-f4cf2b09/comparison-0e9b5505/warm_S_STREAM_K1_2/raw_predictions.csv": "83e11e56d6f811cab099298f1e417d8d7ca13f55ab91bfb6bde929923ac5bff5",
+    "results/G4/collected/results/notebook_02/comparisons/20261009T155214Z-f4cf2b09/comparison-0e9b5505/gate_Original.json": "7622e98384fe681b0b57d3ee1f6e71d3fbed63f4be530242be4412b595ce3404",
+    "results/G4/collected/results/notebook_02/comparisons/20261009T155214Z-f4cf2b09/comparison-0e9b5505/warm_Original_0/comparison.json": "7622e98384fe681b0b57d3ee1f6e71d3fbed63f4be530242be4412b595ce3404",
+    "results/G4/collected/results/notebook_02/comparisons/20261009T155214Z-f4cf2b09/comparison-0e9b5505/warm_Original_1/comparison.json": "7622e98384fe681b0b57d3ee1f6e71d3fbed63f4be530242be4412b595ce3404",
+    "results/G4/collected/results/notebook_02/comparisons/20261009T155214Z-f4cf2b09/comparison-0e9b5505/warm_Original_2/comparison.json": "7622e98384fe681b0b57d3ee1f6e71d3fbed63f4be530242be4412b595ce3404",
+    "results/G4/collected/results/notebook_02/comparisons/20261009T155214Z-f4cf2b09/comparison-0e9b5505/gate_S_STREAM_K1.json": "31a7c5ba4a05da3733bb15573cc927ae1316353c78126d03ecb11b166a22ceb6",
+    "results/G4/collected/results/notebook_02/comparisons/20261009T155214Z-f4cf2b09/comparison-0e9b5505/warm_S_STREAM_K1_0/comparison.json": "7622e98384fe681b0b57d3ee1f6e71d3fbed63f4be530242be4412b595ce3404",
+    "results/G4/collected/results/notebook_02/comparisons/20261009T155214Z-f4cf2b09/comparison-0e9b5505/warm_S_STREAM_K1_1/comparison.json": "7622e98384fe681b0b57d3ee1f6e71d3fbed63f4be530242be4412b595ce3404",
+    "results/G4/collected/results/notebook_02/comparisons/20261009T155214Z-f4cf2b09/comparison-0e9b5505/warm_S_STREAM_K1_2/comparison.json": "7622e98384fe681b0b57d3ee1f6e71d3fbed63f4be530242be4412b595ce3404",
+    "results/G4/collected/results/notebook_02/comparisons/20261009T155214Z-f4cf2b09/comparison-0e9b5505/stage_comparison.json": "5216035d9e4d3ddbfb06baa904d91f1745dc859cd2fd0b0814ddad1850cbbb5c",
+    "results/G4/collected/results/notebook_02/figures/cell_04_output_02.png": "5aa1e2e80c319773753aaa8ad4d3b92ed0e4ebaf24ac79f65e948cbaba16e6d8",
+    "results/G4/collected/results/notebook_02/comparisons/20261009T155214Z-f4cf2b09/comparison-0e9b5505/stage_comparison.png": "7c4a529809989f9f653bdc7b8c76676df369a3a59ee2eb779962c527e06cfb30",
+    "results/G4/collected/results/notebook_02/comparisons/20261009T155214Z-f4cf2b09/comparison-0e9b5505/stage_comparison.svg": "7511f40b80d17be59145f87a6b5a32b889327f449807a1698b4da0f371bd87bd",
+    "results/G4/collected/results/notebook_02/comparisons/20261009T155214Z-f4cf2b09/comparison-0e9b5505.zip": "a9398dc3735616692caf3692d7b852800d16329ca91da8f76ebbf151e76c3b4c"
   },
-  "checked_utc": "2026-10-09T15:30:29Z",
-  "derived_from_report_sha256": "71cf4c01f8f511d22b5b0f9a701abb493aad2b8f580ca43f9ca8c79f1cfc528d",
+  "checked_utc": "2026-10-09T16:09:59Z",
+  "derived_from_report_sha256": "a881911afb1ec07307729e6b604105b54d259f4f5ce32fd61a5c039f35e06106",
+  "publication_transformations": [
+    "Local checkout prefixes replaced with repository-relative paths.",
+    "Unrelated runtime identifiers replaced with a count."
+  ],
   "runtime_released": true,
-  "results_archive_sha256": "fa98df2ca22344f72a39232f0e2999cdbf0e3b2c9887935469926fea6ffa18f5",
+  "results_archive_sha256": "a9398dc3735616692caf3692d7b852800d16329ca91da8f76ebbf151e76c3b4c",
   "regression_tests": {
-    "colab_tests_on_G4": 54,
+    "colab_tests_on_G4": 75,
     "colab_skipped_on_G4": 0
   },
-  "evaluated_notebook": "https://github.com/Raalmonk/CatPred/blob/68f6bd024340b4cd8bc5725170ba9b84321925d6/colab_compare.ipynb"
+  "evaluated_notebook": "https://github.com/Raalmonk/CatPred/blob/a092f0bb3a128e9828ec3e851a58da343377a48e/colab_compare.ipynb"
 }

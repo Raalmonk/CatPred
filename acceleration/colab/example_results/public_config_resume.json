@@ -1,0 +1,10 @@
+{
+  "commit": "a092f0bb3a128e9828ec3e851a58da343377a48e",
+  "initial_commit": "3a3700f7a3baf1b87d0575c7a1f2f0d5d026f72d",
+  "resume_output": "/content/catpred-comparisons/20261009T155214Z-f4cf2b09/comparison-0e9b5505",
+  "reason": "Mechanical dependency drift restored to accepted RDKit; reuse completed exact ESM evidence",
+  "drive_used": false,
+  "weights_uploaded": false,
+  "scientific_source_uploaded": false,
+  "epoch": 1791561632.221986
+}
