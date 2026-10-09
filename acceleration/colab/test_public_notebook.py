@@ -113,7 +113,42 @@ class PublicNotebookTests(unittest.TestCase):
             command = commands[0]
             self.assertEqual(command[command.index('--input') + 1], input_csv)
             self.assertEqual(command[command.index('--repeats') + 1], '3')
-            self.assertEqual(command[command.index('--k1') + 1], 'auto')
+            self.assertEqual(command[command.index('--variants') + 1], 'best')
+            self.assertNotIn('--k1', command)
+
+    def test_public_notes_and_saved_outputs_show_only_two_versions(self):
+        cells = notebook()['cells']
+        visible = []
+        for cell in cells:
+            if cell['cell_type'] == 'markdown':
+                visible.append(''.join(cell['source']))
+            for output in cell.get('outputs', []):
+                visible.append(''.join(output.get('text', [])))
+                visible.extend(''.join(value) for value in output.get('data', {}).values())
+        text = '\n'.join(visible)
+        self.assertNotIn('S_STREAM', text)
+        self.assertNotIn('K1', text)
+        labels = [''.join(output['text']).strip() for output in cells[5]['outputs']
+                  if output['output_type'] == 'stream']
+        self.assertEqual(labels, ['Original', 'Optimized'])
+        tree = ast.parse(''.join(cells[4]['source']))
+        versions = next(ast.literal_eval(node.value) for node in tree.body
+                        if isinstance(node, ast.Assign) and any(isinstance(t, ast.Name) and t.id == 'VERSIONS' for t in node.targets))
+        self.assertEqual(versions, (('Original', 'Original'), ('S_STREAM_K1', 'Optimized')))
+
+    def test_saved_two_version_table_uses_recorded_measurements(self):
+        cells = notebook()['cells']
+        table = next(''.join(output['data']['text/html']) for output in cells[4]['outputs']
+                     if 'text/html' in output.get('data', {}))
+        rows = [re.findall(r'<td[^>]*>(.*?)</td>', row, re.S)
+                for row in re.findall(r'<tr>.*?</tr>', table, re.S)]
+        rows = [row for row in rows if row]
+        saved = json.loads((ROOT / 'acceleration/colab/example_results/summary.json').read_text())
+        expected = []
+        for internal, label in (('Original', 'Original'), ('S_STREAM_K1', 'Optimized')):
+            result = saved['arms'][internal]
+            expected.append([label, f"{result['median_seconds']:.3f}", f"{result['speedup_vs_original']:.2f}×"])
+        self.assertEqual(rows, expected)
 
     def test_models_use_public_https_sources_without_auth_parameters(self):
         tree = ast.parse((ROOT / 'acceleration/colab/setup_runtime.py').read_text())

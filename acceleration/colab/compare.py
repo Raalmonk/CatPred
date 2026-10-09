@@ -1,4 +1,4 @@
-"""Compare original kcat with S_STREAM on one resident CUDA runtime.
+"""Compare original kcat with the complete optimized path on one CUDA runtime.
 
 Imports and --help are safe on a laptop. Model execution requires Linux CUDA.
 The saved precision arrays, rather than rounded CSVs, decide acceptance.
@@ -316,9 +316,16 @@ class Comparison:
 
 
 def execute(options):
+    variants = getattr(options, 'variants', 'best')
+    if variants not in ('best', 'all'):
+        raise ValueError('Choose best or all variants')
+    candidates = ARMS[1:] if variants == 'all' else ('S_STREAM_K1',)
+    def label(arm):
+        return 'Optimized' if variants == 'best' and arm == 'S_STREAM_K1' else arm
     setup = json.loads(options.setup.read_text())
     options.output.mkdir(parents=True, exist_ok=False)
     summary = {'status': 'RUNNING', 'hardware': setup['hardware'], 'arms': {}, 'repetitions': options.repeats,
+               'variants': variants, 'display_names': {arm: label(arm) for arm in ('Original',) + tuple(candidates)},
                'batch_size': 50, 'ensemble_members': 10, 'numeric': 'FP32', 'input_budget_bytes': BUDGET,
                'input_budget_scope': 'retained device inputs', 'input_sha256': sha(options.input),
                'timing_boundary': 'Warm complete request, synchronized, including preprocessing, all ten models, uncertainty, CSV and request-cache release. Model loading, ESM generation, activation checks and evidence serialization are outside this timer.'}
@@ -337,11 +344,11 @@ def execute(options):
         if not baseline_gate['exact_bits']:
             raise RuntimeError('Original output is not bitwise repeatable; no speedup reported')
         eligible = ['Original']
-        for arm in ARMS[1:]:
+        for arm in candidates:
             if arm == 'S_STREAM_K1' and options.k1 == 'off':
                 summary['arms'][arm] = {'status': 'disabled', 'reason': 'Disabled by notebook setting'}
                 continue
-            if arm == 'S_STREAM_K1' and 'S_STREAM' not in eligible:
+            if variants == 'all' and arm == 'S_STREAM_K1' and 'S_STREAM' not in eligible:
                 summary['arms'][arm] = {'status': 'unavailable', 'reason': 'S_STREAM did not pass'}
                 continue
             try:
@@ -360,7 +367,17 @@ def execute(options):
                 summary['arms'][arm] = {'status': status, 'reason': type(error).__name__ + ': ' + str(error)}
                 worker.reset()
                 worker.torch.cuda.empty_cache()
-                print(arm + ': ' + summary['arms'][arm]['reason'], flush=True)
+                if variants == 'all':
+                    print(arm + ': ' + summary['arms'][arm]['reason'], flush=True)
+        if variants == 'best' and 'S_STREAM_K1' not in eligible:
+            unavailable = summary['arms']['S_STREAM_K1']['status'] in ('unavailable', 'disabled')
+            summary.update(status='UNAVAILABLE' if unavailable else 'REJECTED',
+                           reason='Optimized is unavailable on this runtime.' if unavailable else 'Optimized could not complete validation.',
+                           timings_run=False)
+            summary['arms']['Original'] = {'status': 'verified', 'reason': 'Output repeatability passed; timing requires both versions.'}
+            save(options.output / 'summary.json', summary)
+            print(summary['reason'] + ' No speed comparison was run. Details: ' + str(options.output / 'summary.json'), flush=True)
+            return
         save(options.output / 'summary.json', summary)
         print('Precision gates complete. Measuring warm requests...', flush=True)
         records = []
@@ -370,14 +387,17 @@ def execute(options):
                 gate = compare_precision(reference, record)
                 save(Path(record['precision_path']).parent / 'comparison.json', gate)
                 if not gate['exact_bits']:
-                    raise RuntimeError(arm + ' changed during timing; no speedup reported')
+                    raise RuntimeError(label(arm) + ' changed during timing; no speedup reported')
                 records.append(record)
-                print(f"{arm}, repeat {repetition + 1}: {record['seconds']:.3f} s", flush=True)
+                print(f"{label(arm)}, repeat {repetition + 1}: {record['seconds']:.3f} s", flush=True)
         summary['arms'].update(summarize_times(records, eligible))
         summary['status'] = 'COMPLETE'
         summary['all_reported_timings_passed_exact_bits'] = True
         save(options.output / 'summary.json', summary)
-        print(json.dumps(summary, indent=2), flush=True)
+        if variants == 'all':
+            print(json.dumps(summary, indent=2), flush=True)
+        else:
+            print('Comparison complete. Results: ' + str(options.output), flush=True)
     except BaseException as error:
         summary.update(status='FAILED', error=type(error).__name__ + ': ' + str(error))
         save(options.output / 'summary.json', summary)
@@ -394,6 +414,8 @@ def main():
     parser.add_argument('--output', type=Path, required=True)
     parser.add_argument('--repeats', type=int, choices=range(1, 6), default=3)
     parser.add_argument('--k1', choices=('auto', 'off'), default='auto')
+    parser.add_argument('--variants', choices=('best', 'all'), default='best',
+                        help='Compare Original and Optimized; all also includes the intermediate diagnostic path')
     options = parser.parse_args()
     for name in ('setup', 'input', 'output'):
         setattr(options, name, getattr(options, name).resolve())

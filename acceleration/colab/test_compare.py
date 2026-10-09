@@ -113,7 +113,7 @@ class SchedulingTests(unittest.TestCase):
         orders = [comparison.order_for_round(comparison.ARMS, n) for n in range(3)]
         self.assertTrue(all(set(column) == set(comparison.ARMS) for column in zip(*orders)))
 
-    def execute_fake(self, mismatch=None, unavailable_k1=False):
+    def execute_fake(self, mismatch=None, unavailable_k1=False, variants='all', k1='auto'):
         events = []
         class UnsupportedKinetics(RuntimeError):
             pass
@@ -144,13 +144,15 @@ class SchedulingTests(unittest.TestCase):
             root = Path(folder)
             setup, source, output = root / 'setup.json', root / 'input.csv', root / 'result'
             setup.write_text(json.dumps({'hardware': {}}));source.write_text('SMILES,sequence\nC,A\n')
-            options = types.SimpleNamespace(setup=setup, input=source, output=output, repeats=2, k1='auto')
+            options = types.SimpleNamespace(setup=setup, input=source, output=output, repeats=2, k1=k1, variants=variants)
             error = None
-            with patch.object(comparison, 'Comparison', Worker), patch.object(comparison, 'compare_precision', verify), contextlib.redirect_stdout(io.StringIO()):
+            console = io.StringIO()
+            with patch.object(comparison, 'Comparison', Worker), patch.object(comparison, 'compare_precision', verify), contextlib.redirect_stdout(console):
                 try:
                     comparison.execute(options)
                 except RuntimeError as failure:
                     error = failure
+            self.last_stdout = console.getvalue()
             return events, json.loads((output / 'summary.json').read_text()), error
 
     def test_all_gates_precede_timing(self):
@@ -182,6 +184,65 @@ class SchedulingTests(unittest.TestCase):
         self.assertEqual(summary['arms']['S_STREAM_K1']['status'], 'unavailable')
         self.assertNotIn('speedup_vs_original', summary['arms']['S_STREAM_K1'])
         self.assertFalse(any(event[:3] == ('run', 'S_STREAM_K1', 'warm') for event in events))
+
+
+    def test_best_success_runs_only_original_and_complete_optimized(self):
+        events, summary, error = self.execute_fake(variants='best')
+        self.assertIsNone(error)
+        self.assertEqual(summary['status'], 'COMPLETE')
+        self.assertEqual(summary['variants'], 'best')
+        self.assertEqual(set(summary['arms']), {'Original', 'S_STREAM_K1'})
+        runs = [event for event in events if event[0] == 'run']
+        self.assertFalse(any(event[1] == 'S_STREAM' for event in runs))
+        first_warm = next(i for i, event in enumerate(events) if len(event) > 2 and event[2] == 'warm')
+        self.assertEqual([event[1:] for event in events[:first_warm] if event[0] == 'verify'],
+                         [('Original', 'gate', 1), ('S_STREAM_K1', 'gate', 0), ('S_STREAM_K1', 'gate', 1)])
+        self.assertEqual([event[1] for event in runs if event[2] == 'warm'],
+                         ['Original', 'S_STREAM_K1', 'S_STREAM_K1', 'Original'])
+        self.assertEqual(summary['display_names'], {'Original': 'Original', 'S_STREAM_K1': 'Optimized'})
+        self.assertIn('Optimized, repeat 1:', self.last_stdout)
+        self.assertNotIn('S_STREAM', self.last_stdout)
+
+    def test_best_unavailable_does_not_fall_back_or_time_original(self):
+        events, summary, error = self.execute_fake(variants='best', unavailable_k1=True)
+        self.assertIsNone(error)
+        self.assertEqual(summary['status'], 'UNAVAILABLE')
+        self.assertEqual(summary['arms']['S_STREAM_K1']['status'], 'unavailable')
+        self.assertEqual(summary['arms']['Original']['status'], 'verified')
+        self.assertFalse(summary['timings_run'])
+        self.assertFalse(any(len(event) > 2 and (event[1] == 'S_STREAM' or event[2] == 'warm') for event in events))
+        self.assertFalse(any('speedup_vs_original' in arm for arm in summary['arms'].values()))
+        self.assertNotIn('S_STREAM', self.last_stdout)
+
+    def test_best_candidate_discrepancy_stops_before_any_timing(self):
+        events, summary, error = self.execute_fake(('S_STREAM_K1', 'gate', 0), variants='best')
+        self.assertIsNone(error)
+        self.assertEqual(summary['status'], 'REJECTED')
+        self.assertEqual(summary['arms']['S_STREAM_K1']['status'], 'rejected')
+        self.assertFalse(any(len(event) > 2 and event[2] == 'warm' for event in events))
+        self.assertFalse(any('median_seconds' in arm for arm in summary['arms'].values()))
+
+    def test_best_original_discrepancy_stops_before_candidate(self):
+        events, summary, error = self.execute_fake(('Original', 'gate', 1), variants='best')
+        self.assertIsNotNone(error)
+        self.assertEqual(summary['status'], 'FAILED')
+        self.assertEqual({event[1] for event in events if event[0] == 'run'}, {'Original'})
+        self.assertFalse(any(len(event) > 2 and event[2] == 'warm' for event in events))
+
+    def test_best_disabled_candidate_cannot_be_labeled_optimized(self):
+        events, summary, error = self.execute_fake(variants='best', k1='off')
+        self.assertIsNone(error)
+        self.assertEqual(summary['status'], 'UNAVAILABLE')
+        self.assertEqual(summary['arms']['S_STREAM_K1']['status'], 'disabled')
+        self.assertFalse(any(len(event) > 2 and event[2] == 'warm' for event in events))
+        self.assertFalse(any('speedup_vs_original' in arm for arm in summary['arms'].values()))
+
+    def test_cli_defaults_to_best_and_all_remains_explicit(self):
+        base = ['compare.py', '--setup', 'setup.json', '--input', 'input.csv', '--output', 'result']
+        for extra, expected in (([], 'best'), (['--variants', 'all'], 'all')):
+            with patch.object(sys, 'argv', base + extra), patch.object(comparison, 'execute') as execute:
+                comparison.main()
+                self.assertEqual(execute.call_args[0][0].variants, expected)
 
 
 class NotebookTests(unittest.TestCase):
