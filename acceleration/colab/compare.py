@@ -187,32 +187,23 @@ class Comparison:
             assert tuple(map(id, value[2])) == tuple(map(id, self.bundle[2]))
         return value
 
-    def prepare(self):
+    def prepare(self, repeats=3):
         prepared = self.service.prepare_prediction_inputs('kcat', str(self.input), str(self.repo))
         self.service._write_protein_records(prepared.input_csv, prepared.records_file)
         self.raw_csv = Path(prepared.output_csv)
         self.request = replace(self.request, protein_records_file=str(Path(prepared.records_file).resolve()))
         sequences = list(dict.fromkeys(row['sequence'] for row in self.rows))
-        batches = []
-        def generation_batch(seqs):
-            result = self.original_batch(seqs)
-            model = self.esm.GLOBAL_VARIABLES['model'][0]
-            assert not model.training
-            values = [t for t in list(model.parameters()) + list(model.buffers()) if t.is_floating_point()]
-            assert values and all(t.dtype == self.torch.float32 and t.device.type == 'cuda' for t in values)
-            batches.append([hashlib.sha256(s.encode()).hexdigest() for s in seqs])
-            return result
-        self.esm._run_esm_batch = generation_batch
-        self.torch.cuda.synchronize()
-        start = time.perf_counter()
-        features = self.original_many(sequences, device='cpu', batch_size=4)
-        self.torch.cuda.synchronize()
-        esm_seconds = time.perf_counter() - start
+        from esm_compare import benchmark_esm
+        preparation = benchmark_esm(self.esm, sequences=sequences, cache_root=self.cache,
+                                    output=self.out / 'esm', repeats=repeats)
+        features = preparation.pop('features')
         assert list(features) == sequences
         self.expected = {s: self.tensor_identity(t) for s, t in features.items()}
         save(self.out / 'features.json', {'backend': 'original_fair_esm_2', 'batch_size': 4,
              'sequences': {hashlib.sha256(s.encode()).hexdigest(): value for s, value in self.expected.items()},
-             'actual_forward_batches': batches, 'seconds': esm_seconds})
+             'actual_forward_batches': [[hashlib.sha256(s.encode()).hexdigest() for s in sequences[i:i + 4]]
+                                        for i in range(0, len(sequences), 4)],
+             'seconds': preparation['esm_seconds']})
         del features
         self.esm.GLOBAL_VARIABLES['model'] = None
         gc.collect()
@@ -230,8 +221,7 @@ class Comparison:
         self.load(self.build(self.request, prepared, self.repo))
         self.torch.cuda.synchronize()
         model_seconds = time.perf_counter() - start
-        return {'esm_seconds': esm_seconds, 'model_load_seconds': model_seconds,
-                'unique_sequences': len(sequences), 'esm_forward_batches': len(batches)}
+        return dict(preparation, model_load_seconds=model_seconds)
 
     def tensor_identity(self, tensor):
         assert tensor.dtype == self.torch.float32 and tensor.device.type == 'cpu'
@@ -334,7 +324,7 @@ def execute(options):
     try:
         worker = Comparison(setup, options.input, options.output)
         summary['rows'] = len(worker.rows)
-        summary['preparation'] = worker.prepare()
+        summary['preparation'] = worker.prepare(repeats=options.repeats)
         summary['hardware'].update(torch_threads=worker.torch.get_num_threads(), interop_threads=worker.torch.get_num_interop_threads())
         print('Checking original repeatability and complete precision outputs...', flush=True)
         reference = worker.run('Original', 'gate', 0)

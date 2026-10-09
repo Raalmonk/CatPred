@@ -73,7 +73,7 @@ class PublicNotebookTests(unittest.TestCase):
     def test_default_public_example_keeps_all_rows_in_order(self):
         source = code_cells()[1]
         self.assertIn('input_mode = "Bundled example"', source)
-        self.assertIn('repeat_count = 8', source)
+        self.assertIn('repeat_count = 1', source)
         with (ROOT / 'demo/batch_kcat.csv').open(newline='') as stream:
             original_rows = list(csv.DictReader(stream))
         self.assertEqual(len(original_rows), 14)
@@ -88,8 +88,8 @@ class PublicNotebookTests(unittest.TestCase):
                 exec(compile(source, '<public-input>', 'exec'), values)
             with values['INPUT_CSV'].open(newline='') as stream:
                 actual = list(csv.DictReader(stream))
-            self.assertEqual(actual, original_rows * 8)
-            self.assertEqual(len(actual), 112)
+            self.assertEqual(actual, original_rows)
+            self.assertEqual(len(actual), 14)
 
     def test_incomplete_comparison_never_displays_timing_table(self):
         source = code_cells()[2]
@@ -125,7 +125,8 @@ class PublicNotebookTests(unittest.TestCase):
                 visible.append(''.join(cell['source']))
             for output in cell.get('outputs', []):
                 visible.append(''.join(output.get('text', [])))
-                visible.extend(''.join(value) for value in output.get('data', {}).values())
+                visible.extend(''.join(value) for mime, value in output.get('data', {}).items()
+                               if mime in {'text/plain', 'text/html', 'text/markdown'})
         text = '\n'.join(visible)
         self.assertNotIn('S_STREAM', text)
         self.assertNotIn('K1', text)
@@ -145,10 +146,18 @@ class PublicNotebookTests(unittest.TestCase):
                 for row in re.findall(r'<tr>.*?</tr>', table, re.S)]
         rows = [row for row in rows if row]
         saved = json.loads((ROOT / 'acceleration/colab/example_results/summary.json').read_text())
-        expected = []
-        for internal, label in (('Original', 'Original'), ('S_STREAM_K1', 'Optimized')):
-            result = saved['arms'][internal]
-            expected.append([label, f"{result['median_seconds']:.3f}", f"{result['speedup_vs_original']:.2f}×"])
+        if 'esm_comparison' in saved['preparation']:
+            esm = saved['preparation']['esm_comparison']['arms']
+            stages = [('ESM features + loading', esm['Original'], esm['Optimized']),
+                      ('Prediction (models loaded)', saved['arms']['Original'], saved['arms']['S_STREAM_K1'])]
+            expected = [[label, f"{a['median_seconds']:.3f}", f"{b['median_seconds']:.3f}",
+                         f"{a['median_seconds'] / b['median_seconds']:.2f}×"] for label, a, b in stages]
+            self.assertTrue(any('image/png' in o.get('data', {}) for o in cells[4]['outputs']))
+        else:
+            # Prior executed outputs stay intact until the new run is published.
+            expected = [[label, f"{saved['arms'][arm]['median_seconds']:.3f}",
+                         f"{saved['arms'][arm]['speedup_vs_original']:.2f}×"]
+                        for arm, label in (('Original', 'Original'), ('S_STREAM_K1', 'Optimized'))]
         self.assertEqual(rows, expected)
 
     def test_models_use_public_https_sources_without_auth_parameters(self):
@@ -278,7 +287,7 @@ class CheckoutUpdateTests(unittest.TestCase):
         self.assertEqual(values['ACTUAL_COMMIT'], self.old_head)
         self.assertEqual(commands, [])
 
-    def test_repeat_controls_stay_hidden_with_same_defaults(self):
+    def test_repeat_controls_stay_hidden_with_one_input_copy(self):
         values = {}
         for source in code_cells():
             self.assertFalse(any('repeat' in line.lower() and '#@param' in line for line in source.splitlines()))
@@ -287,7 +296,7 @@ class CheckoutUpdateTests(unittest.TestCase):
                     for target in node.targets:
                         if isinstance(target, ast.Name) and target.id in {'repeat_count', 'repeats'}:
                             values[target.id] = ast.literal_eval(node.value)
-        self.assertEqual(values, {'repeat_count': 8, 'repeats': 3})
+        self.assertEqual(values, {'repeat_count': 1, 'repeats': 3})
 
 
 if __name__ == '__main__':

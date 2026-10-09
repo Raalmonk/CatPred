@@ -123,7 +123,7 @@ class SchedulingTests(unittest.TestCase):
                 self.rows = [{}, {}]
                 self.torch = types.SimpleNamespace(get_num_threads=lambda: 24, get_num_interop_threads=lambda: 1,
                                                   cuda=types.SimpleNamespace(empty_cache=lambda: None))
-            def prepare(self):
+            def prepare(self, repeats=3):
                 return {'esm_seconds': 1, 'model_load_seconds': 1, 'unique_sequences': 1}
             def run(self, arm, phase, repetition):
                 events.append(('run', arm, phase, repetition))
@@ -256,7 +256,7 @@ class NotebookTests(unittest.TestCase):
                 compile(''.join(cell['source']), f'<cell-{i}>', 'exec')
         source = ''.join(notebook['cells'][3]['source'])
         self.assertIn('input_mode = "Bundled example"', source)
-        self.assertIn('repeat_count = 8', source)
+        self.assertIn('repeat_count = 1', source)
         self.assertTrue((HERE.parents[1] / 'demo/batch_kcat.csv').is_file())
 
     def test_gitless_override_requires_verified_manifest(self):
