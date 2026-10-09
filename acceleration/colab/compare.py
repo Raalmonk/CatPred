@@ -105,17 +105,118 @@ def summarize_times(records, arms):
             for arm, times in values.items()}
 
 
+def verify_saved_esm(output, sequences, repeats):
+    """Read and independently verify every retained ESM tensor and sample."""
+    import numpy as np
+    root = (Path(output) / 'esm').resolve()
+    summary = json.loads((root / 'summary.json').read_text())
+    if (summary.get('status') != 'COMPLETE' or summary.get('all_exact_bits') is not True
+            or summary['repetitions'] != repeats):
+        raise ValueError('Resume requires a complete exact ESM comparison with unchanged repeats')
+    expected = [('Original', 'gate', 0), ('Original', 'gate', 1), ('Optimized', 'gate', 0), ('Optimized', 'gate', 1)]
+    for repetition in range(repeats):
+        expected.extend((arm, 'timed', repetition) for arm in order_for_round(('Original', 'Optimized'), repetition))
+    expected_names = [f'records/{phase}_{arm}_{repetition}.json' for arm, phase, repetition in expected]
+    if summary['records'] != expected_names or summary['canonical_record'] != expected_names[0]:
+        raise ValueError('Retained ESM sample schedule changed')
+    batches = [[hashlib.sha256(s.encode()).hexdigest() for s in sequences[i:i + 4]]
+               for i in range(0, len(sequences), 4)]
+    reference, canonical, cached = None, None, {}
+    for name, (arm, phase, repetition) in zip(expected_names, expected):
+        record = json.loads((root / name).read_text())
+        if ((record['arm'], record['phase'], record['repetition']) != (arm, phase, repetition)
+                or record['status'] != 'PASSED' or record['exact_bits'] is not True
+                or [b['sequences'] for b in record['actual_forward_batches']] != batches
+                or not record['restoration'] or not all(record['restoration'].values())):
+            raise ValueError('Invalid retained ESM receipt: ' + name)
+        if arm == 'Optimized':
+            backend = record['protein_backend']
+            loaders = backend['loader_receipts']
+            if (not backend.get('closed') or not backend.get('model_released')
+                    or len(loaders) != 1 or loaders[0]['used_mode'] != 'meta'
+                    or not loaders[0]['engaged'] or loaders[0]['fallback_reason'] is not None
+                    or any(b['decision']['used_mode'] != 'off' for b in record['actual_forward_batches'])):
+                raise ValueError('Retained optimized ESM receipt did not use the accepted loader')
+        evidence = record['features']
+        archive = (root / evidence['archive']).resolve()
+        if not archive.is_relative_to(root) or sha(archive) != evidence['archive_sha256']:
+            raise ValueError('Retained ESM archive hash mismatch')
+        key = evidence['archive_sha256']
+        if key not in cached:
+            with np.load(archive, allow_pickle=False) as arrays:
+                cached[key] = {k: arrays[k].copy() for k in arrays.files}
+        arrays = cached[key]
+        entries = evidence['entries']
+        if len(entries) != len(sequences) or set(arrays) != {e['key'] for e in entries}:
+            raise ValueError('Retained ESM archive tensor inventory changed')
+        content = hashlib.sha256(json.dumps(entries, sort_keys=True).encode()).hexdigest()
+        if content != evidence['content_sha256']:
+            raise ValueError('Retained ESM content identity changed')
+        current = {}
+        for sequence, entry in zip(sequences, entries):
+            array = arrays[entry['key']]
+            raw = array.tobytes(order='C')
+            if (entry['sequence_sha256'] != hashlib.sha256(sequence.encode()).hexdigest()
+                    or array.dtype != np.dtype('float32') or array.dtype.str != entry['dtype']
+                    or list(array.shape) != entry['shape'] or array.shape != (min(len(sequence), 2047), 1280)
+                    or not np.isfinite(array).all() or len(raw) != entry['bytes']
+                    or hashlib.sha256(raw).hexdigest() != entry['sha256']):
+                raise ValueError('Retained ESM raw tensor mismatch')
+            current[sequence] = raw
+        if reference is None:
+            reference, canonical = current, record
+        elif current != reference:
+            raise ValueError('Retained ESM samples are not bitwise identical')
+    for arm in ('Original', 'Optimized'):
+        seconds = [json.loads((root / name).read_text())['seconds']
+                   for name, spec in zip(expected_names, expected) if spec[0] == arm and spec[1] == 'timed']
+        if (summary['arms'][arm]['seconds'] != seconds
+                or summary['arms'][arm]['median_seconds'] != statistics.median(seconds)):
+            raise ValueError('Retained ESM timing summary changed')
+    return summary, canonical, reference
+
+
+def archive_attempt(output):
+    """Preserve only the superseded kinetics attempt; keep all ESM work in place."""
+    output = Path(output)
+    attempts = output / 'attempts'
+    attempts.mkdir(exist_ok=True)
+    index = 0
+    while (attempts / f'attempt_{index}').exists():
+        index += 1
+    destination = attempts / f'attempt_{index}'
+    destination.mkdir()
+    moved = []
+    for path in sorted(output.iterdir()):
+        if path.name == 'summary.json' or path.name.startswith(('gate_', 'warm_')):
+            path.rename(destination / path.name)
+            moved.append(path.name)
+    save(destination / 'preservation.json', {'files': moved, 'esm_retained_in_place': True,
+                                           'utc': time.strftime('%Y-%m-%dT%H:%M:%SZ', time.gmtime())})
+    return str(destination.relative_to(output))
+
+
 class Comparison:
-    def __init__(self, setup, source, output):
+    def __init__(self, setup, source, output, resume=False):
         if sys.platform != 'linux':
             raise RuntimeError('Run models on the Linux G4, not the Mac')
         self.setup, self.out = setup, Path(output)
         self.root = Path(setup['work_root']).resolve()
         self.repo = self.root / 'CatPred'
         self.cache = self.out / 'feature_cache'
-        self.cache.mkdir()
+        self.cache.mkdir(exist_ok=resume)
+        self.resume_verified_esm = resume
         self.input = self.out / 'input.csv'
-        self.rows = prepare_input(source, self.input)
+        if resume:
+            check = self.out / 'input.resume-check.csv'
+            try:
+                self.rows = prepare_input(source, check)
+                if sha(check) != sha(self.input):
+                    raise ValueError('Normalized input changed; cannot retain ESM work')
+            finally:
+                check.unlink(missing_ok=True)
+        else:
+            self.rows = prepare_input(source, self.input)
         self.row_ids = [r['row_id'] for r in self.rows]
         os.environ.update(CATPRED_CACHE_PATH=str(self.cache), TORCH_HOME=setup['torch_home'],
                           CATPRED_PREDICTION_CACHE_SIZE='0', CATPRED_MODEL_CACHE_SIZE='2',
@@ -193,9 +294,12 @@ class Comparison:
         self.raw_csv = Path(prepared.output_csv)
         self.request = replace(self.request, protein_records_file=str(Path(prepared.records_file).resolve()))
         sequences = list(dict.fromkeys(row['sequence'] for row in self.rows))
-        from esm_compare import benchmark_esm
-        preparation = benchmark_esm(self.esm, sequences=sequences, cache_root=self.cache,
-                                    output=self.out / 'esm', repeats=repeats)
+        if self.resume_verified_esm:
+            preparation = self.resume_esm(sequences, repeats)
+        else:
+            from esm_compare import benchmark_esm
+            preparation = benchmark_esm(self.esm, sequences=sequences, cache_root=self.cache,
+                                        output=self.out / 'esm', repeats=repeats)
         features = preparation.pop('features')
         assert list(features) == sequences
         self.expected = {s: self.tensor_identity(t) for s, t in features.items()}
@@ -222,6 +326,37 @@ class Comparison:
         self.torch.cuda.synchronize()
         model_seconds = time.perf_counter() - start
         return dict(preparation, model_load_seconds=model_seconds)
+
+    def resume_esm(self, sequences, repeats):
+        from catpred.data import cache_utils
+        from catpred_accel._identity import package_sources, software
+        summary, canonical, reference = verify_saved_esm(self.out, sequences, repeats)
+        context = summary['preflight']['context']
+        current = software(self.torch)
+        previous = context['software']
+        if (summary['caller_sha256'] != sha(self.esm.__file__)
+                or context['implementation_sources'] != package_sources()):
+            raise ValueError('Frozen ESM caller or acceleration library changed')
+        if {k: v for k, v in previous.items() if k != 'rdkit'} != {k: v for k, v in current.items() if k != 'rdkit'}:
+            raise ValueError('Resume permits the recorded RDKit repair only')
+        features = {}
+        for sequence in sequences:
+            tensor = cache_utils.load_cache_value(path=self.esm.ESM_CACHE_PATH, cache_key=sequence,
+                                                  purpose='verified retained ESM feature', map_location='cpu')
+            if (tensor is None or tensor.dtype != self.torch.float32 or tensor.device.type != 'cpu'
+                    or tuple(tensor.shape) != (min(len(sequence), 2047), 1280)
+                    or not self.torch.isfinite(tensor).all().item()
+                    or tensor.numpy().tobytes(order='C') != reference[sequence]):
+                raise ValueError('Retained canonical ESM cache differs from saved raw features')
+            features[sequence] = tensor
+        self.dependency_repair = {'utc': time.strftime('%Y-%m-%dT%H:%M:%SZ', time.gmtime()),
+                                 'dependency': 'rdkit', 'old_version': previous['rdkit'], 'new_version': current['rdkit'],
+                                 'esm_retained': True, 'esm_regenerated': False,
+                                 'esm_software': previous, 'kinetics_software': current,
+                                 'esm_summary_sha256': sha(self.out / 'esm/summary.json'),
+                                 'canonical_cache_raw_bits_verified': True}
+        return {'features': features, 'esm_seconds': canonical['seconds'], 'unique_sequences': len(sequences),
+                'esm_forward_batches': len(canonical['actual_forward_batches']), 'esm_comparison': summary}
 
     def tensor_identity(self, tensor):
         assert tensor.dtype == self.torch.float32 and tensor.device.type == 'cpu'
@@ -313,18 +448,33 @@ def execute(options):
     def label(arm):
         return 'Optimized' if variants == 'best' and arm == 'S_STREAM_K1' else arm
     setup = json.loads(options.setup.read_text())
-    options.output.mkdir(parents=True, exist_ok=False)
+    resume = getattr(options, 'resume_verified_esm', False)
+    if resume:
+        prior = json.loads((options.output / 'summary.json').read_text())
+        if prior['input_sha256'] != sha(options.input):
+            raise ValueError('Input changed; cannot resume verified ESM')
+        if prior.get('status') == 'COMPLETE':
+            raise ValueError('Completed comparisons do not need repair')
+    else:
+        options.output.mkdir(parents=True, exist_ok=False)
     summary = {'status': 'RUNNING', 'hardware': setup['hardware'], 'arms': {}, 'repetitions': options.repeats,
                'variants': variants, 'display_names': {arm: label(arm) for arm in ('Original',) + tuple(candidates)},
                'batch_size': 50, 'ensemble_members': 10, 'numeric': 'FP32', 'input_budget_bytes': BUDGET,
                'input_budget_scope': 'retained device inputs', 'input_sha256': sha(options.input),
                'timing_boundary': 'Warm complete request, synchronized, including preprocessing, all ten models, uncertainty, CSV and request-cache release. Model loading, ESM generation, activation checks and evidence serialization are outside this timer.'}
-    save(options.output / 'summary.json', summary)
+    if not resume:
+        save(options.output / 'summary.json', summary)
     worker = None
+    archived = False
     try:
-        worker = Comparison(setup, options.input, options.output)
+        worker = Comparison(setup, options.input, options.output, resume=True) if resume else Comparison(setup, options.input, options.output)
         summary['rows'] = len(worker.rows)
         summary['preparation'] = worker.prepare(repeats=options.repeats)
+        if resume:
+            attempt = archive_attempt(options.output)
+            archived = True
+            summary['dependency_repair'] = dict(worker.dependency_repair, previous_attempt=attempt)
+            save(options.output / 'dependency_repair.json', summary['dependency_repair'])
         summary['hardware'].update(torch_threads=worker.torch.get_num_threads(), interop_threads=worker.torch.get_num_interop_threads())
         print('Checking original repeatability and complete precision outputs...', flush=True)
         reference = worker.run('Original', 'gate', 0)
@@ -390,7 +540,9 @@ def execute(options):
             print('Comparison complete. Results: ' + str(options.output), flush=True)
     except BaseException as error:
         summary.update(status='FAILED', error=type(error).__name__ + ': ' + str(error))
-        save(options.output / 'summary.json', summary)
+        target = (options.output / ('resume_failed_' + str(time.time_ns()) + '.json')
+                  if resume and not archived else options.output / 'summary.json')
+        save(target, summary)
         raise
     finally:
         if worker is not None:
@@ -404,6 +556,8 @@ def main():
     parser.add_argument('--output', type=Path, required=True)
     parser.add_argument('--repeats', type=int, choices=range(1, 6), default=3)
     parser.add_argument('--k1', choices=('auto', 'off'), default='auto')
+    parser.add_argument('--resume-verified-esm', action='store_true',
+                        help='Repair kinetics execution in the same output, preserving verified ESM samples')
     parser.add_argument('--variants', choices=('best', 'all'), default='best',
                         help='Compare Original and Optimized; all also includes the intermediate diagnostic path')
     options = parser.parse_args()

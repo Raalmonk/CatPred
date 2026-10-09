@@ -261,7 +261,8 @@ def install(work_root, details):
     constraint = work_root / 'preserve_system_torch.txt'
     constraint.write_text('torch==' + TORCH_VERSION + '\n')
     command([python, '-m', 'pip', 'install', '--disable-pip-version-check', '-c', constraint,
-             '-e', work_root / 'CatPred', 'fair-esm==2.0.0', 'rotary-embedding-torch==0.9.1',
+             '-e', work_root / 'CatPred', 'numpy==2.1.3', 'pandas==2.2.3', 'rdkit==2026.3.6',
+             'fair-esm==2.0.0', 'rotary-embedding-torch==0.9.1',
              'ipdb==0.13.13', 'maturin==1.9.6', 'pytest', 'psutil'], log)
     wheels = list((work_root / 'accepted_distribution').glob('*.whl'))
     if len(wheels) != 1 or 'cp313-cp313' not in wheels[0].name:

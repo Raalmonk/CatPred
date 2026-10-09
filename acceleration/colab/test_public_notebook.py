@@ -80,7 +80,7 @@ class PublicNotebookTests(unittest.TestCase):
         with tempfile.TemporaryDirectory() as folder:
             def local_path(value):
                 return Path(folder) / 'runs' if value == '/content/catpred-comparisons' else Path(value)
-            values = dict(Path=local_path, CHECKOUT=ROOT, SETUP={'status': 'ready'}, ACTUAL_COMMIT=None,
+            values = dict(Path=local_path, os=types.SimpleNamespace(environ={}), CHECKOUT=ROOT, SETUP={'status': 'ready'}, ACTUAL_COMMIT=None,
                           CHECKOUT_STATUS='', SOURCE_MANIFEST_SHA=None, SOURCE_BUNDLE_SHA=None,
                           SETUP_PATH=Path(folder) / 'setup.json', datetime=datetime, timezone=timezone,
                           uuid=uuid, json=json, hashlib=hashlib)

@@ -245,6 +245,98 @@ class SchedulingTests(unittest.TestCase):
                 self.assertEqual(execute.call_args[0][0].variants, expected)
 
 
+@unittest.skipIf(np is None, 'NumPy is not installed')
+class ResumeTests(unittest.TestCase):
+    def fixture(self, root):
+        esm = root / 'esm'
+        (esm / 'raw').mkdir(parents=True)
+        (esm / 'records').mkdir()
+        sequence = 'AA'
+        array = np.zeros((2, 1280), dtype=np.float32)
+        archive = esm / 'raw/features.npz'
+        np.savez_compressed(archive, feature_0000=array)
+        entries = [{'key': 'feature_0000', 'sequence_sha256': hashlib.sha256(sequence.encode()).hexdigest(),
+                    'shape': [2, 1280], 'dtype': array.dtype.str, 'bytes': array.nbytes,
+                    'sha256': hashlib.sha256(array.tobytes()).hexdigest()}]
+        evidence = {'archive': 'raw/features.npz', 'archive_sha256': comparison.sha(archive),
+                    'content_sha256': hashlib.sha256(json.dumps(entries, sort_keys=True).encode()).hexdigest(),
+                    'entries': entries}
+        expected = [('Original', 'gate', 0), ('Original', 'gate', 1), ('Optimized', 'gate', 0), ('Optimized', 'gate', 1)]
+        for repeat in range(3):
+            expected.extend((arm, 'timed', repeat) for arm in comparison.order_for_round(('Original', 'Optimized'), repeat))
+        names = []
+        for arm, phase, repeat in expected:
+            name = f'records/{phase}_{arm}_{repeat}.json'
+            names.append(name)
+            record = {'arm': arm, 'phase': phase, 'repetition': repeat, 'status': 'PASSED', 'exact_bits': True,
+                      'seconds': 2. if arm == 'Original' else 1., 'features': evidence,
+                      'restoration': {'functions_restored': True, 'model_released': True},
+                      'actual_forward_batches': [{'sequences': [entries[0]['sequence_sha256']], 'decision': {'used_mode': 'off'}}],
+                      'protein_backend': {'closed': True, 'model_released': True, 'loader_receipts': [
+                          {'used_mode': 'meta', 'engaged': True, 'fallback_reason': None}]}}
+            (esm / name).write_text(json.dumps(record))
+        summary = {'status': 'COMPLETE', 'all_exact_bits': True, 'repetitions': 3, 'records': names,
+                   'canonical_record': names[0], 'arms': {'Original': {'seconds': [2.] * 3, 'median_seconds': 2.},
+                                                        'Optimized': {'seconds': [1.] * 3, 'median_seconds': 1.}}}
+        (esm / 'summary.json').write_text(json.dumps(summary))
+        return esm
+
+    def test_verifies_all_retained_esm_samples_without_generation(self):
+        with tempfile.TemporaryDirectory() as folder:
+            root = Path(folder)
+            self.fixture(root)
+            summary, canonical, reference = comparison.verify_saved_esm(root, ['AA'], 3)
+            self.assertEqual(len(summary['records']), 10)
+            self.assertEqual(canonical['arm'], 'Original')
+            self.assertEqual(reference['AA'], bytes(2 * 1280 * 4))
+
+    def test_changed_raw_receipt_order_or_times_reject_resume(self):
+        for change in ('raw', 'order', 'times', 'fallback'):
+            with self.subTest(change=change), tempfile.TemporaryDirectory() as folder:
+                root = Path(folder)
+                esm = self.fixture(root)
+                if change == 'raw':
+                    (esm / 'raw/features.npz').write_bytes(b'corrupt')
+                elif change == 'fallback':
+                    path = esm / 'records/gate_Optimized_0.json'
+                    value = json.loads(path.read_text())
+                    value['protein_backend']['loader_receipts'][0]['used_mode'] = 'off'
+                    path.write_text(json.dumps(value))
+                else:
+                    path = esm / 'summary.json'
+                    value = json.loads(path.read_text())
+                    if change == 'order':
+                        value['records'].reverse()
+                    else:
+                        value['arms']['Original']['median_seconds'] = 0.1
+                    path.write_text(json.dumps(value))
+                with self.assertRaises(ValueError):
+                    comparison.verify_saved_esm(root, ['AA'], 3)
+
+    def test_archive_preserves_old_attempt_and_keeps_esm_in_place(self):
+        with tempfile.TemporaryDirectory() as folder:
+            root = Path(folder)
+            esm = self.fixture(root)
+            retained = comparison.sha(esm / 'summary.json')
+            (root / 'summary.json').write_text('{"status":"UNAVAILABLE"}')
+            gate = root / 'gate_Original_0'
+            gate.mkdir()
+            (gate / 'raw.npz').write_bytes(b'old raw evidence')
+            (root / 'input.csv').write_text('input preserved')
+            attempt = root / comparison.archive_attempt(root)
+            self.assertEqual((attempt / 'gate_Original_0/raw.npz').read_bytes(), b'old raw evidence')
+            self.assertEqual(comparison.sha(esm / 'summary.json'), retained)
+            self.assertTrue((root / 'input.csv').is_file())
+            self.assertFalse(gate.exists())
+            self.assertEqual(comparison.archive_attempt(root), 'attempts/attempt_1')
+
+    def test_resume_cli_is_explicit(self):
+        args = ['compare.py', '--setup', 'setup.json', '--input', 'input.csv', '--output', 'result', '--resume-verified-esm']
+        with patch.object(sys, 'argv', args), patch.object(comparison, 'execute') as execute:
+            comparison.main()
+            self.assertTrue(execute.call_args[0][0].resume_verified_esm)
+
+
 class NotebookTests(unittest.TestCase):
     def notebook(self):
         return json.loads((HERE.parents[1] / 'colab_compare.ipynb').read_text())
