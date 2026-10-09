@@ -8,6 +8,7 @@ import io
 import json
 from pathlib import Path
 import re
+import subprocess
 import tempfile
 import types
 import unittest
@@ -173,6 +174,120 @@ class PublicNotebookTests(unittest.TestCase):
             if cell['cell_type'] == 'code':
                 compile(''.join(cell['source']), f'<cell-{index}>', 'exec')
                 self.assertEqual(cell['metadata'].get('cellView'), 'form')
+
+
+class CheckoutUpdateTests(unittest.TestCase):
+    """Exercise the actual setup-cell Git branch using local temporary remotes."""
+    def setUp(self):
+        self.temp = tempfile.TemporaryDirectory(prefix='catpred-checkout-test-')
+        self.addCleanup(self.temp.cleanup)
+        self.root = Path(self.temp.name)
+        self.origin = self.root / 'origin.git'
+        self.seed = self.root / 'seed'
+        self.checkout = self.root / 'CatPred-compare'
+        self.git('init', '--bare', '--initial-branch=g4-inference', self.origin)
+        self.git('init', '--initial-branch=g4-inference', self.seed)
+        (self.seed / 'core.txt').write_text('old source')
+        self.git('add', 'core.txt', cwd=self.seed)
+        self.git('commit', '-m', 'Initial fixture', cwd=self.seed)
+        self.git('remote', 'add', 'origin', self.origin, cwd=self.seed)
+        self.git('push', '-u', 'origin', 'g4-inference', cwd=self.seed)
+        self.git('clone', '--branch', 'g4-inference', self.origin, self.checkout)
+        self.old_head = self.git('rev-parse', 'HEAD', cwd=self.checkout).strip()
+        (self.seed / 'core.txt').write_text('current source')
+        self.git('add', 'core.txt', cwd=self.seed)
+        self.git('commit', '-m', 'Update fixture', cwd=self.seed)
+        self.git('push', 'origin', 'g4-inference', cwd=self.seed)
+        self.new_head = self.git('rev-parse', 'HEAD', cwd=self.seed).strip()
+
+    def git(self, *args, cwd=None):
+        result = subprocess.run(['git', '-c', 'user.name=Notebook Test', '-c', 'user.email=notebook@example.test',
+                                 *[str(arg) for arg in args]], cwd=cwd, capture_output=True, text=True)
+        self.assertEqual(result.returncode, 0, result.stderr)
+        return result.stdout
+
+    def run_checkout_branch(self, *, override=None, commit=''):
+        setup_tree = ast.parse(code_cells()[0])
+        branch = next(node for node in setup_tree.body if isinstance(node, ast.If)
+                      and 'CHECKOUT.exists() and' in ast.unparse(node.test))
+        commands = []
+        def run_logged(arguments, log_path):
+            commands.append([str(arg) for arg in arguments])
+            result = subprocess.run([str(arg) for arg in arguments], capture_output=True, text=True)
+            self.assertEqual(result.returncode, 0, result.stderr)
+        work_root = self.root / 'existing-runtime'
+        values = dict(CHECKOUT=self.checkout, checkout_override=override, commit=commit,
+                      REPOSITORY=str(self.origin), Path=Path, subprocess=subprocess,
+                      uuid=uuid, run_logged=run_logged, SETUP_LOG=self.root / 'setup.log',
+                      WORK_ROOT=work_root)
+        exec(compile(ast.Module(body=[branch], type_ignores=[]), '<checkout-update>', 'exec'), values)
+        self.assertEqual(values['WORK_ROOT'], work_root)
+        return values, commands
+
+    def test_clean_default_checkout_fast_forwards_in_place(self):
+        values, commands = self.run_checkout_branch()
+        self.assertEqual(values['CHECKOUT'], self.checkout)
+        self.assertEqual(values['ACTUAL_COMMIT'], self.new_head)
+        self.assertEqual((self.checkout / 'core.txt').read_text(), 'current source')
+        self.assertTrue(any('fetch' in command for command in commands))
+        self.assertTrue(any('merge' in command and '--ff-only' in command for command in commands))
+        self.assertFalse(any('clone' in command for command in commands))
+
+    def test_dirty_checkout_keeps_edits_and_uses_a_new_sibling(self):
+        (self.checkout / 'core.txt').write_text('user edit')
+        (self.checkout / 'notes.txt').write_text('user notes')
+        values, commands = self.run_checkout_branch()
+        self.assertNotEqual(values['CHECKOUT'], self.checkout)
+        self.assertEqual(values['CHECKOUT'].parent, self.checkout.parent)
+        self.assertEqual(values['ACTUAL_COMMIT'], self.new_head)
+        self.assertEqual(self.git('rev-parse', 'HEAD', cwd=self.checkout).strip(), self.old_head)
+        self.assertEqual((self.checkout / 'core.txt').read_text(), 'user edit')
+        self.assertEqual((self.checkout / 'notes.txt').read_text(), 'user notes')
+        self.assertFalse(any('fetch' in command or 'merge' in command for command in commands))
+
+    def test_detached_checkout_is_preserved(self):
+        self.git('checkout', '--detach', 'HEAD', cwd=self.checkout)
+        values, commands = self.run_checkout_branch()
+        self.assertNotEqual(values['CHECKOUT'], self.checkout)
+        self.assertEqual(values['ACTUAL_COMMIT'], self.new_head)
+        self.assertEqual(self.git('rev-parse', 'HEAD', cwd=self.checkout).strip(), self.old_head)
+        self.assertEqual(self.git('rev-parse', '--abbrev-ref', 'HEAD', cwd=self.checkout).strip(), 'HEAD')
+        self.assertFalse(any('merge' in command for command in commands))
+
+    def test_diverged_checkout_keeps_local_commit(self):
+        (self.checkout / 'local.txt').write_text('local work')
+        self.git('add', 'local.txt', cwd=self.checkout)
+        self.git('commit', '-m', 'Local change', cwd=self.checkout)
+        local_head = self.git('rev-parse', 'HEAD', cwd=self.checkout).strip()
+        values, commands = self.run_checkout_branch()
+        self.assertNotEqual(values['CHECKOUT'], self.checkout)
+        self.assertEqual(values['ACTUAL_COMMIT'], self.new_head)
+        self.assertEqual(self.git('rev-parse', 'HEAD', cwd=self.checkout).strip(), local_head)
+        self.assertEqual((self.checkout / 'local.txt').read_text(), 'local work')
+        self.assertFalse(any('merge' in command for command in commands))
+
+    def test_explicit_override_keeps_its_original_checkout(self):
+        values, commands = self.run_checkout_branch(override=str(self.checkout))
+        self.assertEqual(values['CHECKOUT'], self.checkout)
+        self.assertEqual(values['ACTUAL_COMMIT'], self.old_head)
+        self.assertEqual(commands, [])
+
+    def test_explicit_pin_keeps_its_original_checkout(self):
+        values, commands = self.run_checkout_branch(commit=self.old_head)
+        self.assertEqual(values['CHECKOUT'], self.checkout)
+        self.assertEqual(values['ACTUAL_COMMIT'], self.old_head)
+        self.assertEqual(commands, [])
+
+    def test_repeat_controls_stay_hidden_with_same_defaults(self):
+        values = {}
+        for source in code_cells():
+            self.assertFalse(any('repeat' in line.lower() and '#@param' in line for line in source.splitlines()))
+            for node in ast.parse(source).body:
+                if isinstance(node, ast.Assign):
+                    for target in node.targets:
+                        if isinstance(target, ast.Name) and target.id in {'repeat_count', 'repeats'}:
+                            values[target.id] = ast.literal_eval(node.value)
+        self.assertEqual(values, {'repeat_count': 8, 'repeats': 3})
 
 
 if __name__ == '__main__':
