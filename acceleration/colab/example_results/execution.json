@@ -1,45 +1,45 @@
 {
   "status": "complete",
-  "started_epoch": 1791556027.5860004,
-  "source_notebook_sha256": "d7f58c2943f569826496af1c98f84c497ef78a0759508cefe7ef81e5a912133e",
+  "started_epoch": 1791559616.2957735,
+  "source_notebook_sha256": "b1ffad6bbf45fbcb48ddde5be465f24861924ce6d0c1e8fd063b486100311ca0",
   "source_cell_sha256": [
-    "10b7c846df2fed0ecf5410f9748a67d3d1822376f3e018898ffe60cedff59883",
-    "5c36e0ac3609bdb95ff9077a41b8bebd1cff3145ec3f85639d92cae80e303621",
-    "8095167a63ee07fadb355e3b841db7bde828d7d7245aa943f572bfcb89618386",
-    "eccb2747c88aa5d7bbc54b56ee2b4b634a7e108f0b77f527b0593af8c6267aaa",
-    "8f208285e10802327d1571bd5d132c336021d051e2b9f693365e64bf26111709",
-    "8878d0fe07418edb124c7363be09866d18a243ac7d1153acc652a885d0bfdeb3",
-    "c1620b5da6f7dca8a7e1bfad2128663687443ee21fd7b12e0bfe56b32e18582a"
+    "584e3b381e851a791c5771930afc670057ffc88b78628ce728ffb07a3374fc1d",
+    "710296b9534f3cab19e8520edd96ab3c7a3e1ff38db282c52eca6a6a52aa18b2",
+    "969431e1e291bb05c45b08e32922b4120c809baad375ffe35ecbcdb3d520aad7",
+    "6acdbaf574c7ddc6ab6a67223423f3b586a42dc862210357cdd1c74fb67c1ca7",
+    "a544a5629cd14527168d754d14f48a24329a58a94f3bf21eeec3fe441476e598",
+    "caa29220442f945891b1f7571936c11f9bfbb7ad4b85ac3a40cbb257d9643dd7",
+    "193306af235f0cc18853ba7b296c37b30229bc88ba6b494d0e7a23638f2c98eb"
   ],
   "cell_events": [
     {
       "event": "executed",
       "cell_index": 1,
-      "epoch": 1791556053.2430108
+      "epoch": 1791559661.6655593
     },
     {
       "event": "executed",
       "cell_index": 3,
-      "epoch": 1791556053.2533314
+      "epoch": 1791559661.677157
     },
     {
       "event": "executed",
       "cell_index": 4,
-      "epoch": 1791556076.4464371
+      "epoch": 1791559682.954528
     },
     {
       "event": "executed",
       "cell_index": 5,
-      "epoch": 1791556076.4654653
+      "epoch": 1791559682.97098
     },
     {
       "event": "executed",
       "cell_index": 6,
-      "epoch": 1791556076.507509
+      "epoch": 1791559683.0015345
     }
   ],
   "code_cells_executed": 5,
   "source_cells_unchanged": true,
-  "finished_epoch": 1791556076.7211258,
-  "seconds": 49.135125398635864
+  "finished_epoch": 1791559683.2146049,
+  "seconds": 66.91883134841919
 }

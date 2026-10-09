@@ -1,0 +1,99 @@
+{
+  "evidence": "Default cache directories absent before execution; public URLs from executed setup source; downloaded cache files hashed after execution",
+  "drive_used": false,
+  "assets": [
+    {
+      "url": "https://catpred.s3.us-east-1.amazonaws.com/pretrained_production.tar.gz",
+      "path": "/content/catpred-weights-cache/downloads/pretrained_production.tar.gz",
+      "bytes": 205005799,
+      "sha256": "1e33f30359526aab11ec666320283a0a05e98da7ee45e7d965ab2f1d616042ff",
+      "complete_file": true
+    },
+    {
+      "url": "https://dl.fbaipublicfiles.com/fair-esm/models/esm2_t33_650M_UR50D.pt",
+      "path": "/content/catpred-weights-cache/esm/esm2_t33_650M_UR50D.pt",
+      "bytes": 2604537549,
+      "sha256": "ea9d0522b335a8778dea6535a65301f10208dece28cd5865482b0b1fc446168c",
+      "complete_file": true
+    },
+    {
+      "url": "https://dl.fbaipublicfiles.com/fair-esm/regression/esm2_t33_650M_UR50D-contact-regression.pt",
+      "path": "/content/catpred-weights-cache/esm/esm2_t33_650M_UR50D-contact-regression.pt",
+      "bytes": 3687,
+      "sha256": "8ffe6edbd4173dc8d45c2cd5cb27d43aad77ec26b4c768200c58ae1f96693575",
+      "complete_file": true
+    }
+  ],
+  "extracted_models": [
+    {
+      "path": "data/pretrained/production/kcat/fold_0/model_0/model.pt",
+      "bytes": 9975234,
+      "sha256": "feec68cf1884bb14fc80abf8477aa3fc10f76781984ab2849e17e90bbfe8da90",
+      "actual_sha256": "feec68cf1884bb14fc80abf8477aa3fc10f76781984ab2849e17e90bbfe8da90",
+      "verified": true
+    },
+    {
+      "path": "data/pretrained/production/kcat/fold_0/model_1/model.pt",
+      "bytes": 9975234,
+      "sha256": "7a64419ddae49bf4db1b0c45ea0eb08321bab6eaf28a882e3d588bfe844bc382",
+      "actual_sha256": "7a64419ddae49bf4db1b0c45ea0eb08321bab6eaf28a882e3d588bfe844bc382",
+      "verified": true
+    },
+    {
+      "path": "data/pretrained/production/kcat/fold_0/model_2/model.pt",
+      "bytes": 9975234,
+      "sha256": "d1ef752bfee6a51b8967fcf9fb65e45f9b976eff84e1f80f3995342ea0b15253",
+      "actual_sha256": "d1ef752bfee6a51b8967fcf9fb65e45f9b976eff84e1f80f3995342ea0b15253",
+      "verified": true
+    },
+    {
+      "path": "data/pretrained/production/kcat/fold_0/model_3/model.pt",
+      "bytes": 9975234,
+      "sha256": "3cfd167fd099612e62392ef66cf5cf06032594eac9c126f98d3fc9c30009f173",
+      "actual_sha256": "3cfd167fd099612e62392ef66cf5cf06032594eac9c126f98d3fc9c30009f173",
+      "verified": true
+    },
+    {
+      "path": "data/pretrained/production/kcat/fold_0/model_4/model.pt",
+      "bytes": 9975234,
+      "sha256": "016500999499369fc9519bc005f080eea19c80bcdc55323855c4a5ab3eba6320",
+      "actual_sha256": "016500999499369fc9519bc005f080eea19c80bcdc55323855c4a5ab3eba6320",
+      "verified": true
+    },
+    {
+      "path": "data/pretrained/production/kcat/fold_0/model_5/model.pt",
+      "bytes": 9975234,
+      "sha256": "2574f3b25dbd333ab956ebe8b6bc1c8eed600a36a45d33bc914be7344f19eae0",
+      "actual_sha256": "2574f3b25dbd333ab956ebe8b6bc1c8eed600a36a45d33bc914be7344f19eae0",
+      "verified": true
+    },
+    {
+      "path": "data/pretrained/production/kcat/fold_0/model_6/model.pt",
+      "bytes": 9975234,
+      "sha256": "ea23beb23fa40ba83666bd56aa48f0812bb9cc1ee31c3b5a927a3d0b7bab9690",
+      "actual_sha256": "ea23beb23fa40ba83666bd56aa48f0812bb9cc1ee31c3b5a927a3d0b7bab9690",
+      "verified": true
+    },
+    {
+      "path": "data/pretrained/production/kcat/fold_0/model_7/model.pt",
+      "bytes": 9975234,
+      "sha256": "af3f35fa25a18e9e409f8c3b9ee85341ce690fba985e277e956f421d487358c3",
+      "actual_sha256": "af3f35fa25a18e9e409f8c3b9ee85341ce690fba985e277e956f421d487358c3",
+      "verified": true
+    },
+    {
+      "path": "data/pretrained/production/kcat/fold_0/model_8/model.pt",
+      "bytes": 9975234,
+      "sha256": "cdc03244885e6f094bbbaefca260f23447cf1667e0f8df269405ac12518821f7",
+      "actual_sha256": "cdc03244885e6f094bbbaefca260f23447cf1667e0f8df269405ac12518821f7",
+      "verified": true
+    },
+    {
+      "path": "data/pretrained/production/kcat/fold_0/model_9/model.pt",
+      "bytes": 9975234,
+      "sha256": "e1639c49680a472a5655f34fb483ea4cb14da90b0e484d015e0de5874d30ea35",
+      "actual_sha256": "e1639c49680a472a5655f34fb483ea4cb14da90b0e484d015e0de5874d30ea35",
+      "verified": true
+    }
+  ]
+}

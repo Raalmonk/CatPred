@@ -20,39 +20,33 @@
   "arms": {
     "Original": {
       "status": "passed",
-      "median_seconds": 1.2023120179999296,
+      "median_seconds": 1.2032567040000117,
       "seconds": [
-        1.2099519480000254,
-        1.2023120179999296,
-        1.199770588999968
+        1.1972301650000077,
+        1.2125620260000005,
+        1.2032567040000117
       ],
       "speedup_vs_original": 1.0,
-      "prediction_path": "comparison-eb2fcc42/warm_Original_2/input_input_output.csv"
-    },
-    "S_STREAM": {
-      "status": "passed",
-      "median_seconds": 0.4280184860000418,
-      "seconds": [
-        0.4312069860000065,
-        0.4280184860000418,
-        0.426565766000067
-      ],
-      "speedup_vs_original": 2.809018902982177,
-      "prediction_path": "comparison-eb2fcc42/warm_S_STREAM_2/input_input_output.csv"
+      "prediction_path": "/content/catpred-comparisons/20261009T152741Z-fa2bc78e/comparison-40a12f5b/warm_Original_2/input_input_output.csv"
     },
     "S_STREAM_K1": {
       "status": "passed",
-      "median_seconds": 0.39264259699996273,
+      "median_seconds": 0.39327292100000477,
       "seconds": [
-        0.39155808600003184,
-        0.39284539599998425,
-        0.39264259699996273
+        0.3935378010000363,
+        0.3929541210000025,
+        0.39327292100000477
       ],
-      "speedup_vs_original": 3.0621028568636013,
-      "prediction_path": "comparison-eb2fcc42/warm_S_STREAM_K1_2/input_input_output.csv"
+      "speedup_vs_original": 3.059597139158221,
+      "prediction_path": "/content/catpred-comparisons/20261009T152741Z-fa2bc78e/comparison-40a12f5b/warm_S_STREAM_K1_2/input_input_output.csv"
     }
   },
   "repetitions": 3,
+  "variants": "best",
+  "display_names": {
+    "Original": "Original",
+    "S_STREAM_K1": "Optimized"
+  },
   "batch_size": 50,
   "ensemble_members": 10,
   "numeric": "FP32",
@@ -62,12 +56,10 @@
   "timing_boundary": "Warm complete request, synchronized, including preprocessing, all ten models, uncertainty, CSV and request-cache release. Model loading, ESM generation, activation checks and evidence serialization are outside this timer.",
   "rows": 112,
   "preparation": {
-    "esm_seconds": 3.8485903819999976,
-    "model_load_seconds": 0.33557117800000924,
+    "esm_seconds": 3.786504894000018,
+    "model_load_seconds": 0.3283551080000393,
     "unique_sequences": 9,
     "esm_forward_batches": 3
   },
-  "all_reported_timings_passed_exact_bits": true,
-  "results_archive": "results.zip",
-  "results_archive_sha256": "e59609624a2302bed085707179d02fad38bda673029794e1bf07f44470833693"
+  "all_reported_timings_passed_exact_bits": true
 }

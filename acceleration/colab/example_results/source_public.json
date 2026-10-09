@@ -1,0 +1,35 @@
+{
+  "commit": "68f6bd024340b4cd8bc5725170ba9b84321925d6",
+  "expected_commit": "68f6bd024340b4cd8bc5725170ba9b84321925d6",
+  "origin": "https://github.com/Raalmonk/CatPred.git",
+  "status": "",
+  "no_token_authentication": true,
+  "default_git_clone_path": true,
+  "files": [
+    {
+      "path": "colab_compare.ipynb",
+      "bytes": 54751,
+      "sha256": "b1ffad6bbf45fbcb48ddde5be465f24861924ce6d0c1e8fd063b486100311ca0"
+    },
+    {
+      "path": "acceleration/colab/compare.py",
+      "bytes": 23195,
+      "sha256": "64d9ef8fff9fa72ed9af1ebc0e1bef8e2d06da10cdbc1f51edf60ba9b2c51755"
+    },
+    {
+      "path": "acceleration/colab/setup_runtime.py",
+      "bytes": 14718,
+      "sha256": "0fe677a556d4f626708423b811969aa70f088180d3b9629645ec04ffd10972f5"
+    },
+    {
+      "path": "demo/batch_kcat.csv",
+      "bytes": 14254,
+      "sha256": "1af5f730363fe6aad93ff46ec0aaac259625a48df57af7b0a7a1d85a16563607"
+    },
+    {
+      "path": "acceleration/SOURCE_MANIFEST.json",
+      "bytes": 29685,
+      "sha256": "1aa89006755b0645a0adc055cc72e3bf4542a9a46f58bd4689d964f06ed53eba"
+    }
+  ]
+}
