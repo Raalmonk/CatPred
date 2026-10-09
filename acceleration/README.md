@@ -1,5 +1,7 @@
 # Inference runtime
 
+The [comparison notebook](../colab_compare.ipynb) includes saved G4 outputs from the public CatPred example. It checks full-precision outputs before timing both paths and caches weights in Google Drive.
+
 `catpred_accel` packages the accepted S_STREAM input reuse and ESM loading changes. `catpred_kinetics` adds the optional K1 attention change. Both retain the original ten-model FP32 prediction path.
 
 Install into an existing CatPred environment with its dependencies:
@@ -33,4 +35,5 @@ Run the tests without loading models:
 
 ```sh
 python acceleration/check.py
+python -m unittest discover -s acceleration/colab -p 'test_*.py'
 ```

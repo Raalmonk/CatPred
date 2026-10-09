@@ -1,0 +1,73 @@
+{
+  "status": "COMPLETE",
+  "hardware": {
+    "python": "3.13.15 (main, Aug  6 2026, 11:06:22) [GCC 13.3.0]",
+    "torch": "2.11.0+cu130",
+    "torch_file": "/usr/local/lib/python3.13/dist-packages/torch/__init__.py",
+    "cuda": "13.0",
+    "cudnn": 92700,
+    "gpu": "NVIDIA RTX PRO 6000 Blackwell Server Edition",
+    "gpu_bytes": 101974081536,
+    "capability": [
+      12,
+      0
+    ],
+    "cpu_count": 48,
+    "cpu": "Architecture:                            x86_64\nCPU op-mode(s):                          32-bit, 64-bit\nAddress sizes:                           52 bits physical, 57 bits virtual\nByte Order:                              Little Endian\nCPU(s):                                  48\nOn-line CPU(s) list:                     0-47\nVendor ID:                               AuthenticAMD\nModel name:                              AMD EPYC 9B45\nCPU family:                              26\nModel:                                   2\nThread(s) per core:                      2\nCore(s) per socket:                      24\nSocket(s):                               1\nStepping:                                1\nBogoMIPS:                                5400.00\nFlags:                                   fpu vme de pse tsc msr pae mce cx8 apic sep mtrr pge mca cmov pat pse36 clflush mmx fxsr sse sse2 ht syscall nx mmxext fxsr_opt pdpe1gb rdtscp lm constant_tsc rep_good nopl nonstop_tsc cpuid extd_apicid aperfmperf tsc_known_freq pni pclmulqdq monitor ssse3 fma cx16 pcid sse4_1 sse4_2 x2apic movbe popcnt aes xsave avx f16c rdrand hypervisor lahf_lm cmp_legacy cr8_legacy abm sse4a misalignsse 3dnowprefetch osvw topoext mwaitx ssbd ibrs ibpb stibp ibrs_enhanced vmmcall fsgsbase tsc_adjust bmi1 avx2 smep bmi2 invpcid avx512f avx512dq rdseed adx smap avx512ifma clflushopt clwb avx512cd sha_ni avx512bw avx512vl xsaveopt xsavec xgetbv1 xsaves avx_vnni avx512_bf16 clzero xsaveerptr wbnoinvd arat avx512vbmi umip pku ospke avx512_vbmi2 gfni vaes vpclmulqdq avx512_vnni avx512_bitalg avx512_vpopcntdq rdpid movdiri movdir64b avx512_vp2intersect flush_l1d\nHypervisor vendor:                       KVM\nVirtualization type:                     full\nL1d cache:                               1.1 MiB (24 instances)\nL1i cache:                               768 KiB (24 instances)\nL2 cache:                                24 MiB (24 instances)\nL3 cache:                                96 MiB (3 instances)\nNUMA node(s):                            1\nNUMA node0 CPU(s):                       0-47\nVulnerability Gather data sampling:      Not affected\nVulnerability Indirect target selection: Not affected\nVulnerability Itlb multihit:             Not affected\nVulnerability L1tf:                      Not affected\nVulnerability Mds:                       Not affected\nVulnerability Meltdown:                  Not affected\nVulnerability Mmio stale data:           Not affected\nVulnerability Reg file data sampling:    Not affected\nVulnerability Retbleed:                  Not affected\nVulnerability Spec rstack overflow:      Not affected\nVulnerability Spec store bypass:         Vulnerable\nVulnerability Spectre v1:                Vulnerable: __user pointer sanitization and usercopy barriers only; no swapgs barriers\nVulnerability Spectre v2:                Vulnerable; IBPB: disabled; STIBP: disabled; PBRSB-eIBRS: Not affected; BHI: Not affected\nVulnerability Srbds:                     Not affected\nVulnerability Tsa:                       Not affected\nVulnerability Tsx async abort:           Not affected\nVulnerability Vmscape:                   Not affected\n",
+    "torch_threads": 24,
+    "interop_threads": 1
+  },
+  "arms": {
+    "Original": {
+      "status": "passed",
+      "median_seconds": 1.2023120179999296,
+      "seconds": [
+        1.2099519480000254,
+        1.2023120179999296,
+        1.199770588999968
+      ],
+      "speedup_vs_original": 1.0,
+      "prediction_path": "comparison-eb2fcc42/warm_Original_2/input_input_output.csv"
+    },
+    "S_STREAM": {
+      "status": "passed",
+      "median_seconds": 0.4280184860000418,
+      "seconds": [
+        0.4312069860000065,
+        0.4280184860000418,
+        0.426565766000067
+      ],
+      "speedup_vs_original": 2.809018902982177,
+      "prediction_path": "comparison-eb2fcc42/warm_S_STREAM_2/input_input_output.csv"
+    },
+    "S_STREAM_K1": {
+      "status": "passed",
+      "median_seconds": 0.39264259699996273,
+      "seconds": [
+        0.39155808600003184,
+        0.39284539599998425,
+        0.39264259699996273
+      ],
+      "speedup_vs_original": 3.0621028568636013,
+      "prediction_path": "comparison-eb2fcc42/warm_S_STREAM_K1_2/input_input_output.csv"
+    }
+  },
+  "repetitions": 3,
+  "batch_size": 50,
+  "ensemble_members": 10,
+  "numeric": "FP32",
+  "input_budget_bytes": 2147483648,
+  "input_budget_scope": "retained device inputs",
+  "input_sha256": "7c78c6cc8cd0ba619ee382104b6fa23f79d3aa905201960c2ecd41133f6ecbd0",
+  "timing_boundary": "Warm complete request, synchronized, including preprocessing, all ten models, uncertainty, CSV and request-cache release. Model loading, ESM generation, activation checks and evidence serialization are outside this timer.",
+  "rows": 112,
+  "preparation": {
+    "esm_seconds": 3.8485903819999976,
+    "model_load_seconds": 0.33557117800000924,
+    "unique_sequences": 9,
+    "esm_forward_batches": 3
+  },
+  "all_reported_timings_passed_exact_bits": true,
+  "results_archive": "results.zip",
+  "results_archive_sha256": "e59609624a2302bed085707179d02fad38bda673029794e1bf07f44470833693"
+}

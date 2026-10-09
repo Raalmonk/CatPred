@@ -1,0 +1,351 @@
+{
+  "status": "PASS",
+  "scope": "Saved public 112-row G4 notebook execution and raw gate/warm arrays",
+  "notebook": {
+    "code_cells": [
+      1,
+      3,
+      4,
+      5,
+      6
+    ],
+    "execution_counts": [
+      1,
+      2,
+      3,
+      4,
+      5
+    ],
+    "published_code_equals_executed": true,
+    "allowed_later_markdown_changes": [
+      0,
+      2
+    ],
+    "original_source_notebook_sha256": "d7f58c2943f569826496af1c98f84c497ef78a0759508cefe7ef81e5a912133e"
+  },
+  "execution_path": "results/G4/collected/results/notebook_01/execution.json",
+  "source_snapshot_id": "32306fb1b8ec5d07ef1f6c71e641ffd9965143d0b1d71bb10a888b96b6939bc4",
+  "original_public_source_unchanged": true,
+  "input": {
+    "rows": 112,
+    "original_public_rows": 14,
+    "repetitions": 8,
+    "sha256": "7c78c6cc8cd0ba619ee382104b6fa23f79d3aa905201960c2ecd41133f6ecbd0",
+    "order_and_duplicate_rows_preserved": true
+  },
+  "complete_receipts": 15,
+  "raw_comparisons": [
+    {
+      "receipt": "comparisons/20261009T142733Z-bbef9c68/comparison-eb2fcc42/gate_Original_0/receipt.json",
+      "reported_arm": true,
+      "exact_bits": true,
+      "arrays": {
+        "member_raw": true,
+        "numeric_raw": true,
+        "numeric_processed": true
+      }
+    },
+    {
+      "receipt": "comparisons/20261009T142733Z-bbef9c68/comparison-eb2fcc42/gate_Original_1/receipt.json",
+      "reported_arm": true,
+      "exact_bits": true,
+      "arrays": {
+        "member_raw": true,
+        "numeric_raw": true,
+        "numeric_processed": true
+      }
+    },
+    {
+      "receipt": "comparisons/20261009T142733Z-bbef9c68/comparison-eb2fcc42/gate_S_STREAM_0/receipt.json",
+      "reported_arm": true,
+      "exact_bits": true,
+      "arrays": {
+        "member_raw": true,
+        "numeric_raw": true,
+        "numeric_processed": true
+      }
+    },
+    {
+      "receipt": "comparisons/20261009T142733Z-bbef9c68/comparison-eb2fcc42/gate_S_STREAM_1/receipt.json",
+      "reported_arm": true,
+      "exact_bits": true,
+      "arrays": {
+        "member_raw": true,
+        "numeric_raw": true,
+        "numeric_processed": true
+      }
+    },
+    {
+      "receipt": "comparisons/20261009T142733Z-bbef9c68/comparison-eb2fcc42/gate_S_STREAM_K1_0/receipt.json",
+      "reported_arm": true,
+      "exact_bits": true,
+      "arrays": {
+        "member_raw": true,
+        "numeric_raw": true,
+        "numeric_processed": true
+      }
+    },
+    {
+      "receipt": "comparisons/20261009T142733Z-bbef9c68/comparison-eb2fcc42/gate_S_STREAM_K1_1/receipt.json",
+      "reported_arm": true,
+      "exact_bits": true,
+      "arrays": {
+        "member_raw": true,
+        "numeric_raw": true,
+        "numeric_processed": true
+      }
+    },
+    {
+      "receipt": "comparisons/20261009T142733Z-bbef9c68/comparison-eb2fcc42/warm_Original_0/receipt.json",
+      "reported_arm": true,
+      "exact_bits": true,
+      "arrays": {
+        "member_raw": true,
+        "numeric_raw": true,
+        "numeric_processed": true
+      }
+    },
+    {
+      "receipt": "comparisons/20261009T142733Z-bbef9c68/comparison-eb2fcc42/warm_Original_1/receipt.json",
+      "reported_arm": true,
+      "exact_bits": true,
+      "arrays": {
+        "member_raw": true,
+        "numeric_raw": true,
+        "numeric_processed": true
+      }
+    },
+    {
+      "receipt": "comparisons/20261009T142733Z-bbef9c68/comparison-eb2fcc42/warm_Original_2/receipt.json",
+      "reported_arm": true,
+      "exact_bits": true,
+      "arrays": {
+        "member_raw": true,
+        "numeric_raw": true,
+        "numeric_processed": true
+      }
+    },
+    {
+      "receipt": "comparisons/20261009T142733Z-bbef9c68/comparison-eb2fcc42/warm_S_STREAM_0/receipt.json",
+      "reported_arm": true,
+      "exact_bits": true,
+      "arrays": {
+        "member_raw": true,
+        "numeric_raw": true,
+        "numeric_processed": true
+      }
+    },
+    {
+      "receipt": "comparisons/20261009T142733Z-bbef9c68/comparison-eb2fcc42/warm_S_STREAM_1/receipt.json",
+      "reported_arm": true,
+      "exact_bits": true,
+      "arrays": {
+        "member_raw": true,
+        "numeric_raw": true,
+        "numeric_processed": true
+      }
+    },
+    {
+      "receipt": "comparisons/20261009T142733Z-bbef9c68/comparison-eb2fcc42/warm_S_STREAM_2/receipt.json",
+      "reported_arm": true,
+      "exact_bits": true,
+      "arrays": {
+        "member_raw": true,
+        "numeric_raw": true,
+        "numeric_processed": true
+      }
+    },
+    {
+      "receipt": "comparisons/20261009T142733Z-bbef9c68/comparison-eb2fcc42/warm_S_STREAM_K1_0/receipt.json",
+      "reported_arm": true,
+      "exact_bits": true,
+      "arrays": {
+        "member_raw": true,
+        "numeric_raw": true,
+        "numeric_processed": true
+      }
+    },
+    {
+      "receipt": "comparisons/20261009T142733Z-bbef9c68/comparison-eb2fcc42/warm_S_STREAM_K1_1/receipt.json",
+      "reported_arm": true,
+      "exact_bits": true,
+      "arrays": {
+        "member_raw": true,
+        "numeric_raw": true,
+        "numeric_processed": true
+      }
+    },
+    {
+      "receipt": "comparisons/20261009T142733Z-bbef9c68/comparison-eb2fcc42/warm_S_STREAM_K1_2/receipt.json",
+      "reported_arm": true,
+      "exact_bits": true,
+      "arrays": {
+        "member_raw": true,
+        "numeric_raw": true,
+        "numeric_processed": true
+      }
+    }
+  ],
+  "same_runtime_statistics": {
+    "Original": {
+      "n": 3,
+      "seconds": [
+        1.2099519480000254,
+        1.2023120179999296,
+        1.199770588999968
+      ],
+      "median_seconds": 1.2023120179999296,
+      "speedup_vs_original": 1.0
+    },
+    "S_STREAM": {
+      "n": 3,
+      "seconds": [
+        0.4312069860000065,
+        0.4280184860000418,
+        0.426565766000067
+      ],
+      "median_seconds": 0.4280184860000418,
+      "speedup_vs_original": 2.809018902982177
+    },
+    "S_STREAM_K1": {
+      "n": 3,
+      "seconds": [
+        0.39155808600003184,
+        0.39284539599998425,
+        0.39264259699996273
+      ],
+      "median_seconds": 0.39264259699996273,
+      "speedup_vs_original": 3.0621028568636013
+    }
+  },
+  "unmeasured_arms": {},
+  "claims": {
+    "all_five_code_cells_executed_error_free": true,
+    "published_code_cells_equal_executed": true,
+    "raw_ten_member_outputs_bit_exact_for_reported_arms": true,
+    "full_numeric_outputs_and_metadata_bit_exact": true,
+    "signed_zero_aware": true,
+    "all_saved_arrays_finite": true,
+    "batch_50_and_all_ten_members": true,
+    "input_caches_closed_empty": true,
+    "current_warm_medians_and_speedups_recomputed": true,
+    "notebook_displays_actual_timing_values": true,
+    "unavailable_arms_not_timed": true
+  },
+  "feature_validation": "Saved identity manifest and actual original generation batch records; feature tensor cache is not included in this notebook result download.",
+  "numpy_version": "2.0.2",
+  "validator_sha256": "d915b5e82f07dafc5fe1408e711cb0043328e94f237623db1db8196150a29e2b",
+  "input_sha256": {
+    "results/G4/collected/results/notebook_01/execution.json": "0afdab4be2b441f7fcdb3284c67c6e79d4f086892a208e02daa06476f429e014",
+    "results/G4/collected/results/notebook_01/colab_compare.executed.ipynb": "0fddf817ab0270267063038aff3e5d2f22bf023652f2385a46c8c03f7eb62cc5",
+    "results/G4/collected/results/notebook_01/source_bundle_manifest.json": "2c20f9f951912404b10d40688c42c76df319f42f785c09cd20cecdd7985fd9b7",
+    "source_snapshots/32306fb1b8ec5d07ef1f6c71e641ffd9965143d0b1d71bb10a888b96b6939bc4.zip": "537cb84df395c70606b4947160b514cc2aee2f48df5089e130689863e16653e9",
+    "repository/demo/batch_kcat.csv": "1af5f730363fe6aad93ff46ec0aaac259625a48df57af7b0a7a1d85a16563607",
+    "repository/acceleration/colab/compare.py": "6ef5cfa6a7fcbc333f1ca535961d69424f8b24f3bd8d0bfb81071a0abd74124f",
+    "repository/acceleration/colab/setup_runtime.py": "0fe677a556d4f626708423b811969aa70f088180d3b9629645ec04ffd10972f5",
+    "repository/colab_compare.ipynb": "d981cdcb9a036852e61850975422a0f429b5fb8317c72d5f90e0b89d20160fc1",
+    "results/G4/collected/results/notebook_01/comparisons/20261009T142733Z-bbef9c68/comparison-eb2fcc42/summary.json": "531512c2ce834abb2131cd43f4a9e09c9dc33dd9d5477f2eea1c99357d95ad22",
+    "results/G4/collected/results/notebook_01/comparisons/20261009T142733Z-bbef9c68/notebook_config.json": "17350b32243336190809478f81f85393cd18283a1d74de9a8e6efefcf787b49c",
+    "results/G4/collected/results/notebook_01/comparisons/20261009T142733Z-bbef9c68/input.csv": "7c78c6cc8cd0ba619ee382104b6fa23f79d3aa905201960c2ecd41133f6ecbd0",
+    "results/G4/collected/results/notebook_01/comparisons/20261009T142733Z-bbef9c68/comparison-eb2fcc42/input.csv": "474a30beb142a278ce8d821676db13f03fab8996e38983ef0bcc82ebc0a5edb8",
+    "results/G4/collected/results/notebook_01/setup.json": "0977ef200a96c1bed8c9e066dfc52808250d3b5d9323fd7ba9ab95623dc8b7f8",
+    "results/G4/collected/results/notebook_01/comparisons/20261009T142733Z-bbef9c68/comparison-eb2fcc42/gate_Original_0/receipt.json": "365b27da5d8eb8ab5f796fc2ad896a28327838820dc8fe1a7e80722f39e6c3bb",
+    "results/G4/collected/results/notebook_01/comparisons/20261009T142733Z-bbef9c68/comparison-eb2fcc42/gate_Original_0/precision.npz": "ec03ba0601a75c8a7be35c140be37253813a8eae609db92e3c97ece0a91eb12e",
+    "results/G4/collected/results/notebook_01/comparisons/20261009T142733Z-bbef9c68/comparison-eb2fcc42/gate_Original_0/precision_manifest.json": "37801fd018c44e121267865ba91e008b21bca71676e4c3646abf23ff3304e88d",
+    "results/G4/collected/results/notebook_01/comparisons/20261009T142733Z-bbef9c68/comparison-eb2fcc42/gate_Original_0/input_input_output.csv": "3c7ffbd8a3ab94328b888cc928ead3b37af18bc0ba99e0721347cf370dcddaf6",
+    "results/G4/collected/results/notebook_01/comparisons/20261009T142733Z-bbef9c68/comparison-eb2fcc42/gate_Original_0/raw_predictions.csv": "6e8732f09f6be613943dbede094e459be6d9cc0b53c12a6154764f702ee66560",
+    "results/G4/collected/results/notebook_01/comparisons/20261009T142733Z-bbef9c68/comparison-eb2fcc42/gate_Original_1/receipt.json": "65fbfbbc7ceebb485f5aa378c65c5b7c5bfcfbd2734e13fe3a156a01b07a9c41",
+    "results/G4/collected/results/notebook_01/comparisons/20261009T142733Z-bbef9c68/comparison-eb2fcc42/gate_Original_1/precision.npz": "ec03ba0601a75c8a7be35c140be37253813a8eae609db92e3c97ece0a91eb12e",
+    "results/G4/collected/results/notebook_01/comparisons/20261009T142733Z-bbef9c68/comparison-eb2fcc42/gate_Original_1/precision_manifest.json": "37801fd018c44e121267865ba91e008b21bca71676e4c3646abf23ff3304e88d",
+    "results/G4/collected/results/notebook_01/comparisons/20261009T142733Z-bbef9c68/comparison-eb2fcc42/gate_Original_1/input_input_output.csv": "3c7ffbd8a3ab94328b888cc928ead3b37af18bc0ba99e0721347cf370dcddaf6",
+    "results/G4/collected/results/notebook_01/comparisons/20261009T142733Z-bbef9c68/comparison-eb2fcc42/gate_Original_1/raw_predictions.csv": "6e8732f09f6be613943dbede094e459be6d9cc0b53c12a6154764f702ee66560",
+    "results/G4/collected/results/notebook_01/comparisons/20261009T142733Z-bbef9c68/comparison-eb2fcc42/gate_S_STREAM_0/receipt.json": "d3af8769b94016bc9d4210e5c799f569dc2d890c30df56d6617290834991b103",
+    "results/G4/collected/results/notebook_01/comparisons/20261009T142733Z-bbef9c68/comparison-eb2fcc42/gate_S_STREAM_0/precision.npz": "ec03ba0601a75c8a7be35c140be37253813a8eae609db92e3c97ece0a91eb12e",
+    "results/G4/collected/results/notebook_01/comparisons/20261009T142733Z-bbef9c68/comparison-eb2fcc42/gate_S_STREAM_0/precision_manifest.json": "37801fd018c44e121267865ba91e008b21bca71676e4c3646abf23ff3304e88d",
+    "results/G4/collected/results/notebook_01/comparisons/20261009T142733Z-bbef9c68/comparison-eb2fcc42/gate_S_STREAM_0/input_input_output.csv": "3c7ffbd8a3ab94328b888cc928ead3b37af18bc0ba99e0721347cf370dcddaf6",
+    "results/G4/collected/results/notebook_01/comparisons/20261009T142733Z-bbef9c68/comparison-eb2fcc42/gate_S_STREAM_0/raw_predictions.csv": "6e8732f09f6be613943dbede094e459be6d9cc0b53c12a6154764f702ee66560",
+    "results/G4/collected/results/notebook_01/comparisons/20261009T142733Z-bbef9c68/comparison-eb2fcc42/gate_S_STREAM_1/receipt.json": "05f8050f859f2a58bb574a744de0481a31182dd43c6a0a999a1253422fade19f",
+    "results/G4/collected/results/notebook_01/comparisons/20261009T142733Z-bbef9c68/comparison-eb2fcc42/gate_S_STREAM_1/precision.npz": "ec03ba0601a75c8a7be35c140be37253813a8eae609db92e3c97ece0a91eb12e",
+    "results/G4/collected/results/notebook_01/comparisons/20261009T142733Z-bbef9c68/comparison-eb2fcc42/gate_S_STREAM_1/precision_manifest.json": "37801fd018c44e121267865ba91e008b21bca71676e4c3646abf23ff3304e88d",
+    "results/G4/collected/results/notebook_01/comparisons/20261009T142733Z-bbef9c68/comparison-eb2fcc42/gate_S_STREAM_1/input_input_output.csv": "3c7ffbd8a3ab94328b888cc928ead3b37af18bc0ba99e0721347cf370dcddaf6",
+    "results/G4/collected/results/notebook_01/comparisons/20261009T142733Z-bbef9c68/comparison-eb2fcc42/gate_S_STREAM_1/raw_predictions.csv": "6e8732f09f6be613943dbede094e459be6d9cc0b53c12a6154764f702ee66560",
+    "results/G4/collected/results/notebook_01/comparisons/20261009T142733Z-bbef9c68/comparison-eb2fcc42/gate_S_STREAM_K1_0/receipt.json": "78c4470f75c6fa7e9ee3a1822650a44eacd0855d7e16c5e233d2d7b5da409573",
+    "results/G4/collected/results/notebook_01/comparisons/20261009T142733Z-bbef9c68/comparison-eb2fcc42/gate_S_STREAM_K1_0/precision.npz": "ec03ba0601a75c8a7be35c140be37253813a8eae609db92e3c97ece0a91eb12e",
+    "results/G4/collected/results/notebook_01/comparisons/20261009T142733Z-bbef9c68/comparison-eb2fcc42/gate_S_STREAM_K1_0/precision_manifest.json": "37801fd018c44e121267865ba91e008b21bca71676e4c3646abf23ff3304e88d",
+    "results/G4/collected/results/notebook_01/comparisons/20261009T142733Z-bbef9c68/comparison-eb2fcc42/gate_S_STREAM_K1_0/input_input_output.csv": "3c7ffbd8a3ab94328b888cc928ead3b37af18bc0ba99e0721347cf370dcddaf6",
+    "results/G4/collected/results/notebook_01/comparisons/20261009T142733Z-bbef9c68/comparison-eb2fcc42/gate_S_STREAM_K1_0/raw_predictions.csv": "6e8732f09f6be613943dbede094e459be6d9cc0b53c12a6154764f702ee66560",
+    "results/G4/collected/results/notebook_01/comparisons/20261009T142733Z-bbef9c68/comparison-eb2fcc42/gate_S_STREAM_K1_1/receipt.json": "64644052e1466857057f94a4896e9cef74263f05a16bc80511ea2bf496835036",
+    "results/G4/collected/results/notebook_01/comparisons/20261009T142733Z-bbef9c68/comparison-eb2fcc42/gate_S_STREAM_K1_1/precision.npz": "ec03ba0601a75c8a7be35c140be37253813a8eae609db92e3c97ece0a91eb12e",
+    "results/G4/collected/results/notebook_01/comparisons/20261009T142733Z-bbef9c68/comparison-eb2fcc42/gate_S_STREAM_K1_1/precision_manifest.json": "37801fd018c44e121267865ba91e008b21bca71676e4c3646abf23ff3304e88d",
+    "results/G4/collected/results/notebook_01/comparisons/20261009T142733Z-bbef9c68/comparison-eb2fcc42/gate_S_STREAM_K1_1/input_input_output.csv": "3c7ffbd8a3ab94328b888cc928ead3b37af18bc0ba99e0721347cf370dcddaf6",
+    "results/G4/collected/results/notebook_01/comparisons/20261009T142733Z-bbef9c68/comparison-eb2fcc42/gate_S_STREAM_K1_1/raw_predictions.csv": "6e8732f09f6be613943dbede094e459be6d9cc0b53c12a6154764f702ee66560",
+    "results/G4/collected/results/notebook_01/comparisons/20261009T142733Z-bbef9c68/comparison-eb2fcc42/warm_Original_0/receipt.json": "18cb318bbf4b1c4f2430af8a3a5efb0a81058347475bbd5b88a9a2ecce6a92ca",
+    "results/G4/collected/results/notebook_01/comparisons/20261009T142733Z-bbef9c68/comparison-eb2fcc42/warm_Original_0/precision.npz": "ec03ba0601a75c8a7be35c140be37253813a8eae609db92e3c97ece0a91eb12e",
+    "results/G4/collected/results/notebook_01/comparisons/20261009T142733Z-bbef9c68/comparison-eb2fcc42/warm_Original_0/precision_manifest.json": "37801fd018c44e121267865ba91e008b21bca71676e4c3646abf23ff3304e88d",
+    "results/G4/collected/results/notebook_01/comparisons/20261009T142733Z-bbef9c68/comparison-eb2fcc42/warm_Original_0/input_input_output.csv": "3c7ffbd8a3ab94328b888cc928ead3b37af18bc0ba99e0721347cf370dcddaf6",
+    "results/G4/collected/results/notebook_01/comparisons/20261009T142733Z-bbef9c68/comparison-eb2fcc42/warm_Original_0/raw_predictions.csv": "6e8732f09f6be613943dbede094e459be6d9cc0b53c12a6154764f702ee66560",
+    "results/G4/collected/results/notebook_01/comparisons/20261009T142733Z-bbef9c68/comparison-eb2fcc42/warm_Original_1/receipt.json": "58f1fb650f3e7f03e7921beace41f59208b74f58ffd803ec36b46910e5e359aa",
+    "results/G4/collected/results/notebook_01/comparisons/20261009T142733Z-bbef9c68/comparison-eb2fcc42/warm_Original_1/precision.npz": "ec03ba0601a75c8a7be35c140be37253813a8eae609db92e3c97ece0a91eb12e",
+    "results/G4/collected/results/notebook_01/comparisons/20261009T142733Z-bbef9c68/comparison-eb2fcc42/warm_Original_1/precision_manifest.json": "37801fd018c44e121267865ba91e008b21bca71676e4c3646abf23ff3304e88d",
+    "results/G4/collected/results/notebook_01/comparisons/20261009T142733Z-bbef9c68/comparison-eb2fcc42/warm_Original_1/input_input_output.csv": "3c7ffbd8a3ab94328b888cc928ead3b37af18bc0ba99e0721347cf370dcddaf6",
+    "results/G4/collected/results/notebook_01/comparisons/20261009T142733Z-bbef9c68/comparison-eb2fcc42/warm_Original_1/raw_predictions.csv": "6e8732f09f6be613943dbede094e459be6d9cc0b53c12a6154764f702ee66560",
+    "results/G4/collected/results/notebook_01/comparisons/20261009T142733Z-bbef9c68/comparison-eb2fcc42/warm_Original_2/receipt.json": "5c84e4d604d3626cb293aee4be9e5363a44ef372a8c9287a5540c4163b55c818",
+    "results/G4/collected/results/notebook_01/comparisons/20261009T142733Z-bbef9c68/comparison-eb2fcc42/warm_Original_2/precision.npz": "ec03ba0601a75c8a7be35c140be37253813a8eae609db92e3c97ece0a91eb12e",
+    "results/G4/collected/results/notebook_01/comparisons/20261009T142733Z-bbef9c68/comparison-eb2fcc42/warm_Original_2/precision_manifest.json": "37801fd018c44e121267865ba91e008b21bca71676e4c3646abf23ff3304e88d",
+    "results/G4/collected/results/notebook_01/comparisons/20261009T142733Z-bbef9c68/comparison-eb2fcc42/warm_Original_2/input_input_output.csv": "3c7ffbd8a3ab94328b888cc928ead3b37af18bc0ba99e0721347cf370dcddaf6",
+    "results/G4/collected/results/notebook_01/comparisons/20261009T142733Z-bbef9c68/comparison-eb2fcc42/warm_Original_2/raw_predictions.csv": "6e8732f09f6be613943dbede094e459be6d9cc0b53c12a6154764f702ee66560",
+    "results/G4/collected/results/notebook_01/comparisons/20261009T142733Z-bbef9c68/comparison-eb2fcc42/warm_S_STREAM_0/receipt.json": "a3eba46cc646d594c68c30c7761706daf62fc5095bfe35565069546482d4a694",
+    "results/G4/collected/results/notebook_01/comparisons/20261009T142733Z-bbef9c68/comparison-eb2fcc42/warm_S_STREAM_0/precision.npz": "ec03ba0601a75c8a7be35c140be37253813a8eae609db92e3c97ece0a91eb12e",
+    "results/G4/collected/results/notebook_01/comparisons/20261009T142733Z-bbef9c68/comparison-eb2fcc42/warm_S_STREAM_0/precision_manifest.json": "37801fd018c44e121267865ba91e008b21bca71676e4c3646abf23ff3304e88d",
+    "results/G4/collected/results/notebook_01/comparisons/20261009T142733Z-bbef9c68/comparison-eb2fcc42/warm_S_STREAM_0/input_input_output.csv": "3c7ffbd8a3ab94328b888cc928ead3b37af18bc0ba99e0721347cf370dcddaf6",
+    "results/G4/collected/results/notebook_01/comparisons/20261009T142733Z-bbef9c68/comparison-eb2fcc42/warm_S_STREAM_0/raw_predictions.csv": "6e8732f09f6be613943dbede094e459be6d9cc0b53c12a6154764f702ee66560",
+    "results/G4/collected/results/notebook_01/comparisons/20261009T142733Z-bbef9c68/comparison-eb2fcc42/warm_S_STREAM_1/receipt.json": "d81bdd726243cceaf15a3d54110c5c572b576d48f8331ca444557f1ff613f295",
+    "results/G4/collected/results/notebook_01/comparisons/20261009T142733Z-bbef9c68/comparison-eb2fcc42/warm_S_STREAM_1/precision.npz": "ec03ba0601a75c8a7be35c140be37253813a8eae609db92e3c97ece0a91eb12e",
+    "results/G4/collected/results/notebook_01/comparisons/20261009T142733Z-bbef9c68/comparison-eb2fcc42/warm_S_STREAM_1/precision_manifest.json": "37801fd018c44e121267865ba91e008b21bca71676e4c3646abf23ff3304e88d",
+    "results/G4/collected/results/notebook_01/comparisons/20261009T142733Z-bbef9c68/comparison-eb2fcc42/warm_S_STREAM_1/input_input_output.csv": "3c7ffbd8a3ab94328b888cc928ead3b37af18bc0ba99e0721347cf370dcddaf6",
+    "results/G4/collected/results/notebook_01/comparisons/20261009T142733Z-bbef9c68/comparison-eb2fcc42/warm_S_STREAM_1/raw_predictions.csv": "6e8732f09f6be613943dbede094e459be6d9cc0b53c12a6154764f702ee66560",
+    "results/G4/collected/results/notebook_01/comparisons/20261009T142733Z-bbef9c68/comparison-eb2fcc42/warm_S_STREAM_2/receipt.json": "d89d6bfb474934560bdcf2d5ad9886efe3aec3d0c742243a3f88cab13d8a112c",
+    "results/G4/collected/results/notebook_01/comparisons/20261009T142733Z-bbef9c68/comparison-eb2fcc42/warm_S_STREAM_2/precision.npz": "ec03ba0601a75c8a7be35c140be37253813a8eae609db92e3c97ece0a91eb12e",
+    "results/G4/collected/results/notebook_01/comparisons/20261009T142733Z-bbef9c68/comparison-eb2fcc42/warm_S_STREAM_2/precision_manifest.json": "37801fd018c44e121267865ba91e008b21bca71676e4c3646abf23ff3304e88d",
+    "results/G4/collected/results/notebook_01/comparisons/20261009T142733Z-bbef9c68/comparison-eb2fcc42/warm_S_STREAM_2/input_input_output.csv": "3c7ffbd8a3ab94328b888cc928ead3b37af18bc0ba99e0721347cf370dcddaf6",
+    "results/G4/collected/results/notebook_01/comparisons/20261009T142733Z-bbef9c68/comparison-eb2fcc42/warm_S_STREAM_2/raw_predictions.csv": "6e8732f09f6be613943dbede094e459be6d9cc0b53c12a6154764f702ee66560",
+    "results/G4/collected/results/notebook_01/comparisons/20261009T142733Z-bbef9c68/comparison-eb2fcc42/warm_S_STREAM_K1_0/receipt.json": "9e9127d1ea01bc06bf1dcb5461465bec974da7b6cb403a4e164a571f4e9b2156",
+    "results/G4/collected/results/notebook_01/comparisons/20261009T142733Z-bbef9c68/comparison-eb2fcc42/warm_S_STREAM_K1_0/precision.npz": "ec03ba0601a75c8a7be35c140be37253813a8eae609db92e3c97ece0a91eb12e",
+    "results/G4/collected/results/notebook_01/comparisons/20261009T142733Z-bbef9c68/comparison-eb2fcc42/warm_S_STREAM_K1_0/precision_manifest.json": "37801fd018c44e121267865ba91e008b21bca71676e4c3646abf23ff3304e88d",
+    "results/G4/collected/results/notebook_01/comparisons/20261009T142733Z-bbef9c68/comparison-eb2fcc42/warm_S_STREAM_K1_0/input_input_output.csv": "3c7ffbd8a3ab94328b888cc928ead3b37af18bc0ba99e0721347cf370dcddaf6",
+    "results/G4/collected/results/notebook_01/comparisons/20261009T142733Z-bbef9c68/comparison-eb2fcc42/warm_S_STREAM_K1_0/raw_predictions.csv": "6e8732f09f6be613943dbede094e459be6d9cc0b53c12a6154764f702ee66560",
+    "results/G4/collected/results/notebook_01/comparisons/20261009T142733Z-bbef9c68/comparison-eb2fcc42/warm_S_STREAM_K1_1/receipt.json": "efc96f336d71bc29c89658f0bf9465d974a844f8beaef1e202e873c8e91c16cf",
+    "results/G4/collected/results/notebook_01/comparisons/20261009T142733Z-bbef9c68/comparison-eb2fcc42/warm_S_STREAM_K1_1/precision.npz": "ec03ba0601a75c8a7be35c140be37253813a8eae609db92e3c97ece0a91eb12e",
+    "results/G4/collected/results/notebook_01/comparisons/20261009T142733Z-bbef9c68/comparison-eb2fcc42/warm_S_STREAM_K1_1/precision_manifest.json": "37801fd018c44e121267865ba91e008b21bca71676e4c3646abf23ff3304e88d",
+    "results/G4/collected/results/notebook_01/comparisons/20261009T142733Z-bbef9c68/comparison-eb2fcc42/warm_S_STREAM_K1_1/input_input_output.csv": "3c7ffbd8a3ab94328b888cc928ead3b37af18bc0ba99e0721347cf370dcddaf6",
+    "results/G4/collected/results/notebook_01/comparisons/20261009T142733Z-bbef9c68/comparison-eb2fcc42/warm_S_STREAM_K1_1/raw_predictions.csv": "6e8732f09f6be613943dbede094e459be6d9cc0b53c12a6154764f702ee66560",
+    "results/G4/collected/results/notebook_01/comparisons/20261009T142733Z-bbef9c68/comparison-eb2fcc42/warm_S_STREAM_K1_2/receipt.json": "07ccad299aaf5282bad9f55da2c3f743b415ad4641e5aa1683b47bcd000c9e6a",
+    "results/G4/collected/results/notebook_01/comparisons/20261009T142733Z-bbef9c68/comparison-eb2fcc42/warm_S_STREAM_K1_2/precision.npz": "ec03ba0601a75c8a7be35c140be37253813a8eae609db92e3c97ece0a91eb12e",
+    "results/G4/collected/results/notebook_01/comparisons/20261009T142733Z-bbef9c68/comparison-eb2fcc42/warm_S_STREAM_K1_2/precision_manifest.json": "37801fd018c44e121267865ba91e008b21bca71676e4c3646abf23ff3304e88d",
+    "results/G4/collected/results/notebook_01/comparisons/20261009T142733Z-bbef9c68/comparison-eb2fcc42/warm_S_STREAM_K1_2/input_input_output.csv": "3c7ffbd8a3ab94328b888cc928ead3b37af18bc0ba99e0721347cf370dcddaf6",
+    "results/G4/collected/results/notebook_01/comparisons/20261009T142733Z-bbef9c68/comparison-eb2fcc42/warm_S_STREAM_K1_2/raw_predictions.csv": "6e8732f09f6be613943dbede094e459be6d9cc0b53c12a6154764f702ee66560",
+    "results/G4/collected/results/notebook_01/comparisons/20261009T142733Z-bbef9c68/comparison-eb2fcc42/gate_Original.json": "7622e98384fe681b0b57d3ee1f6e71d3fbed63f4be530242be4412b595ce3404",
+    "results/G4/collected/results/notebook_01/comparisons/20261009T142733Z-bbef9c68/comparison-eb2fcc42/warm_Original_0/comparison.json": "7622e98384fe681b0b57d3ee1f6e71d3fbed63f4be530242be4412b595ce3404",
+    "results/G4/collected/results/notebook_01/comparisons/20261009T142733Z-bbef9c68/comparison-eb2fcc42/warm_Original_1/comparison.json": "7622e98384fe681b0b57d3ee1f6e71d3fbed63f4be530242be4412b595ce3404",
+    "results/G4/collected/results/notebook_01/comparisons/20261009T142733Z-bbef9c68/comparison-eb2fcc42/warm_Original_2/comparison.json": "7622e98384fe681b0b57d3ee1f6e71d3fbed63f4be530242be4412b595ce3404",
+    "results/G4/collected/results/notebook_01/comparisons/20261009T142733Z-bbef9c68/comparison-eb2fcc42/gate_S_STREAM.json": "31a7c5ba4a05da3733bb15573cc927ae1316353c78126d03ecb11b166a22ceb6",
+    "results/G4/collected/results/notebook_01/comparisons/20261009T142733Z-bbef9c68/comparison-eb2fcc42/warm_S_STREAM_0/comparison.json": "7622e98384fe681b0b57d3ee1f6e71d3fbed63f4be530242be4412b595ce3404",
+    "results/G4/collected/results/notebook_01/comparisons/20261009T142733Z-bbef9c68/comparison-eb2fcc42/warm_S_STREAM_1/comparison.json": "7622e98384fe681b0b57d3ee1f6e71d3fbed63f4be530242be4412b595ce3404",
+    "results/G4/collected/results/notebook_01/comparisons/20261009T142733Z-bbef9c68/comparison-eb2fcc42/warm_S_STREAM_2/comparison.json": "7622e98384fe681b0b57d3ee1f6e71d3fbed63f4be530242be4412b595ce3404",
+    "results/G4/collected/results/notebook_01/comparisons/20261009T142733Z-bbef9c68/comparison-eb2fcc42/gate_S_STREAM_K1.json": "31a7c5ba4a05da3733bb15573cc927ae1316353c78126d03ecb11b166a22ceb6",
+    "results/G4/collected/results/notebook_01/comparisons/20261009T142733Z-bbef9c68/comparison-eb2fcc42/warm_S_STREAM_K1_0/comparison.json": "7622e98384fe681b0b57d3ee1f6e71d3fbed63f4be530242be4412b595ce3404",
+    "results/G4/collected/results/notebook_01/comparisons/20261009T142733Z-bbef9c68/comparison-eb2fcc42/warm_S_STREAM_K1_1/comparison.json": "7622e98384fe681b0b57d3ee1f6e71d3fbed63f4be530242be4412b595ce3404",
+    "results/G4/collected/results/notebook_01/comparisons/20261009T142733Z-bbef9c68/comparison-eb2fcc42/warm_S_STREAM_K1_2/comparison.json": "7622e98384fe681b0b57d3ee1f6e71d3fbed63f4be530242be4412b595ce3404",
+    "results/G4/collected/results/notebook_01/comparisons/20261009T142733Z-bbef9c68/comparison-eb2fcc42/features.json": "3aa7da5046147b1bd5e4c11167b0ac33a48fd770cc673b350cd956c2d6404a7e"
+  },
+  "checked_utc": "2026-10-09T14:32:18Z",
+  "derived_from_report_sha256": "70abd97e8e7233cb9f6aeeef5efb010778573f01adafea09f92071cbcfe369b3",
+  "path_display_note": "Local repository paths are shown relative to the repository; source report and numerical results are unchanged.",
+  "runtime_released": true,
+  "results_archive_sha256": "e59609624a2302bed085707179d02fad38bda673029794e1bf07f44470833693",
+  "regression_tests": {
+    "existing_runtime_tests": 87,
+    "colab_tests_on_G4": 32,
+    "colab_skipped_on_G4": 0
+  }
+}

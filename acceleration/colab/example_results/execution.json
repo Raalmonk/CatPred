@@ -1,0 +1,45 @@
+{
+  "status": "complete",
+  "started_epoch": 1791556027.5860004,
+  "source_notebook_sha256": "d7f58c2943f569826496af1c98f84c497ef78a0759508cefe7ef81e5a912133e",
+  "source_cell_sha256": [
+    "10b7c846df2fed0ecf5410f9748a67d3d1822376f3e018898ffe60cedff59883",
+    "5c36e0ac3609bdb95ff9077a41b8bebd1cff3145ec3f85639d92cae80e303621",
+    "8095167a63ee07fadb355e3b841db7bde828d7d7245aa943f572bfcb89618386",
+    "eccb2747c88aa5d7bbc54b56ee2b4b634a7e108f0b77f527b0593af8c6267aaa",
+    "8f208285e10802327d1571bd5d132c336021d051e2b9f693365e64bf26111709",
+    "8878d0fe07418edb124c7363be09866d18a243ac7d1153acc652a885d0bfdeb3",
+    "c1620b5da6f7dca8a7e1bfad2128663687443ee21fd7b12e0bfe56b32e18582a"
+  ],
+  "cell_events": [
+    {
+      "event": "executed",
+      "cell_index": 1,
+      "epoch": 1791556053.2430108
+    },
+    {
+      "event": "executed",
+      "cell_index": 3,
+      "epoch": 1791556053.2533314
+    },
+    {
+      "event": "executed",
+      "cell_index": 4,
+      "epoch": 1791556076.4464371
+    },
+    {
+      "event": "executed",
+      "cell_index": 5,
+      "epoch": 1791556076.4654653
+    },
+    {
+      "event": "executed",
+      "cell_index": 6,
+      "epoch": 1791556076.507509
+    }
+  ],
+  "code_cells_executed": 5,
+  "source_cells_unchanged": true,
+  "finished_epoch": 1791556076.7211258,
+  "seconds": 49.135125398635864
+}
